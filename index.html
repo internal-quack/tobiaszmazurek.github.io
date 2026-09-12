@@ -624,9 +624,9 @@
   }
   .motif-grill{ bottom:10%; right:8%; width:13.125rem; }
   /* Pozycje motywów dopieszczone ręcznie w trybie edycji na 2560x1440 (nadpisują domyślne powyżej dla tych sekcji) */
-  #project-2 .motif-glasses{ top:12.54%; left:80.44%; right:auto; bottom:auto; }
+  #project-2 .motif-glasses{ top:12.46%; left:80.44%; right:auto; bottom:auto; }
   #project-4 .motif-turret{ top:10.56%; left:85.36%; right:auto; bottom:auto; }
-  #project-6 .motif-axe{ top:57.66%; left:30.92%; right:auto; bottom:auto; }
+  #project-6 .motif-axe{ top:25.52%; left:30.68%; right:auto; bottom:auto; }
   #project-9 .motif-console{ top:57.69%; left:43.95%; right:auto; bottom:auto; --motif-transform:rotate(-6deg) scale(0.84); }
   #project-8 .motif-signal{ top:62.43%; left:14.48%; right:auto; bottom:auto; }
   #about-technical .motif-about{ top:63.28%; left:7.25%; right:auto; bottom:auto; --motif-transform:rotate(153deg) scale(0.88); }
@@ -636,8 +636,19 @@
   #about-technical .project-content .tags{ margin-bottom:0.5rem; }
   #contact .motif-contact{ top:19.19%; left:58.75%; right:auto; bottom:auto; }
   #project-7 .motif-paw{ top:35.87%; left:50.19%; right:auto; bottom:auto; }
-  #career .motif-flag{ top:10.53%; left:81.66%; right:auto; bottom:auto; }
+  #career .motif-flag{ top:27.32%; left:81.66%; right:auto; bottom:auto; }
   #project-11 .motif-wip{ top:12.91%; left:9.61%; right:auto; bottom:auto; }
+  #hero .motif-hero{ top:31.79%; left:62.42%; right:auto; bottom:auto; --motif-transform:rotate(12deg) scale(1.4); }
+  #skills .motif-skills{ top:7.49%; left:75%; right:auto; bottom:auto; --motif-transform:rotate(0deg) scale(0.8); }
+  #project-blade .motif-blade{ top:32.44%; left:12.25%; right:auto; bottom:auto; --motif-transform:rotate(-12deg) scale(1); }
+  #hero{ --motif-glow-size:2 !important; }
+  #skills{ --motif-glow-size:2.5 !important; }
+  #career{ --motif-glow-size:2 !important; }
+  #project-blade{ --motif-glow-size:1.4 !important; }
+  #hero{ --motif-glow-strength:0.4 !important; }
+  #career{ --motif-glow-strength:0.75 !important; }
+  #skills{ --motif-glow-strength:0.6 !important; }
+  #project-2{ --motif-glow-strength:0.7 !important; }
   #skills{ --motif-color:#a35724 !important; }
   #skills{ --motif-icon-color:#a35724 !important; }
   @media (max-width:860px){
@@ -900,52 +911,6 @@
     color:var(--text);
   }
   .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
-
-  .cue-row{
-    position:absolute;
-    left:50%;
-    bottom:6rem;
-    transform:translateX(-50%);
-    display:flex;
-    align-items:flex-start;
-    gap:2.5rem;
-    z-index:2;
-  }
-  .scroll-cue{
-    font-size:0.75rem;
-    color:var(--text-dim);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0.5rem;
-  }
-  .click-cue{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0.5rem;
-    padding-top:0.4375rem;
-    font-size:0.6875rem;
-    color:var(--text-dim);
-    opacity:.7;
-  }
-  .click-cue svg{
-    width:1.375rem; height:1.375rem;
-    color:var(--accent);
-    animation:tapPulse 1.8s ease-in-out infinite;
-  }
-  @keyframes tapPulse{
-    0%, 100%{ opacity:1; transform:scale(1); }
-    50%{ opacity:.6; transform:scale(.9); }
-  }
-  .scroll-cue .line{
-    width:0.0625rem; height:2.25rem;
-    background:linear-gradient(var(--accent), transparent);
-    animation:pulse 2s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:.3;} 50%{opacity:1;}
-  }
 
   /* Section headers */
   .kicker{
@@ -1408,16 +1373,15 @@
   #project-6 .project-media{ flex-basis:58rem; max-width:58rem; --media-x:2.109rem; --media-y:0.815rem; }
   #project-6 .project-row{ gap:0.5rem; max-width:none; }
   #project-6 .tile-collage{ width:min(58rem, calc((var(--media-max-h) - 6rem) / 0.55)); max-width:none; aspect-ratio:1/0.55; }
-  #project-6 .tile-a{ width:47.00%; height:47%; aspect-ratio:auto; top:-2.51%; left:7.14%; transform:rotate(-4deg); z-index:23; }
-  #project-6 .tile-b{ width:47%; height:48%; aspect-ratio:auto; top:-2.7%; left:50.78%; transform:rotate(3deg); z-index:1; }
-  #project-6 .tile-c{ width:46%; height:47%; aspect-ratio:auto; top:44.51%; left:7.13%; transform:rotate(1deg); z-index:3; }
-  #project-6 .tile-d{ width:47%; height:48%; aspect-ratio:auto; top:44.35%; left:51.48%; transform:rotate(-4deg); z-index:4; }
-  #project-blade .project-media{ flex-basis:58rem; max-width:58rem; }
-  #project-blade .tile-collage{ width:min(58rem, calc((var(--media-max-h) - 6rem) / 0.55)); max-width:none; aspect-ratio:1/0.55; }
-  #project-blade .tile-a{ width:47.00%; height:47%; aspect-ratio:auto; top:-2.51%; left:7.14%; transform:rotate(-4deg); z-index:1; }
-  #project-blade .tile-b{ width:47%; height:48%; aspect-ratio:auto; top:-2.7%; left:50.78%; transform:rotate(3deg); z-index:2; }
-  #project-blade .tile-c{ width:46%; height:47%; aspect-ratio:auto; top:44.51%; left:7.13%; transform:rotate(1deg); z-index:3; }
-  #project-blade .tile-d{ width:47%; height:48%; aspect-ratio:auto; top:44.35%; left:51.48%; transform:rotate(-4deg); z-index:4; }
+  #project-6 .tile-a{ width:40.00%; height:40%; aspect-ratio:auto; top:3.5%; left:9.45%; transform:rotate(-4deg); z-index:1; }
+  #project-6 .tile-b{ width:41.00%; height:42%; aspect-ratio:auto; top:0.9%; left:48.89%; transform:rotate(3deg); z-index:4; }
+  #project-6 .tile-c{ width:41.00%; height:42%; aspect-ratio:auto; top:42.1%; left:9.53%; transform:rotate(1deg); z-index:2; }
+  #project-6 .tile-d{ width:40.00%; height:41%; aspect-ratio:auto; top:43.75%; left:52.14%; transform:rotate(-4deg); z-index:3; }
+  #project-blade .project-media{ flex-basis:56rem; max-width:56rem; }
+  #project-blade .tile-collage{ width:56rem; max-width:none; aspect-ratio:1/0.55; }
+  #project-blade .tile-a{ width:38.00%; height:38%; aspect-ratio:auto; top:25.31%; left:56.72%; transform:rotate(-4deg); z-index:2; }
+  #project-blade .tile-b{ width:36.00%; height:37%; aspect-ratio:auto; top:58%; left:53.14%; transform:rotate(0deg); z-index:3; }
+  #project-blade .tile-c{ width:35.00%; height:36%; aspect-ratio:auto; top:-1.58%; left:59.75%; transform:rotate(1deg); z-index:1; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-a{ width:58%; aspect-ratio:4/5; top:7%; left:8%; transform:rotate(-3.6deg); z-index:4; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-b{ width:36%; aspect-ratio:4/5; top:7%; right:8%; transform:rotate(7.2deg); z-index:3; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-c{ width:36%; aspect-ratio:4/5; bottom:7%; right:8%; transform:rotate(-7.2deg); z-index:2; }
@@ -2073,7 +2037,7 @@
   }
   #edit-panel .ep-legend span{ color:#9A9D9F; text-align:right; }
   /* Skala/pozycja tekstu per sekcja — wygenerowane z panelu edycji (?edit) na 2560x1440, w rem (skaluje się z resztą strony) */
-  #hero .inner{ transform:translate(0.000rem,-0.192rem) scale(0.8); transform-origin:center; }
+  #hero .inner{ transform:translate(0.000rem,-2.157rem) scale(0.8); transform-origin:center; }
   #career .inner{ transform:translate(0.000rem,0.000rem) scale(1); transform-origin:center; }
   #skills .inner{ transform:translate(0.000rem,0.000rem) scale(0.9); transform-origin:center; }
   #contact .inner{ transform:translate(0.000rem,-0.959rem) scale(0.9); transform-origin:center; }
@@ -2081,9 +2045,11 @@
   #about-recommend .project-content{ transform:translate(8.293rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-1 .project-content{ transform:translate(-4.219rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-2 .project-content{ transform:translate(8.198rem,0.000rem) scale(0.9); transform-origin:center; }
-  #project-4 .project-content{ transform:translate(6.520rem,0.000rem) scale(0.9); transform-origin:center; }
+  #project-4 .project-content{ transform:translate(7.125rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-5 .project-content{ transform:translate(-4.794rem,0.000rem) scale(0.9); transform-origin:center; }
-  #project-6 .project-content{ transform:translate(6.855rem,-3.547rem) scale(0.9); transform-origin:center; }
+  #project-6 .project-content{ transform:translate(-1.151rem,0.000rem) scale(0.9); transform-origin:center; }
+  #project-blade .project-content{ transform:translate(16.874rem,-4.986rem) scale(1); transform-origin:center; }
+  #project-blade .project-media{ transform:translate(-10.930rem,-0.527rem); }
   #project-7 .project-content{ transform:translate(-39.693rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-8 .project-content{ transform:translate(-1.534rem,4.986rem) scale(0.9); transform-origin:center; }
   #project-9 .project-content{ transform:translate(5.129rem,-4.410rem) scale(0.9); transform-origin:center; }
@@ -2297,17 +2263,6 @@
       <div style="background-image:url('images/icons/nerd-simulator.svg'); background-color:#1a1a1c;">Nerd Sim</div>
       <div style="background-image:url('images/icons/space-defense.svg'); background-color:#1a1a1c;">Space Defense</div>
       <div style="background-image:url('images/icons/blade-river.svg'); background-color:#1a1a1c;">Blade River</div>
-    </div>
-  </div>
-  <div class="cue-row">
-    <div class="scroll-cue"><span class="line"></span><span data-i18n="hero-scroll-hint">scrolluj</span></div>
-    <div class="click-cue">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="2.6" fill="currentColor"/>
-        <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
-        <circle cx="12" cy="12" r="10.5" stroke="currentColor" stroke-width="1" opacity="0.28"/>
-      </svg>
-      <span data-i18n="hero-hint">kliknij ikonę</span>
     </div>
   </div>
 </section>
@@ -2557,9 +2512,6 @@
         </div>
         <div class="tile tile-c">
           <div class="about-photo" style="background-image:url('images/blade-river-3.jpg?v=1')" role="img" aria-label="Blade River — ekran wczytywania"></div>
-        </div>
-        <div class="tile tile-d">
-          <div class="about-photo" style="background-image:url('images/blade-river-4.jpg?v=1')" role="img" aria-label="Blade River — walka ze szkieletami"></div>
         </div>
       </div>
     </div>
@@ -3307,8 +3259,6 @@
       'hero-sub':"This is my little corner of game dev — gameplay, networking systems, and custom editor tools, from game jams to titles shipped on Steam.",
       'hero-btn-projects':'View projects',
       'hero-btn-contact':'Contact',
-      'hero-hint':'click the icon',
-      'hero-scroll-hint':'scroll',
 
       'about-kicker':'About',
       'about-tab-0':'This is my turf', 'about-tab-1':'This is me', 'about-tab-2':'What I play',
