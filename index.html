@@ -18,21 +18,21 @@
     --accent-warm:#C9642E;
     --line:#2A2D31;
     --maxw:61.25rem;
-    --media-max-h:calc(100vh - 170px - 6.25rem);
+    --media-max-h:calc(100vh - 14.3996rem);
     --ent:1; /* entrance animation strength multiplier — adjustable via the intensity switcher */
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{
     scroll-behavior:smooth;
-    /* Jeden wspólny mechanizm skalowania całego layoutu (czcionki, odstępy, wymiary w rem).
-       Referencja: 16px przy szerokości okna ~2552px (projektowana wielkość).
-       Poniżej 861px włącza się dedykowany układ mobilny (patrz media queries), więc tam
-       font-size zostaje płaski na dolnej granicy i nie wchodzi w konflikt z tamtymi regułami. */
+    /* Single shared mechanism for scaling the whole layout (fonts, spacing, rem-based dimensions).
+       Reference: 16px at a window width of ~2552px (design size).
+       Below 861px a dedicated mobile layout kicks in (see media queries), so there
+       font-size stays flat at the lower bound and doesn't conflict with those rules. */
     font-size:16px;
   }
   @media (min-width:861px){
     html{
-      /* Sekcje są height:100vh, więc skalowanie reaguje na węższy Z DWÓCH wymiarów (min(vw, vh)) —
+      /* Sections are height:100vh, so scaling reacts to whichever of the two dimensions is narrower (min(vw, vh)) —
          przy niskim/krótkim oknie (mało wysokości: pasek zadań, pasek zakładek przeglądarki,
          okno niepełnoekranowe) to wysokość ogranicza skalę, żeby treść nie ucinała się w pionie;
          przy typowym szerokim-a-płytkim oknie (16:9 w pełnym oknie) to szerokość ogranicza skalę
@@ -57,27 +57,27 @@
      Kolejność ważna: te bloki muszą być NIŻEJ niż ogólna reguła @media(min-width:861px),
      żeby wygrywały w kaskadzie na dokładnie tych oknach. ========================= */
 
-  /* --- Kotwica 1: monitor 1920×1080 (pełne okno) --- */
+  /* --- Anchor 1: 1920×1080 monitor (full window) --- */
   @media (min-width:1900px) and (max-width:1959px) and (min-height:960px) and (max-height:1100px){
     html{ font-size:15.65px; }
-    /* Miejsce na CSS wygenerowany z panelu edycji (?edit) na tym oknie: */
+    /* Space for CSS generated from the edit panel (?edit) at this window size: */
   }
 
-  /* --- Kotwica 2: monitor 2560×1440 (pełne okno, główny) --- */
+  /* --- Anchor 2: 2560×1440 monitor (full window, primary) --- */
   @media (min-width:2540px) and (max-width:2600px) and (min-height:1300px) and (max-height:1460px){
     html{ font-size:20.86px; }
-    /* Miejsce na CSS wygenerowany z panelu edycji (?edit) na tym oknie: */
+    /* Space for CSS generated from the edit panel (?edit) at this window size: */
   }
 
-  /* --- Kotwica 3: MacBook Air 15" — domyślne skalowanie macOS,
-     przeglądarka widzi ~1710×1107 (nie 2880×1864 — patrz wyjaśnienie w rozmowie).
-     Inna proporcja (16:10.4 zamiast 16:9), więc warto sprawdzić realny
-     window.innerWidth/innerHeight na urządzeniu przed dostrajaniem —
-     jeśli macOS ma zmienione skalowanie na "More Space"/"Larger Text",
-     te liczby będą inne i zakres trzeba będzie poszerzyć/przesunąć. --- */
+  /* --- Anchor 3: MacBook Air 15" — default macOS scaling,
+     the browser sees ~1710×1107 (not 2880×1864 — see explanation earlier in the project).
+     Different aspect ratio (16:10.4 instead of 16:9), so it's worth checking the real
+     window.innerWidth/innerHeight on the device before tuning —
+     if macOS has scaling changed to "More Space"/"Larger Text",
+     these numbers will differ and the range will need widening/shifting. --- */
   @media (min-width:1690px) and (max-width:1730px) and (min-height:1080px) and (max-height:1130px){
     html{ font-size:13.94px; }
-    /* Miejsce na CSS wygenerowany z panelu edycji (?edit) na tym oknie: */
+    /* Space for CSS generated from the edit panel (?edit) at this window size: */
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -387,7 +387,7 @@
     height:100vh;
     display:flex;
     flex-direction:column;
-    padding:170px 3.5rem 6.25rem;
+    padding:8.1496rem 3.5rem 6.25rem;
     border-bottom:1px solid var(--line);
     opacity:0.2;
     transition:opacity .8s ease;
@@ -405,7 +405,7 @@
   }
   @media (max-width:860px){
     section{padding:90px 24px; height:auto; min-height:100vh; width:100% !important; opacity:1;}
-    section:not(.render-near){ content-visibility:visible; } /* na mobile sekcje układają się pionowo jedna pod drugą — ukrywanie treści psułoby zwykłe przewijanie */
+    section:not(.render-near){ content-visibility:visible; } /* on mobile, sections stack vertically one after another — hiding content would break normal scrolling */
   }
   .inner{
     position:relative;
@@ -634,14 +634,14 @@
     .roadmap-dot{ top:0.2rem; left:0; }
   }
   .motif-grill{ bottom:10%; right:8%; width:13.125rem; }
-  /* Pozycje motywów dopieszczone ręcznie w trybie edycji na 2560x1440 (nadpisują domyślne powyżej dla tych sekcji) */
+  /* Icon positions fine-tuned by hand in edit mode at 2560x1440 (override the defaults above for these sections) */
   #project-2 .motif-glasses{ top:9.56%; left:6.46%; right:auto; bottom:auto; --motif-transform:rotate(-30deg) scale(1); }
   #project-4 .motif-turret{ top:13.08%; left:73.48%; right:auto; bottom:auto; }
   #project-6 .motif-axe{ top:10.17%; left:82.6%; right:auto; bottom:auto; --motif-transform:rotate(28deg) scale(1); }
   #project-9 .motif-console{ top:4.72%; left:7.93%; right:auto; bottom:auto; }
   #project-8 .motif-signal{ top:62.43%; left:14.48%; right:auto; bottom:auto; }
   #about-technical .motif-about{ top:63.28%; left:7.25%; right:auto; bottom:auto; --motif-transform:rotate(153deg) scale(0.88); }
-  /* Sekcja "To moja działka" miała za dużo treści na wysokość 100vh — ściśnięte odstępy, żeby zmieściło się bez wewnętrznego scrolla */
+  /* The "This is my thing" section had too much content for a 100vh height — spacing tightened so it fits without internal scrolling */
   #about-technical .project-content p{ margin-bottom:0.875rem; }
   #about-technical .testimonial-wrap{ margin-top:0.875rem; }
   #about-technical .project-content .tags{ margin-bottom:0.5rem; }
@@ -718,7 +718,7 @@
     100%{ box-shadow:0 0 0 0 transparent; }
   }
 
-  /* ===== Dymek powitalny (onboarding) — pokazuje się raz, skacze do konkretnych elementów ===== */
+  /* ===== Welcome tooltip (onboarding) — shows once, jumps to specific elements ===== */
   #onboarding-bubble{
     position:fixed;
     z-index:9998;
@@ -746,13 +746,13 @@
     border-right:1px solid rgba(255,255,255,.14);
     border-bottom:1px solid rgba(255,255,255,.14);
   }
-  /* Dymek POD elementem, strzałka wskazuje W GÓRĘ (do elementu nad nim) */
+  /* Bubble BELOW the element, arrow points UP (toward the element above it) */
   #onboarding-bubble[data-arrow="up"]::after{
     top:-0.46rem; left:var(--arrow-x, 50%); transform:translateX(-50%) rotate(-135deg);
     border-right:none; border-bottom:none;
     border-left:1px solid rgba(255,255,255,.14); border-top:1px solid rgba(255,255,255,.14);
   }
-  /* Dymek NAD elementem, strzałka wskazuje W DÓŁ (do elementu pod nim) */
+  /* Bubble ABOVE the element, arrow points DOWN (toward the element below it) */
   #onboarding-bubble[data-arrow="down"]::after{
     bottom:-0.46rem; left:var(--arrow-x, 50%); transform:translateX(-50%) rotate(45deg);
   }
@@ -809,7 +809,7 @@
   #onboarding-next:hover{ filter:brightness(1.08); }
   #onboarding-dots span.active{ background:var(--accent); }
 
-  /* ===== TYMCZASOWY PANEL TESTOWY 5 WARIANTÓW STARTU — do usunięcia po wyborze ===== */
+  /* ===== TEMPORARY TEST PANEL FOR 5 HERO VARIANTS — remove once a choice is made ===== */
   #hero-variant-tester{
     position:fixed; bottom:24px; right:24px; z-index:9999;
     display:flex; gap:6px;
@@ -825,7 +825,7 @@
   }
   #hero-variant-tester button.active{ background:var(--accent, #7C6A4A); color:#0E0F11; }
 
-  /* ============ Finalny layout Start — edytorska, duża typografia + kicker + podświetlone słowo ============ */
+  /* ============ Final Hero layout — editorial, large typography + kicker + highlighted word ============ */
   #hero .inner{ max-width:none; width:100%; align-items:flex-start; }
   #hero .hero-top{ display:none; }
   #hero .hero-mid{ padding-top:0; }
@@ -1014,7 +1014,7 @@
     position:relative;
     overflow:hidden;
     justify-content:center;
-    padding:170px 3.5rem 6.25rem;
+    padding:8.1496rem 3.5rem 6.25rem;
   }
   .project-slide .ghost-num{
     position:absolute;
@@ -1061,7 +1061,7 @@
     margin:auto;
   }
   .project-slide[data-dir="left"] .project-row{ flex-direction:row-reverse; }
-  .project-row .project-content{ flex:0 1 34rem; max-width:34rem; margin:0; max-height:calc(100vh - 170px - 6.25rem); }
+  .project-row .project-content{ flex:0 1 34rem; max-width:34rem; margin:0; max-height:calc(100vh - 14.3996rem); }
   .project-row .project-content p,
   .project-row .project-content .tags,
   .project-row .project-content .links{ max-width:34rem; }
@@ -1070,7 +1070,7 @@
   .project-media{
     flex:0 1 34rem;
     min-width:0;
-    max-height:calc(100vh - 170px - 6.25rem);
+    max-height:calc(100vh - 14.3996rem);
     overflow-y:hidden;
     opacity:.15;
     transform:translate(var(--media-x, 0), var(--media-y, 0)) scale(.5);
@@ -1319,7 +1319,7 @@
   #project-11 .tile-new4{ width:43.00%; height:25%; aspect-ratio:auto; top:12.5%; left:53.61%; transform:rotate(9deg); z-index:4; }
   #project-9 .tile-a{ width:82.00%; height:38%; aspect-ratio:auto; top:7.19%; left:4.01%; transform:rotate(3deg); z-index:23; }
   #project-9 .tile-b{ width:70.00%; height:36%; aspect-ratio:auto; top:56.87%; left:25.79%; transform:rotate(-4deg); z-index:1; }
-  /* "To moja działka" — wachlarz: jedno zdjęcie na środku (proste, na wierzchu, największe),
+  /* "This is my thing" — fan layout: one photo in the center (straight, on top, largest),
      reszta wygląda zza niego pod różnymi kątami, jak rozrzucone/przypięte zdjęcia na biurku. */
   #about-technical .project-media{ flex-basis:49rem; --media-x:-2.445rem; --media-y:1.151rem; }
   #about-technical .tile-collage{
@@ -1338,7 +1338,7 @@
   #about-technical .tile-d{ width:61.00%; height:41%; aspect-ratio:auto; top:43.12%; left:69.1%; transform:rotate(5deg); z-index:4; }
   #about-technical .tile .about-photo{ width:100%; height:100%; aspect-ratio:auto; }
 
-  /* "Tak to ja" — ten sam wachlarz co w "To moja działka", ale lustrzane kąty obrotu,
+  /* "Yep, that's me" — same fan layout as "This is my thing", but mirrored rotation angles,
      żeby obie sekcje O mnie nie wyglądały identycznie mimo wspólnego wzorca. */
   #about-life .project-media{ flex-basis:49rem; --media-x:-1.198rem; --media-y:0.000rem; }
   #about-life .tile-collage{
@@ -1667,7 +1667,7 @@
   }
   #contact .sec-title{margin-bottom:1rem; max-width:26ch;}
   #career .sec-title{max-width:24ch;}
-  /* Sekcja kontakt miała za dużo treści na wysokość 100vh — ściśnięte odstępy, żeby zmieściło się bez wewnętrznego scrolla */
+  /* The contact section had too much content for a 100vh height — spacing tightened so it fits without internal scrolling */
   #contact p.reveal{ margin-bottom:0.875rem; }
   #contact .contact-links a{ padding:0.5rem 0; }
 
@@ -1838,7 +1838,7 @@
     border:1px solid var(--line);
     border-radius:1rem;
     min-height:20.9375rem;
-    max-height:calc(100vh - 170px - 8.75rem);
+    max-height:calc(100vh - 16.8996rem);
     overflow-y:auto;
     scrollbar-width:none;
     transition:opacity .28s ease;
@@ -1921,7 +1921,7 @@
     color:var(--text-dim);
     font-size:0.8125rem;
   }
-  /* ===== Tryb edycji layoutu (narzędzie deweloperskie, nie dla zwiedzających) ===== */
+  /* ===== Layout edit mode (developer tool, not for visitors) ===== */
   body.edit-mode .project-slide,
   body.edit-mode .tile-collage,
   body.edit-mode .project-media,
@@ -2048,7 +2048,7 @@
     padding:2px 7px; font-size:11px; font-family:monospace; white-space:nowrap;
   }
   #edit-panel .ep-legend span{ color:#9A9D9F; text-align:right; }
-  /* Skala/pozycja tekstu per sekcja — wygenerowane z panelu edycji (?edit) na 2560x1440, w rem (skaluje się z resztą strony) */
+  /* Per-section text scale/position — generated from the edit panel (?edit) at 2560x1440, in rem (scales with the rest of the page) */
   #hero .inner{ transform:translate(0.000rem,-2.157rem) scale(0.8); transform-origin:center; }
   #career .inner{ transform:translate(0.000rem,0.000rem) scale(1); transform-origin:center; }
   #skills .inner{ transform:translate(0.000rem,0.000rem) scale(0.9); transform-origin:center; }
@@ -2072,7 +2072,7 @@
   #project-10 .project-content{ transform:translate(-3.452rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-11 .project-content{ transform:translate(-0.288rem,7.718rem) scale(0.9); transform-origin:center; }
   #about-life .project-content{ transform:translate(-11.649rem,0.000rem) scale(0.9); transform-origin:center; }
-  /* ===== Szybkie podsumowanie (modal dla rekruterów bez czasu na scrollowanie) ===== */
+  /* ===== Quick summary (modal for recruiters short on time to scroll) ===== */
   #summary-modal{
     position:fixed; inset:0; z-index:2000;
     display:flex; align-items:center; justify-content:center;
@@ -2938,7 +2938,7 @@
       <span class="pindex reveal" data-i18n="about-eyebrow-2">O mnie 03/03</span>
       <h3 class="reveal" data-i18n="about-h-2">W co gram</h3>
       <p class="reveal" data-i18n="about-p-2">Granie towarzyszy mi od zawsze, długo zanim jeszcze pomyślałem o pisaniu kodu. Ograłem mnóstwo tytułów w różnych gatunkach, od soulslike'ów po strzelanki. Ostatnio najbardziej wciągają mnie FPS-y i extraction shootery. Wciąż czekam, aż w końcu wyjdzie dobrze zrobiony The Day Before — chyba w innym wszechświecie.</p>
-      <div class="tags reveal"><span>Cuphead</span><span>Age of Empires IV</span><span>Rust</span><span>Lies of P</span><span>Black Myth: Wukong</span></div>
+      <div class="tags reveal"><span>Cuphead</span><span>Age of Empires IV</span><span>Rust</span><span>Lies of P</span><span>Black Myth: Wukong</span><span>Sekiro: Shadows Die Twice</span></div>
       <div class="links reveal">
         <a href="https://steamcommunity.com/profiles/76561198025641193/" target="_blank" rel="noopener" data-i18n="about-steam-link">Mój profil Steam ↗</a>
       </div>
@@ -3025,7 +3025,7 @@
   function idToNavKey(id){
     if(ABOUT_IDS.includes(id)) return 'omnie';
     const sec = document.getElementById(id);
-    if(sec && sec.dataset.group) return 'projekty'; // każda sekcja projektowa (ma data-group) → jedna zakładka "Projekty"
+    if(sec && sec.dataset.group) return 'projekty'; // every project section (has data-group) → counts as a single "Projects" tab
     return id; // hero, skills, career, contact
   }
 
@@ -3034,7 +3034,7 @@
     navLinks.forEach(a => a.classList.remove('active'));
     const link = navMap[key];
     if(link) link.classList.add('active');
-    // Highlight the exact sub-link: "O mnie" matcuje po id sekcji, "Projekty" po kategorii (data-group)
+    // Highlight the exact sub-link: "O mnie" matches by section id, "Projekty" by category (data-group)
     const exact = navMap[id];
     if(exact && exact.classList.contains('subnav-link')) exact.classList.add('active');
     const sec = document.getElementById(id);
@@ -3063,14 +3063,14 @@
   function render(){
     // Fade: only current section is fully visible
     sections.forEach((s, i) => s.classList.toggle('in-view', i === index));
-    // Trzymaj też bezpośrednich sąsiadów (przed/po) w pełni wyrenderowanych — inaczej
-    // przejście do nich nie ma czym się płynnie zanimować (content-visibility:hidden
-    // całkowicie pomija renderowanie, więc pojawiały się od razu, bez przejścia).
+    // Also keep the immediate neighbours (prev/next) fully rendered — otherwise
+    // transitioning to them has nothing to animate from (content-visibility:hidden
+    // skips rendering entirely, so they'd just appear instantly, with no transition).
     sections.forEach((s, i) => s.classList.toggle('render-near', Math.abs(i - index) <= 1));
     const content = getScrollableContent(sections[index]);
     if(content) content.scrollTop = 0; // always start at the top of the content
     const media = sections[index].querySelector('.project-media');
-    if(media) media.scrollTop = 0; // zdjęcia też zawsze wracają na górę, nie zostają "zjechane" po powrocie
+    if(media) media.scrollTop = 0; // photos also always reset to the top, instead of staying "scrolled down" on return
     setActiveNav(sections[index].id);
     // Smooth page-wide background color wash, D&D-style
     const bg = sections[index].dataset.bg;
@@ -3091,9 +3091,9 @@
     goTo._t = window.setTimeout(() => { animating = false; }, TRANSITION_MS);
   }
 
-  // --- Dolne przyciski nawigacji: ‹‹ (poprzednia kategoria) ‹ › (krok) ›› (następna kategoria) ---
+  // --- Bottom nav buttons: ‹‹ (previous category) ‹ › (step) ›› (next category) ---
   function groupOf(i){
-    // sekcje projektowe mają wspólny data-group (produkcje/gry/narzedzia/...) — reszta liczy się jako własna, osobna "grupa"
+    // project sections share a data-group (production/games/tools/...) — everything else counts as its own separate "group"
     return sections[i].dataset.group || sections[i].id;
   }
   function skipToGroup(dir){
@@ -3104,7 +3104,7 @@
       i += dir;
       if(groupOf(i) !== curGroup){ goTo(i); return; }
     }
-    goTo(i); // koniec/początek listy — idź tak daleko jak się da
+    goTo(i); // end/start of the list — go as far as possible
   }
   document.addEventListener('DOMContentLoaded', function(){
     const navPrevBtn = document.getElementById('nav-prev');
@@ -3126,7 +3126,7 @@
   window.addEventListener('wheel', (e) => {
     if(!isDesktop()) return; // let mobile scroll natively
     if(animating) return;
-    if(e.target.closest && e.target.closest('#edit-panel')) return; // panel edycji przewija się natywnie
+    if(e.target.closest && e.target.closest('#edit-panel')) return; // the edit panel scrolls natively
     const lb = document.getElementById('lightbox');
     if(lb && lb.classList.contains('active')) return; // preview open — don't touch page scroll
     const sm = document.getElementById('summary-modal');
@@ -3171,7 +3171,7 @@
   // --- Keyboard nav (desktop only) ---
   window.addEventListener('keydown', (e) => {
     if(!isDesktop() || animating) return;
-    if(e.target && (e.target.isContentEditable || e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return; // pisanie tekstu — spacja/strzałki mają działać normalnie, nie przełączać sekcji
+    if(e.target && (e.target.isContentEditable || e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return; // typing text — space/arrow keys should behave normally, not switch sections
     const lb = document.getElementById('lightbox');
     if(lb && lb.classList.contains('active')) return; // preview open — arrows belong to it, not page nav
     const sm = document.getElementById('summary-modal');
@@ -3505,8 +3505,8 @@
       i = Math.max(0, Math.min(TL.length - 1, i));
       if(i === tlIndex) return;
       tlIndex = i;
-      // Kropka reaguje 1:1, natychmiast, z każdym tiknięciem scrolla — więc jeśli
-      // przestajesz scrollować, nic dalej samo "nie dojeżdża".
+      // The dot reacts 1:1, instantly, to every scroll tick — so if you stop
+      // scrolling, nothing keeps "coasting" on its own afterward.
       points.forEach((p, pi) => p.classList.toggle('active', pi === i));
 
       window.clearTimeout(tlSettleTimer);
@@ -3514,8 +3514,8 @@
         paint();
         return;
       }
-      // Treść panelu przemalowuje się dopiero, gdy scrollowanie faktycznie się zatrzyma —
-      // przy szybkim, ciągłym scrollu nie miga więc każdą pośrednią kartą po kolei.
+      // The panel content only repaints once scrolling actually stops —
+      // so a fast, continuous scroll won't flash through every intermediate card.
       tlSettleTimer = window.setTimeout(() => {
         panel.style.opacity = '0';
         window.setTimeout(() => {
@@ -3569,9 +3569,9 @@
       const glowSize = parseFloat(cs.getPropertyValue('--motif-glow-size')) || 1;
       const glowStrength = Math.max(0, Math.min(1.5, parseFloat(cs.getPropertyValue('--motif-glow-strength')) || 1));
       const rgb = hexToRgb(glowColor) || { r: 124, g: 106, b: 74 };
-      // Wpisujemy KONKRETNY kolor (nie zmienną CSS) — przeglądarki potrafią płynnie animować
-      // przejście między dwiema konkretnymi wartościami koloru, ale często NIE animują płynnie,
-      // gdy kolor pochodzi ze zmiennej CSS (var()) — stąd wcześniejsze "skakanie" poświaty.
+      // We write a CONCRETE color (not a CSS variable) — browsers can smoothly animate
+      // a transition between two concrete color values, but often DON'T animate smoothly
+      // when the color comes from a CSS variable (var()) — hence the earlier glow "snapping".
       const rgba = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + glowStrength + ')';
       wrap.style.filter =
         'drop-shadow(0 0 ' + Math.round(22 * glowSize) + 'px ' + rgba + ') ' +
@@ -3587,8 +3587,8 @@
     wrap.setAttribute('aria-label', isLit ? 'Zgaś ikonę' : 'Zapal ikonę');
     applyMotifFilter(wrap, isLit);
   }
-  // Ikonki, które startują "zapalone" już w samym HTML (bez kliknięcia), też muszą dostać
-  // ten sam, poprawny styl od razu — inaczej pokazywałyby się bez poświaty aż do pierwszego kliknięcia.
+  // Icons that start out already "lit" in the HTML itself (without a click) also need
+  // the same correct style applied immediately — otherwise they'd show no glow until the first click.
   document.querySelectorAll('.motif-wrap.motif-clickable.lit').forEach(wrap => applyMotifFilter(wrap, true));
   document.querySelectorAll('.motif-wrap.motif-clickable').forEach(wrap => {
     const toggle = (e) => { e.stopPropagation(); toggleMotif(wrap); };
@@ -3597,8 +3597,8 @@
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(e); }
     });
   });
-  // Klik gdziekolwiek indziej w danej sekcji (nie na zdjęciu/tekście/linku/przycisku)
-  // też przełącza poświatę ikony tła tej sekcji — nie trzeba już celować dokładnie w ikonę.
+  // Clicking anywhere else in a section (not on a photo/text/link/button)
+  // also toggles that section's background icon glow — no need to click the icon precisely anymore.
   document.addEventListener('click', function(e){
     if(e.target.closest('.tile, .solo-photo, [data-i18n], a, button, input, .motif-wrap, #edit-toggle, #edit-panel, .lightbox, .tags')) return;
     const section = e.target.closest('section');
@@ -3678,8 +3678,8 @@
     currentGroup = els.map(function(g){
       return { url: getImageUrl(g), alt: g.getAttribute('aria-label') };
     }).filter(function(item){ return item.url; });
-    // Sortuj po numerze w nazwie pliku (kolejność w kodzie zależy od z-index/warstw, nie od numeracji) —
-    // dzięki temu "dalej/wstecz" zawsze idzie 1,2,3,4..., niezależnie od tego jak są poukładane na stronie.
+    // Sort by the number in the filename (order in the code depends on z-index/layering, not numbering) —
+    // this way "next/prev" always goes 1,2,3,4..., regardless of how they're arranged on the page.
     currentGroup.sort(function(a, b){
       const na = (a.url.match(/(\d+)(\.[a-zA-Z0-9]+)(\?.*)?$/) || [])[1];
       const nb = (b.url.match(/(\d+)(\.[a-zA-Z0-9]+)(\?.*)?$/) || [])[1];
@@ -3692,9 +3692,9 @@
     lightbox.classList.add('active');
     lightbox.setAttribute('aria-hidden', 'false');
 
-    // Automatyczne dociąganie kolejnych, ponumerowanych zdjęć spoza widocznych kafelków
-    // (np. widoczne to takto-1..4.jpg — spróbuj takto-5.jpg, 6.jpg... aż któryś nie istnieje).
-    // Dzięki temu można dorzucić pliki do folderu images/ bez zmiany kodu.
+    // Automatically pulls in further numbered photos beyond the visible tiles
+    // (e.g. visible ones are takto-1..4.jpg — try takto-5.jpg, 6.jpg... until one doesn't exist).
+    // This means files can be added to the images/ folder without changing the code.
     const firstUrl = currentGroup[0] && currentGroup[0].url;
     const m = firstUrl && firstUrl.match(/^(.*?)(\d+)(\.[a-zA-Z0-9]+)(\?.*)?$/);
     if(m){
@@ -3750,7 +3750,7 @@
     zoomAtPoint(e.clientX, e.clientY, zoomLevel > 1.02 ? 1 : 2.5);
   });
 
-  // --- Karuzela referencji: działa dla 1 albo N cytatów, bez zmian w kodzie przy dokładaniu kolejnych ---
+  // --- Testimonial carousel: works for 1 or N quotes, no code changes needed when adding more ---
   (function(){
     const track = document.getElementById('testimonial-track');
     const prevBtn = document.getElementById('test-prev');
@@ -3889,7 +3889,7 @@
   modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
 
-  // Linki wewnątrz modala (np. do projektów) — zamknij modal, potem przewiń do sekcji.
+  // Links inside the modal (e.g. to projects) — close the modal, then scroll to the section.
   modal.querySelectorAll('[data-jump]').forEach(function(a){
     a.addEventListener('click', function(e){
       e.preventDefault();
@@ -4059,9 +4059,9 @@
 <button id="ep-reopen" type="button" title="Pokaż panel edycji (klawisz H)">Panel ‹</button>
 <script>
 (function(){
-  // Cały mechanizm edytora (setki nasłuchiwaczy, obsługa przeciągania, itd.) jest potrzebny
-  // WYŁĄCZNIE w trybie ?edit — dla zwykłego odwiedzającego (99.9% ruchu) w ogóle się nie uruchamia,
-  // żeby nie obciążać startu strony kodem, którego i tak nigdy nie użyje.
+  // The entire editor mechanism (hundreds of listeners, drag handling, etc.) is only
+  // needed in ?edit mode — for a regular visitor (99.9% of traffic) it never runs at all,
+  // so page startup isn't burdened with code they'll never use anyway.
   if(!new URLSearchParams(window.location.search).has('edit')) return;
   const toggleBtn = document.getElementById('edit-toggle');
   toggleBtn.classList.add('visible');
@@ -4071,7 +4071,7 @@
   const outputBox = document.getElementById('ep-output');
 
   const tileState = new Map();   // selector -> {left, top, width, rotate, unit}
-  const tileFilenameState = new Map(); // "sectionId :: tag" -> nowy pełny url obrazka
+  const tileFilenameState = new Map(); // "sectionId :: tag" -> new full image URL
   const tileFilenameOriginal = new Map(); // "sectionId :: tag" -> oryginalny url obrazka (do resetu)
 
   // ===== Cofnij (Ctrl+Z) =====
@@ -4095,9 +4095,9 @@
     const fn = undoStack.pop();
     if(fn) fn();
   }
-  // Ogólny "zapisz stan przed zmianą" — działa dla dowolnej mapy stanu (tekst, media, gap, motyw, kolor),
-  // nie tylko dla zdjęć. styleProps może zawierać zwykłe właściwości ('transform', 'gap', ...) albo
-  // customowe zmienne CSS (zaczynające się od '--').
+  // Generic "save state before change" — works for any state map (text, media, gap, icon, color),
+  // not just photos. styleProps can contain plain properties ('transform', 'gap', ...) or
+  // custom CSS variables (starting with '--').
   function snapshotState(mapRef, key, el, styleProps){
     const hadKey = mapRef ? mapRef.has(key) : false;
     const rawVal = hadKey ? mapRef.get(key) : null;
@@ -4128,16 +4128,16 @@
     }
   });
 
-  const deletedTiles = new Set(); // "sectionId :: tag" usuniętych zdjęć
-  const addedTiles = new Map();   // tag -> {sectionId, orientation} nowo dodanych zdjęć
+  const deletedTiles = new Set(); // "sectionId :: tag" of deleted photos
+  const addedTiles = new Map();   // tag -> {sectionId, orientation} of newly added photos
   let addedTileCounter = 0;
 
-  // ===== Przeciąganie dużych ikon tła (motif) w trybie edycji =====
+  // ===== Dragging large background icons (motif) in edit mode =====
   const motifState = new Map(); // "sectionId :: motif-class" -> {top, left, rot, scale}
-  const motifColorState = new Map(); // sectionId -> hex color (poświata / glow)
-  const motifIconColorState = new Map(); // sectionId -> hex color (sama ikonka / kreska)
-  const motifGlowSizeState = new Map(); // sectionId -> mnożnik rozmiaru poświaty (1 = 100%, domyślny)
-  const motifGlowStrengthState = new Map(); // sectionId -> mnożnik siły/jasności poświaty (1 = 100%, domyślny)
+  const motifColorState = new Map(); // sectionId -> hex color (glow)
+  const motifIconColorState = new Map(); // sectionId -> hex color (icon itself / line)
+  const motifGlowSizeState = new Map(); // sectionId -> glow size multiplier (1 = 100%, default)
+  const motifGlowStrengthState = new Map(); // sectionId -> glow strength/brightness multiplier (1 = 100%, default)
   const motifColorOriginal = new Map(); // sectionId -> oryginalny --motif-color z HTML (do prawdziwego resetu)
   const motifIconColorOriginal = new Map(); // sectionId -> oryginalny --motif-icon-color (zwykle brak = puste)
   document.querySelectorAll('.motif-wrap').forEach(function(wrap){
@@ -4185,7 +4185,7 @@
       document.addEventListener('mousemove', onMove);
       document.addEventListener('mouseup', onUp);
     }, true);
-    // Nie przełączaj poświaty, jeśli to było przeciąganie, nie klik.
+    // Don't toggle the glow if this was a drag, not a click.
     wrap.addEventListener('click', function(e){
       if(document.body.classList.contains('edit-mode')){
         e.stopPropagation(); e.preventDefault();
@@ -4230,7 +4230,7 @@
   }, 300);
 
 
-  // ===== Prowadnice środka (jak w narzędziach graficznych) =====
+  // ===== Center guides (like in graphic design tools) =====
   const guideV = document.createElement('div'); guideV.className = 'edit-guide v'; document.body.appendChild(guideV);
   const guideH = document.createElement('div'); guideH.className = 'edit-guide h'; document.body.appendChild(guideH);
   const guidesToggle = document.getElementById('ep-guides');
@@ -4238,8 +4238,8 @@
 
   function hideGuides(){ guideV.style.display = 'none'; guideH.style.display = 'none'; }
 
-  // Sprawdza wyśrodkowanie elementu (dany prostokąt w px, viewport) względem containerRect.
-  // Zwraca skorygowane {left, top} (w px, viewport) po ew. przyciągnięciu do środka.
+  // Checks whether an element (given rect in px, viewport) is centered relative to containerRect.
+  // Returns the corrected {left, top} (in px, viewport) after optionally snapping to center.
   function snapToCenter(rect, containerRect){
     if(!guidesToggle.checked) return { left: rect.left, top: rect.top, snappedX:false, snappedY:false };
     const cx = containerRect.left + containerRect.width/2;
@@ -4273,7 +4273,7 @@
     return { sectionId, tag, key: sectionId + ' :: ' + tag };
   }
 
-  // --- Nazwa pliku zdjęcia (output) ---
+  // --- Photo filename (output) ---
   function getImageEl(tileEl){
     return tileEl.classList.contains('solo-photo') ? tileEl : tileEl.querySelector('.about-photo');
   }
@@ -4295,8 +4295,8 @@
   }
 
   function currentRotation(el){
-    // Czytaj z inline style (to, co realnie ustawiliśmy) — nigdy z computed style,
-    // bo computed style podczas hovera pokazuje tymczasowy efekt "uniesienia" (rotate(0)).
+    // Read from inline style (what we actually set) — never from computed style,
+    // because computed style during hover shows the temporary "lift" effect (rotate(0)).
     if(el.style.transform){
       const m = el.style.transform.match(/rotate\(([-\d.]+)deg\)/);
       if(m) return parseFloat(m[1]);
@@ -4319,9 +4319,9 @@
     });
   }
 
-  // Wspólne uchwyty, "nad wszystkim" (nie uwięzione wewnątrz konkretnego zdjęcia) —
-  // dzięki temu obrót/resize działa zawsze na tym zdjęciu, na które właśnie patrzysz,
-  // nawet jeśli leży pod innym w stosie.
+  // Shared handles, "above everything" (not trapped inside a specific photo) —
+  // this way rotate/resize always works on whichever photo you're currently looking at,
+  // even if it's underneath another one in the stack.
   const tileControls = document.getElementById('ep-tile-controls');
   const activeNameEl = document.getElementById('ep-active-name');
   const filenameInput = document.getElementById('ep-filename');
@@ -4333,7 +4333,7 @@
   let activeEl = null;
   let mode = null, startX = 0, startY = 0, startLeft = 0, startTop = 0, parentRect = null, dragElW = 0, dragElH = 0;
 
-  // --- Kontrolki ikonek-motywów (obrót / skala / kolor poświaty) ---
+  // --- Icon (motif) controls (rotate / scale / glow color) ---
   const motifControls = document.getElementById('ep-motif-controls');
   const motifNameEl = document.getElementById('ep-motif-name');
   const motifRotSlider = document.getElementById('ep-motif-rotate');
@@ -4377,9 +4377,9 @@
     activeMotif = wrap;
     motifControls.style.display = 'block';
     tileControls.style.display = 'none';
-    // Zapal ikonkę automatycznie przy zaznaczeniu do edycji — inaczej ustawienia
-    // koloru/rozmiaru/siły poświaty nie mają czego pokazać (poświata istnieje tylko
-    // w stanie "zapalonym"), co wygląda jak "nic nie działa", choć ustawienia są poprawne.
+    // Auto-light the icon when selected for editing — otherwise the color/size/strength
+    // glow settings have nothing to show (the glow only exists in the "lit" state),
+    // which looks like "nothing works" even though the settings are correct.
     if(!wrap.classList.contains('lit')){
       wrap.classList.add('lit');
       if(window.applyMotifFilter) window.applyMotifFilter(wrap, true);
@@ -4465,7 +4465,7 @@
     if(!sectionEl) return;
     let v = motifColorHex.value.trim();
     if(v && v[0] !== '#') v = '#' + v;
-    if(!isValidHex(v)) return; // czekaj aż wpisze pełne 6 znaków, nie stosuj częściowego wpisu
+    if(!isValidHex(v)) return; // wait until a full 6 characters are typed, don't apply a partial input
     if(!glowHexSnapshotTaken){
       if(!motifColorOriginal.has(sectionEl.id)) motifColorOriginal.set(sectionEl.id, sectionEl.style.getPropertyValue('--motif-color'));
       snapshotState(motifColorState, sectionEl.id, sectionEl, ['--motif-color']);
@@ -4568,7 +4568,7 @@
     if(el.style.width && el.style.width.indexOf('%') !== -1) return parseFloat(el.style.width);
     const parent = el.offsetParent || el.parentElement;
     const parentWidth = parent.getBoundingClientRect().width;
-    const elWidth = parseFloat(getComputedStyle(el).width); // świeży pomiar, nigdy z cache'u
+    const elWidth = parseFloat(getComputedStyle(el).width); // fresh measurement, never from cache
     return (elWidth / parentWidth) * 100;
   }
   function currentHeightPct(el){
@@ -4614,9 +4614,9 @@
 
   document.addEventListener('wheel', function(e){
     if(!document.body.classList.contains('edit-mode')) return;
-    if(e.target.closest('#edit-panel')) return; // panel edycji przewija się natywnie, nie edytuje elementów pod spodem
+    if(e.target.closest('#edit-panel')) return; // the edit panel scrolls natively, doesn't edit the elements underneath
 
-    // Zdjęcie: scroll = obrót, Ctrl+scroll = szerokość, Alt+scroll = wysokość, Ctrl+Alt = oba naraz.
+    // Photo: scroll = rotate, Ctrl+scroll = width, Alt+scroll = height, Ctrl+Alt = both at once.
     const tile = e.target.closest('.tile, .solo-photo');
     if(tile){
       e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
@@ -4660,7 +4660,7 @@
       return;
     }
 
-    // Ikonka-motyw: scroll = obrót, Ctrl+scroll = skala.
+    // Icon (motif): scroll = rotate, Ctrl+scroll = scale.
     const motifWrap = e.target.closest('.motif-wrap');
     if(motifWrap){
       e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
@@ -4683,7 +4683,7 @@
       return;
     }
 
-    // Tekst: sam scroll = skala tekstu (z zachowaniem wybranego punktu odniesienia).
+    // Text: plain scroll = text scale (keeping the chosen reference point).
     const textBlock = e.target.closest('.project-content, .inner');
     if(textBlock && !e.ctrlKey){
       e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
@@ -4698,7 +4698,7 @@
       return;
     }
 
-    // Puste miejsce w kontenerze zdjęć (nie samo zdjęcie): sam scroll = rozmiar kontenera.
+    // Empty space in the photo container (not the photo itself): plain scroll = container size.
     const media = e.target.closest('.project-media');
     if(media && !e.ctrlKey){
       e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
@@ -4760,7 +4760,7 @@
     if(!activeEl) return;
     const pct = parseInt(heightSlider.value, 10);
     heightVal.textContent = pct + '%';
-    activeEl.style.aspectRatio = 'auto'; // rozprzęga wysokość od szerokości
+    activeEl.style.aspectRatio = 'auto'; // decouples height from width
     activeEl.style.height = pct + '%';
     recordState(activeEl);
   });
@@ -4805,10 +4805,10 @@
     startX = e.clientX; startY = e.clientY;
     const cs = getComputedStyle(activeEl);
     parentRect = (activeEl.offsetParent || activeEl.parentElement).getBoundingClientRect();
-    // getComputedStyle().left/top/width/height odzwierciedlają prawdziwą pozycję i rozmiar
-    // SPRZED obrotu — w przeciwieństwie do getBoundingClientRect(), które dla obróconego
-    // elementu zwraca większy, przesunięty "bounding box". Dzięki temu przy starcie
-    // przeciągania nie ma skoku zależnego od kąta obrotu zdjęcia.
+    // getComputedStyle().left/top/width/height reflect the true position and size
+    // BEFORE rotation — unlike getBoundingClientRect(), which for a rotated
+    // element returns a larger, shifted "bounding box". This means there's no jump
+    // at the start of dragging depending on the photo's rotation angle.
     startLeft = parseFloat(cs.left) || 0;
     startTop = parseFloat(cs.top) || 0;
     dragElW = parseFloat(cs.width);
@@ -4851,7 +4851,7 @@
       else textEditState.set(key, el.textContent);
     });
     el.addEventListener('keydown', function(e){
-      if(e.key === 'Enter') e.preventDefault(); // Enter nie dzieli akapitu poprawnie — użyj przycisku "Podziel na akapit"
+      if(e.key === 'Enter') e.preventDefault(); // Enter doesn't split the paragraph correctly — use the "Split into paragraph" button
     });
   });
 
@@ -4932,7 +4932,7 @@
   }
   toggleBtn.addEventListener('click', toggleEditMode);
 
-  // Chowanie panelu edycji (żeby nie zasłaniał treści podczas przeciągania), bez wychodzenia z trybu edycji.
+  // Hiding the edit panel (so it doesn't cover content while dragging), without leaving edit mode.
   const epHideBtn = document.getElementById('ep-hide');
   const epReopenBtn = document.getElementById('ep-reopen');
   function setPanelHidden(hidden){
@@ -4989,8 +4989,8 @@
   document.getElementById('ep-add-h').addEventListener('click', function(){ addNewTile('h'); });
   document.getElementById('ep-add-v').addEventListener('click', function(){ addNewTile('v'); });
 
-  const containerState = new Map(); // sectionId -> rem (szerokość)
-  const containerHeightState = new Map(); // sectionId -> rem (wysokość, tylko gdy odblokowana od proporcji) value
+  const containerState = new Map(); // sectionId -> rem (width)
+  const containerHeightState = new Map(); // sectionId -> rem (height, only when unlocked from aspect ratio) value
   const containerSlider = document.getElementById('ep-container-size');
   const containerVal = document.getElementById('ep-container-val');
   const containerSectionLabel = document.getElementById('ep-container-section');
@@ -5060,12 +5060,12 @@
     });
     if(undoStack.length > 60) undoStack.shift();
   });
-  // Liczy maksymalny bezpieczny rozmiar kontenera (rem), żeby nigdy nie przekroczyć dostępnej wysokości —
-  // to samo zabezpieczenie co formuła min()/calc() w CSS, tylko liczone na żywo w JS, żeby suwak/scroll
-  // w edytorze nie mogły ustawić czegoś, co i tak zostałoby ucięte na docelowej stronie.
+  // Computes the maximum safe container size (rem) so it never exceeds the available height —
+  // the same safeguard as the min()/calc() formula in CSS, just computed live in JS so the
+  // editor's slider/scroll can't set something that would get clipped on the live page anyway.
   function getSafeContainerMaxRem(collage, media){
     if(!collage || !media) return 70;
-    if(getComputedStyle(collage).aspectRatio === 'auto') return 70; // wysokość już niezależna — szerokość wolna
+    if(getComputedStyle(collage).aspectRatio === 'auto') return 70; // height is already independent — width is free
     const mediaMaxHPx = parseFloat(getComputedStyle(media).maxHeight);
     if(!mediaMaxHPx || !isFinite(mediaMaxHPx)) return 70;
     let ratio = 0.82;
@@ -5134,7 +5134,7 @@
     if(rem > safeMax){ rem = safeMax; containerHeightSlider.value = rem; }
     containerHeightVal.textContent = rem + 'rem';
     containerHeightState.set(sid, rem);
-    collage.style.aspectRatio = 'auto'; // rozprzęga wysokość od szerokości — szerokość może już iść dowolnie w bok
+    collage.style.aspectRatio = 'auto'; // decouples height from width — width can now go however wide it needs
     collage.style.height = rem + 'rem';
   });
 
@@ -5146,7 +5146,7 @@
       const m = t.match(/^matrix\(([^)]+)\)$/);
       if(m){
         const v = m[1].split(',').map(parseFloat);
-        scale = Math.sqrt(v[0]*v[0] + v[1]*v[1]) || 1; // wielkość skali (bez rotacji na tych blokach)
+        scale = Math.sqrt(v[0]*v[0] + v[1]*v[1]) || 1; // scale magnitude (no rotation on these blocks)
         x = v[4] || 0; y = v[5] || 0;
       }
     }
@@ -5185,9 +5185,9 @@
     if(media) media.style.transform = 'translate(' + pxToRem(st.x).toFixed(3) + 'rem,' + pxToRem(st.y).toFixed(3) + 'rem)';
   }
 
-  // Przeciąganie myszką całych bloków (tekst / kontener zdjęć), z synchronizacją suwaków.
-  // Zoptymalizowane: żadnych zapytań do DOM ani odczytów layoutu w trakcie ruchu myszy —
-  // wszystko co potrzebne mierzymy raz, na starcie przeciągania.
+  // Mouse-dragging whole blocks (text / photo container), synced with the sliders.
+  // Optimized: no DOM queries or layout reads while the mouse is moving —
+  // everything needed is measured once, at the start of the drag.
   function setupBlockDrag(el, getState, applyFn, xSlider, ySlider, xVal, yVal, stateMap){
     let dragging = false, sx = 0, sy = 0, ox = 0, oy = 0, rowRect = null, elW = 0, elH = 0, elLeft0 = 0, elTop0 = 0;
     let pendingX = 0, pendingY = 0, rafScheduled = false;
@@ -5196,7 +5196,7 @@
       rafScheduled = false;
       if(!dragging) return;
       let x = pendingX, y = pendingY;
-      // Pozycja elementu (bez ponownego mierzenia DOM) na bazie startowej + przesunięcia.
+      // Element position (without re-measuring the DOM) based on the starting point + offset.
       const curLeft = elLeft0 + (x - ox), curTop = elTop0 + (y - oy);
       const rect = { left: curLeft, top: curTop, width: elW, height: elH };
       const snapped = snapToCenter(rect, rowRect);
@@ -5350,9 +5350,9 @@
         css += '#' + sid + ' .tile-collage{ height:' + heightRem + 'rem; aspect-ratio:auto; }\n';
       }
     });
-    // Normalizacja z-index: zamiast ciągnąć surowy, wciąż rosnący globalny licznik,
-    // ustaw małe, uporządkowane wartości (1,2,3...) OSOBNO w każdej sekcji — zachowuje
-    // kolejność "co jest nad czym", ale nigdy nie zbliża się do niebezpiecznych liczb.
+    // z-index normalization: instead of dragging along a raw, ever-growing global counter,
+    // set small, tidy values (1,2,3...) SEPARATELY within each section — this preserves
+    // the "what's on top of what" order, but never creeps toward unsafe numbers.
     (function normalizeZIndex(){
       const bySection = new Map();
       tileState.forEach(function(v, key){
@@ -5372,7 +5372,7 @@
       zCounter = 10;
     })();
     tileState.forEach(function(v){
-      if(deletedTiles.has(v.sectionId + ' :: ' + v.tag)) return; // usunięte - nie eksportuj pozycji
+      if(deletedTiles.has(v.sectionId + ' :: ' + v.tag)) return; // deleted - don't export its position
       const posProps = [];
       if(v.top) posProps.push('top:' + v.top + ';');
       if(v.left) posProps.push('left:' + v.left + ';');
@@ -5381,16 +5381,16 @@
              posProps.join(' ') + ' transform:rotate(' + v.rotate + 'deg); z-index:' + v.zIndex + '; }\n';
     });
     if(deletedTiles.size){
-      css += '\n/* Usunięte zdjęcia — skasuj ręcznie odpowiedni blok <div class="tile ..."> w HTML: */\n';
+      css += '\n/* Deleted photos — manually remove the matching <div class="tile ..."> block in the HTML: */\n';
       deletedTiles.forEach(function(k){ css += '  ' + k + '\n'; });
     }
     if(addedTiles.size){
-      css += '\n/* Nowe zdjęcia — dodaj ten fragment HTML do .tile-collage w danej sekcji (podmień obrazek na właściwy plik, jeśli dalej jest tam TWOJ-PLIK): */\n';
+      css += '\n/* New photos — add this HTML snippet to .tile-collage in the given section (swap in the right image file if it still says TWOJ-PLIK): */\n';
       addedTiles.forEach(function(info, tag){
         const key = info.sectionId + ' :: ' + tag;
         const customUrl = tileFilenameState.get(key);
         const finalUrl = customUrl || 'images/TWOJ-PLIK.jpg?v=1';
-        css += '  <div class="tile ' + tag + '"><div class="about-photo" style="background-image:url(\'' + finalUrl + '\')"></div></div>  /* sekcja: ' + info.sectionId + ', proporcje: ' + info.orientation + ' */\n';
+        css += '  <div class="tile ' + tag + '"><div class="about-photo" style="background-image:url(\'' + finalUrl + '\')"></div></div>  /* section: ' + info.sectionId + ', orientation: ' + info.orientation + ' */\n';
       });
     }
     const txtOrigin = document.getElementById('ep-txt-center').checked ? 'center' : 'top left';
@@ -5427,26 +5427,26 @@
       css += '#' + sid + '{ --motif-glow-strength:' + mult + ' !important; }\n';
     });
     if(tileFilenameState.size){
-      css += '\n/* Zmienione nazwy plików zdjęć — wgraj/zmień nazwę pliku na dysku na tę, i podmień url w HTML dla tego kafelka: */\n';
+      css += '\n/* Renamed photo files — upload/rename the file on disk to this name, and swap the url in the HTML for this tile: */\n';
       tileFilenameState.forEach(function(url, key){
         css += '  ' + key + ' -> images/' + url.split('/').pop() + '\n';
       });
     }
     if(textEditState.size){
-      css += '\n/* Zmieniony tekst (podmień ręcznie w HTML przy tym data-i18n="..."): */\n';
+      css += '\n/* Changed text (manually swap in the HTML at this data-i18n="..."): */\n';
       textEditState.forEach(function(newText, key){
-        if(newParagraphs.has(key)) return; // te pokazujemy osobno niżej, jako nowy HTML
+        if(newParagraphs.has(key)) return; // these are shown separately below, as new HTML
         css += '  ' + key + ': "' + newText.replace(/"/g,'\\"') + '"\n';
       });
     }
     if(newParagraphs.size){
-      css += '\n/* Nowe akapity — dodaj ten fragment HTML zaraz PO elemencie z podanym data-i18n: */\n';
+      css += '\n/* New paragraphs — add this HTML snippet right AFTER the element with the given data-i18n: */\n';
       newParagraphs.forEach(function(info, key){
         const text = textEditState.has(key) ? textEditState.get(key) : '';
         css += '  po data-i18n="' + info.afterKey + '" dodaj: <p class="' + info.className + '" data-i18n="' + key + '">' + text.replace(/</g,'&lt;') + '</p>\n';
       });
     }
-    outputBox.value = css || '/* Nie wprowadzono jeszcze żadnych zmian. */';
+    outputBox.value = css || '/* No changes made yet. */';
   });
 
   document.getElementById('ep-copy').addEventListener('click', function(){
@@ -5521,13 +5521,13 @@
   });
 
   document.getElementById('ep-reset').addEventListener('click', function(){
-    document.querySelectorAll('[class*="tile-new"]').forEach(function(el){ el.remove(); }); // usuń dodane w tej sesji
+    document.querySelectorAll('[class*="tile-new"]').forEach(function(el){ el.remove(); }); // remove ones added in this session
     document.querySelectorAll('.tile, .solo-photo').forEach(function(el){
       el.style.left = ''; el.style.top = ''; el.style.right = ''; el.style.bottom = '';
       el.style.width = ''; el.style.height = ''; el.style.aspectRatio = '';
       el.style.transform = ''; el.style.zIndex = '';
       el.classList.remove('edit-active');
-      el.style.display = ''; // przywróć ewentualnie "usunięte" (ukryte) zdjęcia
+      el.style.display = ''; // restore any "deleted" (hidden) photos
     });
     zCounter = 10;
     addedTileCounter = 0;
@@ -5590,7 +5590,7 @@
 </script>
 <script>
 (function(){
-  // Dymek powitalny — pokazuje się przy każdym otwarciu strony.
+  // Welcome tooltip — shows every time the page opens.
   const STEPS = {
     pl: [
       { text: 'Cześć! Chwila, zanim zaczniesz — szybki przewodnik 👋', target: null },
@@ -5634,8 +5634,18 @@
   }
 
   function positionNear(targetEl){
+    // The target might live in a section that's currently "switched off from rendering"
+    // (content-visibility:hidden, because it's far from the current section) — in that case the browser
+    // returns a zero rect (0,0,0,0), which breaks the whole position calculation. In that case
+    // we treat it as if there were no target at all — the bubble falls back to a safe, centered spot.
+    if(targetEl){
+      const r = targetEl.getBoundingClientRect();
+      if(r.width === 0 && r.height === 0 && r.top === 0 && r.left === 0){
+        targetEl = null;
+      }
+    }
     if(!targetEl){
-      // Brak konkretnego celu — dymek na środku, bez strzałki (np. pożegnalna wiadomość)
+      // No specific target — bubble centered, no arrow (e.g. the closing message)
       bubble.dataset.arrow = 'none';
       bubble.style.transform = 'translateX(-50%)';
       bubble.style.left = '50%';
@@ -5660,7 +5670,7 @@
     bubble.style.left = left + 'px';
     bubble.style.top = top + 'px';
     bubble.dataset.arrow = placeBelow ? 'up' : 'down';
-    // Strzałka celuje realnie w środek elementu, nawet gdy dymek jest przesunięty przy krawędzi ekranu.
+    // The arrow genuinely points at the element's center, even when the bubble is shifted near a screen edge.
     bubble.style.setProperty('--arrow-x', (targetCenterX - left) + 'px');
   }
 
@@ -5682,7 +5692,7 @@
     const list = STEPS[getLang()];
     if(i >= list.length){ finish(); return; }
     if(i === 0){ revealStep(0); return; }
-    // Schowaj w obecnym miejscu, dopiero PO tym przenieś i wysuń w nowym.
+    // Hide it in the current spot, only AFTER that move it and reveal it in the new one.
     bubble.classList.remove('visible');
     window.clearTimeout(timer);
     timer = window.setTimeout(function(){ revealStep(i); }, 380);
@@ -5717,7 +5727,7 @@
   window.setTimeout(function(){
     if(dismissed) return;
     startOnboarding();
-  }, 1400); // mała chwila po wczytaniu strony, żeby nie wyskakiwało natychmiast
+  }, 1400); // a short delay after page load, so it doesn't pop up immediately
 })();
 </script>
 </body>
