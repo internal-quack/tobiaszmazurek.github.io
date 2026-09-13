@@ -396,7 +396,7 @@
     box-sizing:border-box;
   }
   section.in-view{opacity:1;}
-  section:not(.in-view){
+  section:not(.render-near){
     content-visibility:hidden;
     contain-intrinsic-size:0 100vh;
   }
@@ -405,7 +405,7 @@
   }
   @media (max-width:860px){
     section{padding:90px 24px; height:auto; min-height:100vh; width:100% !important; opacity:1;}
-    section:not(.in-view){ content-visibility:visible; } /* na mobile sekcje układają się pionowo jedna pod drugą — ukrywanie treści psułoby zwykłe przewijanie */
+    section:not(.render-near){ content-visibility:visible; } /* na mobile sekcje układają się pionowo jedna pod drugą — ukrywanie treści psułoby zwykłe przewijanie */
   }
   .inner{
     position:relative;
@@ -3063,6 +3063,10 @@
   function render(){
     // Fade: only current section is fully visible
     sections.forEach((s, i) => s.classList.toggle('in-view', i === index));
+    // Trzymaj też bezpośrednich sąsiadów (przed/po) w pełni wyrenderowanych — inaczej
+    // przejście do nich nie ma czym się płynnie zanimować (content-visibility:hidden
+    // całkowicie pomija renderowanie, więc pojawiały się od razu, bez przejścia).
+    sections.forEach((s, i) => s.classList.toggle('render-near', Math.abs(i - index) <= 1));
     const content = getScrollableContent(sections[index]);
     if(content) content.scrollTop = 0; // always start at the top of the content
     const media = sections[index].querySelector('.project-media');
