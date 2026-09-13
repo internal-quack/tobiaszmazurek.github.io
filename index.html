@@ -529,7 +529,7 @@
   /* Per-section decor placement + color */
   .blob-hero{ --blob-color:#7C9A92; top:-7.5rem; right:-6.25rem; }
   .blob-about{ --blob-color:#4C7A9E; bottom:-8.75rem; left:-7.5rem; }
-  .blob-skills{ --blob-color:#C9642E; top:-6.25rem; left:10%; }
+  .blob-skills{ --blob-color:#3B5F9E; top:-6.25rem; left:10%; }
   .blob-warm{ --blob-color:#C9642E; bottom:-9.375rem; right:-5.625rem; }
   .blob-sage{ --blob-color:#7C9A92; top:-7.5rem; left:-5.625rem; }
   .blob-contact{ --blob-color:#4C7A9E; top:-8.125rem; right:15%; }
@@ -624,10 +624,10 @@
   }
   .motif-grill{ bottom:10%; right:8%; width:13.125rem; }
   /* Pozycje motywów dopieszczone ręcznie w trybie edycji na 2560x1440 (nadpisują domyślne powyżej dla tych sekcji) */
-  #project-2 .motif-glasses{ top:12.46%; left:80.44%; right:auto; bottom:auto; }
-  #project-4 .motif-turret{ top:10.56%; left:85.36%; right:auto; bottom:auto; }
-  #project-6 .motif-axe{ top:25.52%; left:30.68%; right:auto; bottom:auto; }
-  #project-9 .motif-console{ top:57.69%; left:43.95%; right:auto; bottom:auto; --motif-transform:rotate(-6deg) scale(0.84); }
+  #project-2 .motif-glasses{ top:9.56%; left:6.46%; right:auto; bottom:auto; --motif-transform:rotate(-30deg) scale(1); }
+  #project-4 .motif-turret{ top:13.08%; left:73.48%; right:auto; bottom:auto; }
+  #project-6 .motif-axe{ top:10.17%; left:82.6%; right:auto; bottom:auto; --motif-transform:rotate(28deg) scale(1); }
+  #project-9 .motif-console{ top:4.72%; left:7.93%; right:auto; bottom:auto; }
   #project-8 .motif-signal{ top:62.43%; left:14.48%; right:auto; bottom:auto; }
   #about-technical .motif-about{ top:63.28%; left:7.25%; right:auto; bottom:auto; --motif-transform:rotate(153deg) scale(0.88); }
   /* Sekcja "To moja działka" miała za dużo treści na wysokość 100vh — ściśnięte odstępy, żeby zmieściło się bez wewnętrznego scrolla */
@@ -635,7 +635,7 @@
   #about-technical .testimonial-wrap{ margin-top:0.875rem; }
   #about-technical .project-content .tags{ margin-bottom:0.5rem; }
   #contact .motif-contact{ top:19.19%; left:58.75%; right:auto; bottom:auto; }
-  #project-7 .motif-paw{ top:35.87%; left:50.19%; right:auto; bottom:auto; }
+  #project-7 .motif-paw{ top:65.41%; left:22.49%; right:auto; bottom:auto; }
   #career .motif-flag{ top:27.32%; left:81.66%; right:auto; bottom:auto; }
   #project-11 .motif-wip{ top:12.91%; left:9.61%; right:auto; bottom:auto; }
   #hero .motif-hero{ top:31.79%; left:62.42%; right:auto; bottom:auto; --motif-transform:rotate(12deg) scale(1.4); }
@@ -648,9 +648,11 @@
   #hero{ --motif-glow-strength:0.4 !important; }
   #career{ --motif-glow-strength:0.75 !important; }
   #skills{ --motif-glow-strength:0.6 !important; }
-  #project-2{ --motif-glow-strength:0.7 !important; }
-  #skills{ --motif-color:#a35724 !important; }
-  #skills{ --motif-icon-color:#a35724 !important; }
+  #project-7{ --motif-glow-size:1.7 !important; }
+  #project-2{ --motif-glow-size:1.9 !important; }
+  #project-2{ --motif-glow-strength:1 !important; }
+  #skills{ --motif-color:#3B5F9E !important; }
+  #skills{ --motif-icon-color:#3B5F9E !important; }
   @media (max-width:860px){
     .motif-wrap{ width:180px !important; }
   }
@@ -834,7 +836,6 @@
   #hero .hero-bottom{ margin-top:2.5rem; }
   #hero .btn{ background:none !important; border:none !important; border-bottom:2px solid currentColor !important; border-radius:0 !important; padding:0 0 0.25rem 0 !important; color:var(--text) !important; }
   #hero .hero-stats{ display:none; }
-  #hero .motif-wrap{ --motif-transform:scale(1.6); }
 
   .hero-preview-strip{ display:none; }
 
@@ -1285,9 +1286,9 @@
   #project-9 .tile-collage{ aspect-ratio:1/0.95; width:min(36rem, calc((var(--media-max-h) - 6rem) / 0.95)); max-width:36rem; }
   #project-4 .project-media{ flex-basis:41rem; max-width:41rem; --media-x:2.397rem; --media-y:0.000rem; }
   #project-4 .tile-collage{ width:min(41rem, calc((var(--media-max-h) - 6rem) / 0.82)); max-width:41rem; }
-  #project-4 .tile-a{ width:80%; height:39%; aspect-ratio:auto; top:10.56%; left:10%; transform:rotate(-2deg); z-index:1; }
-  #project-4 .tile-b{ width:47%; height:28%; aspect-ratio:auto; top:51.13%; left:2.57%; transform:rotate(5.4deg); z-index:3; }
-  #project-4 .tile-c{ width:49%; height:30%; aspect-ratio:auto; top:48.99%; left:48.26%; transform:rotate(-7deg); z-index:2; }
+  #project-4 .tile-a{ width:53.00%; height:29%; aspect-ratio:auto; top:24.58%; left:3.45%; transform:rotate(-1deg); z-index:1; }
+  #project-4 .tile-b{ width:47.00%; aspect-ratio:auto; top:55.08%; left:49.68%; transform:rotate(3deg); z-index:2; }
+  #project-4 .tile-c{ width:49.00%; aspect-ratio:auto; top:37.29%; left:21.01%; transform:rotate(-7deg); z-index:3; }
   #project-5 .project-media{ flex-basis:40rem; max-width:40rem; --media-x:-1.007rem; --media-y:0.000rem; }
   #project-5 .tile-collage{ width:min(40rem, calc((var(--media-max-h) - 6rem) / 0.82)); max-width:none; }
   #project-7 .project-media{ flex-basis:40rem; --media-x:36.721rem; --media-y:1.151rem; }
@@ -1373,10 +1374,10 @@
   #project-6 .project-media{ flex-basis:58rem; max-width:58rem; --media-x:2.109rem; --media-y:0.815rem; }
   #project-6 .project-row{ gap:0.5rem; max-width:none; }
   #project-6 .tile-collage{ width:min(58rem, calc((var(--media-max-h) - 6rem) / 0.55)); max-width:none; aspect-ratio:1/0.55; }
-  #project-6 .tile-a{ width:40.00%; height:40%; aspect-ratio:auto; top:3.5%; left:9.45%; transform:rotate(-4deg); z-index:1; }
-  #project-6 .tile-b{ width:41.00%; height:42%; aspect-ratio:auto; top:0.9%; left:48.89%; transform:rotate(3deg); z-index:4; }
-  #project-6 .tile-c{ width:41.00%; height:42%; aspect-ratio:auto; top:42.1%; left:9.53%; transform:rotate(1deg); z-index:2; }
-  #project-6 .tile-d{ width:40.00%; height:41%; aspect-ratio:auto; top:43.75%; left:52.14%; transform:rotate(-4deg); z-index:3; }
+  #project-6 .tile-a{ width:40.00%; aspect-ratio:auto; top:-2.96%; left:50.02%; transform:rotate(-4deg); z-index:3; }
+  #project-6 .tile-b{ width:39.00%; aspect-ratio:auto; top:44.17%; left:50.36%; transform:rotate(-3deg); z-index:4; }
+  #project-6 .tile-c{ width:25.00%; height:30%; aspect-ratio:auto; top:71.06%; left:57.69%; transform:rotate(0deg); z-index:1; }
+  #project-6 .tile-d{ width:40.00%; aspect-ratio:auto; top:19.68%; left:49.66%; transform:rotate(0deg); z-index:2; }
   #project-blade .project-media{ flex-basis:56rem; max-width:56rem; }
   #project-blade .tile-collage{ width:56rem; max-width:none; aspect-ratio:1/0.55; }
   #project-blade .tile-a{ width:38.00%; height:38%; aspect-ratio:auto; top:25.31%; left:56.72%; transform:rotate(-4deg); z-index:2; }
@@ -2045,14 +2046,18 @@
   #about-recommend .project-content{ transform:translate(8.293rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-1 .project-content{ transform:translate(-4.219rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-2 .project-content{ transform:translate(8.198rem,0.000rem) scale(0.9); transform-origin:center; }
-  #project-4 .project-content{ transform:translate(7.125rem,0.000rem) scale(0.9); transform-origin:center; }
+  #project-4 .project-content{ transform:translate(1.965rem,-1.103rem) scale(0.9); transform-origin:center; }
   #project-5 .project-content{ transform:translate(-4.794rem,0.000rem) scale(0.9); transform-origin:center; }
-  #project-6 .project-content{ transform:translate(-1.151rem,0.000rem) scale(0.9); transform-origin:center; }
+  #project-6 .project-content{ transform:translate(14.477rem,4.698rem) scale(0.9); transform-origin:center; }
+  #project-6 .project-media{ transform:translate(-9.827rem,0.000rem); }
   #project-blade .project-content{ transform:translate(16.874rem,-4.986rem) scale(1); transform-origin:center; }
   #project-blade .project-media{ transform:translate(-10.930rem,-0.527rem); }
-  #project-7 .project-content{ transform:translate(-39.693rem,0.000rem) scale(0.9); transform-origin:center; }
+  #project-7 .project-content{ transform:translate(-40.316rem,-3.787rem) scale(0.9); transform-origin:center; }
+  #project-7 .project-media{ transform:translate(31.256rem,0.000rem); }
   #project-8 .project-content{ transform:translate(-1.534rem,4.986rem) scale(0.9); transform-origin:center; }
-  #project-9 .project-content{ transform:translate(5.129rem,-4.410rem) scale(0.9); transform-origin:center; }
+  #project-8 .project-media{ transform:translate(-0.815rem,-0.719rem); }
+  #project-9 .project-content{ transform:translate(-1.486rem,2.253rem) scale(0.9); transform-origin:center; }
+  #project-9 .project-media{ transform:translate(1.294rem,-1.630rem); }
   #project-10 .project-content{ transform:translate(-3.452rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-11 .project-content{ transform:translate(-0.288rem,7.718rem) scale(0.9); transform-origin:center; }
   #about-technical .project-content{ transform:translate(5.034rem,0.767rem) scale(0.8); transform-origin:center; }
@@ -2392,7 +2397,7 @@
       <span class="pindex reveal">Projekt 01 / 12</span>
       <h3 class="reveal">Mr Toilet</h3>
       <p class="reveal" data-i18n="p2-p">Tak, to dosłownie symulator sprzątania publicznej toalety — czasem najlepszy gameplay siedzi w najmniej oczywistym temacie. Sprzątasz, pobierasz opłaty, wyrzucasz nieuczciwych klientów i rozbudowujesz swoje toaletowe imperium. </p>
-      <p class="reveal" data-i18n="p2-p-split">Odpowiadałem za szeroki zakres systemów gameplayowych — od pierwszych prototypów po gotowe, dopracowane mechaniki, w tym UI i customizację obiektów. To właśnie przy tym projekcie nauczyłem się realnego procesu wydawania gry na Steam — wymogów platformy, konfiguracji builda i tego, jak ten proces wygląda na innych kanałach dystrybucji.</p>
+      <p class="reveal" data-i18n="p2-p-split">Odpowiadałem za szeroki zakres systemów gameplayowych — od pierwszych prototypów po gotowe, dopracowane mechaniki. To właśnie przy tym projekcie nauczyłem się realnych wymogów platformy a także procesu wydawania gry na Steam.</p>
       <div class="tags reveal"><span>Unity</span><span>C#</span><span>Steam</span><span>First-person</span></div>
       <div class="links reveal">
         <a href="https://store.steampowered.com/app/3930150/Mr_Toilet/" target="_blank" rel="noopener">Steam ↗</a>
@@ -2429,7 +2434,7 @@
       <span class="pindex reveal">Projekt 02 / 12</span>
       <h3 class="reveal">Nerd Simulator</h3>
       <p class="reveal" data-i18n="p1-p">A skoro przed chwilą czytałeś o sprzątaniu kibla — tak, pracowałem też przy grze dosłownie o byciu nerdem. Niezłe zestawienie, co? Krótka, humorystyczna przygodówka point-and-click, w której pomagasz czterdziestoletniemu Mervinowi wyprowadzić się od mamy — przez absurdalne prace dorywcze i jeszcze bardziej absurdalne kłopoty. </p>
-      <p class="reveal" data-i18n="p1-p-split">Odpowiadałem za szeroki zakres gameplayu, między innymi zbudowałem samodzielną mini-grę w stylu pseudo-klikera, wplecioną w jedną z tych absurdalnych prac dorywczych.</p>
+      <p class="reveal" data-i18n="p1-p-split">Odpowiadałem za szeroki zakres gameplayu, między innymi pseudo-klikera, sortowanią śmieci, customizacją pokoju czy pomocniczym pinnym.</p>
       <div class="tags reveal"><span>Unity</span><span>C#</span><span>Steam</span><span>Point & Click</span></div>
       <div class="links reveal">
         <a href="https://store.steampowered.com/app/3128220/Nerd_Simulator/?l=polish" target="_blank" rel="noopener">Steam ↗</a>
@@ -2462,7 +2467,8 @@
     <div class="project-content">
       <span class="pindex reveal">Projekt 03 / 12</span>
       <h3 class="reveal">Indian Lumberjack</h3>
-      <p class="reveal" data-i18n="p5-p">Zręcznościowa, niekończąca się gra — Indianin musi zebrać odpowiednią ilość drewna, aby przetrwać zimę, rozbijając drzewo na części jednym uderzeniem. Zaprogramowałem całość samodzielnie, zarządzając przy tym assetami od zewnętrznych grafików, kompozytorów i twórcy dźwięku oraz wpinając je w grę. To właśnie przy tym projekcie nauczyłem się obsługiwać generatywne systemy budujące całą rozgrywkę — między innymi generatywny system kafelków drzewa.</p>
+      <p class="reveal" data-i18n="p5-p">Zręcznościowa, niekończąca się gra — Indianin musi zebrać odpowiednią ilość drewna, aby przetrwać zimę, rozbijając drzewo na części jednym uderzeniem. Zaprogramowałem całość samodzielnie, zarządzając przy tym assetami od zewnętrznych grafików, kompozytorów i twórcy dźwięku oraz wpinając je w grę. </p>
+      <p class="reveal" data-i18n="p5-p-split">To właśnie przy tym projekcie nauczyłem się jak realnie spiąć cały projekt w całość.</p>
       <div class="tags reveal"><span>Unity</span><span>C#</span><span>Arcade</span><span>Solo Dev</span></div>
     </div>
     <div class="project-media">
@@ -3297,13 +3303,14 @@
       'skills-items2':'Unity (advanced, URP), Unreal Engine 5 (basic)',
 
       'p1-p':'And since you were just reading about scrubbing a toilet — yes, I also made a game literally about being a nerd. Quite the pairing. A short, comedic point-and-click adventure where you help forty-year-old Mervin move out of his mom\'s house — through absurd odd jobs and even more absurd trouble. ',
-      'p1-p-split':'I was responsible for a broad range of gameplay work, including a standalone pseudo-clicker minigame woven into one of those absurd odd jobs.',
+      'p1-p-split':'I was responsible for a broad range of gameplay, including a pseudo-clicker, trash sorting, room customization, and a helper pin system.',
       'p2-p':'Yes, it\'s literally a simulator about cleaning a public restroom — sometimes the best gameplay hides in the least glamorous premise. Clean up, charge fees, kick out freeloaders, and grow your bathroom empire. ',
-      'p2-p-split':'I was responsible for a broad range of gameplay systems — from early prototypes through to polished, finished mechanics, including UI and object customization. This was the project where I learned the real process of shipping a game on Steam — platform requirements, build configuration, and how that process differs across other distribution channels.',
+      'p2-p-split':'I was responsible for a broad range of gameplay systems — from early prototypes through to polished, finished mechanics. This was the project where I learned the real requirements of the platform, as well as the process of shipping a game on Steam.',
       'p3-h3':'Space Defense',
       'p3-p':'A cyberpunk-styled Tower Defense — you defend a path from waves of enemies by placing and upgrading defense turrets. Built as a university project with a four-person team, run fully by SCRUM — short sprints, stand-ups, retrospectives, planning. I was the gameplay programmer.',
       'p4-p':'The first game I ever made — in a three-person team at the PolskiGamedev.pl Game Jam. The game itself is short and not exactly deep in terms of gameplay, but it\'s where I learned the most as a beginner programmer. The goal is to defeat Popiel by collecting mice across three different maps, which change once you\'ve gathered everything needed for that round.',
-      'p5-p':'An endless arcade game — a lumberjack has to gather enough wood to survive winter, chopping a tree into pieces with a single hit. I coded the whole thing myself, managing assets from external artists, composers, and a sound designer and wiring them into the game. This was the project where I learned to work with generative systems driving the whole game — including a generative tree-tile system.',
+      'p5-p':'An endless arcade game — a lumberjack has to gather enough wood to survive winter, chopping a tree into pieces with a single hit. I coded the whole thing myself, managing assets from external artists, composers, and a sound designer and wiring them into the game. ',
+      'p5-p-split':'This was the project where I learned how to actually tie a whole project together end to end.',
       'pblade-p':'A top-down hack and slash — you fight off waves of enemies, combining a basic attack with four cooldown-based skills. I coded the whole thing myself: the combat system, enemy AI, spawn waves, and the full skill set.',
       'p6-p':"A multi-level arcade game made at a game jam — you play a galaxy defender saving a cat planet from destruction, destroying enemy comets and dodging attacks. Each planet is its own self-contained minigame, with its own set of threats. I was the programmer, responsible for every layer of gameplay — from controls and collision, through enemy wave logic, to the scoring system and transitions between planets.",
       'p7-p':'My own game, which I\'m building myself — pitched as <em>“Overcooked meets base defense”</em>. You defend a backyard from living, attacking food, cook it up on the grill, and race to serve hungry guests before the forest breaks through the fence. Co-op for 1–4 players. I\'m aiming to release a demo in January 2027 — I\'ll leave the rest as a surprise.',
