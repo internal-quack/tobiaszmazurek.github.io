@@ -640,15 +640,15 @@
   #project-6 .motif-axe{ top:10.17%; left:82.6%; right:auto; bottom:auto; --motif-transform:rotate(28deg) scale(1); }
   #project-9 .motif-console{ top:10.9%; left:6.52%; right:auto; bottom:auto; --motif-transform:rotate(0deg) scale(0.64); }
   #project-8 .motif-signal{ top:62.43%; left:14.48%; right:auto; bottom:auto; }
-  #about-technical .motif-about{ top:64.96%; left:4.05%; right:auto; bottom:auto; --motif-transform:rotate(-16deg) scale(0.78); }
+  #about-technical .motif-about{ top:66.72%; left:6.9%; right:auto; bottom:auto; --motif-transform:rotate(-22deg) scale(0.62); }
   /* The "This is my thing" section had too much content for a 100vh height — spacing tightened so it fits without internal scrolling */
   #about-technical .project-content p{ margin-bottom:0.875rem; }
   #about-technical .testimonial-wrap{ margin-top:0.875rem; }
   #about-technical .project-content .tags{ margin-bottom:0.5rem; }
-  #contact .motif-contact{ top:19.19%; left:58.75%; right:auto; bottom:auto; }
-  #project-7 .motif-paw{ top:16.41%; left:38.74%; right:auto; bottom:auto; }
+  #contact .motif-contact{ top:19.11%; left:58.75%; right:auto; bottom:auto; }
+  #project-7 .motif-paw{ top:69.16%; left:8.9%; right:auto; bottom:auto; }
   #career .motif-flag{ top:27.32%; left:81.66%; right:auto; bottom:auto; }
-  #project-11 .motif-wip{ top:12.91%; left:9.61%; right:auto; bottom:auto; }
+  #project-11 .motif-wip{ top:11.92%; left:12.7%; right:auto; bottom:auto; --motif-transform:rotate(0deg) scale(0.8); }
   #hero .motif-hero{ top:31.79%; left:62.42%; right:auto; bottom:auto; --motif-transform:rotate(12deg) scale(1.4); }
   #skills .motif-skills{ top:7.49%; left:75%; right:auto; bottom:auto; --motif-transform:rotate(0deg) scale(0.8); }
   #project-blade .motif-blade{ top:32.44%; left:12.25%; right:auto; bottom:auto; --motif-transform:rotate(-12deg) scale(1); }
@@ -663,6 +663,8 @@
   #project-2{ --motif-glow-size:1.9 !important; }
   #project-2{ --motif-glow-strength:1 !important; }
   #project-4{ --motif-glow-strength:0.95 !important; }
+  #contact{ --motif-glow-size:1.8 !important; }
+  #contact{ --motif-glow-strength:0.9 !important; }
   #skills{ --motif-color:#3B5F9E !important; }
   #skills{ --motif-icon-color:#3B5F9E !important; }
   @media (max-width:860px){
@@ -1337,7 +1339,7 @@
   }
   .tile-collage[data-count="3"]{ aspect-ratio:1/1.15; width:min(34rem, 100%); }
   .tile-collage[data-count="4"]{ aspect-ratio:1/1.35; width:min(34rem, 100%); }
-  .tile{ position:absolute; transition:width .35s ease, height .35s ease, top .35s ease, left .35s ease, right .35s ease, bottom .35s ease, transform .35s cubic-bezier(.22,1,.36,1); cursor:default; }
+  .tile{ position:absolute; min-height:15%; transition:width .35s ease, height .35s ease, top .35s ease, left .35s ease, right .35s ease, bottom .35s ease, transform .35s cubic-bezier(.22,1,.36,1); cursor:default; }
   body:not(.edit-mode) .tile:hover{ transform:rotate(0deg) scale(1.06) !important; z-index:500 !important; }
   .tile:hover .about-photo{ box-shadow:0 28px 55px -18px rgba(0,0,0,.85); }
   .tile .about-photo{
@@ -1368,32 +1370,32 @@
   #project-8 .tile-collage{ aspect-ratio:1/0.95; width:min(36rem, 100%); }
   #project-8 .tile-a{ width:67.00%; height:44%; aspect-ratio:auto; top:5.75%; left:4.53%; transform:rotate(-4deg); z-index:66; }
   #project-8 .tile-b{ width:60%; height:40%; aspect-ratio:auto; top:55.2%; left:35.89%; transform:rotate(3deg); z-index:2; }
-  #project-9 .project-media{ flex-basis:36rem; max-width:36rem; --media-x:2.397rem; --media-y:-4.219rem; }
-  #project-9 .tile-collage{ aspect-ratio:1/0.95; width:min(36rem, 100%); }
+  #project-9 .project-media{ flex-basis:39rem; max-width:39rem; --media-x:2.397rem; --media-y:-4.219rem; }
+  #project-9 .tile-collage{ width:39rem; max-width:100%; }
   #project-4 .project-media{ flex-basis:36rem; max-width:36rem; --media-x:2.397rem; --media-y:0.000rem; }
-  #project-4 .tile-collage{ width:min(36rem, 100%); }
+  #project-4 .tile-collage{ width:36rem; max-width:100%; }
   #project-4 .tile-a{ width:56.00%; height:32%; aspect-ratio:auto; top:8.46%; left:14.38%; transform:rotate(-4deg); z-index:3; }
   #project-4 .tile-b{ width:61.00%; height:34%; aspect-ratio:auto; top:57.05%; left:18.78%; transform:rotate(6deg); z-index:1; }
   #project-4 .tile-c{ width:56.00%; height:32%; aspect-ratio:auto; top:31.98%; left:29.72%; transform:rotate(-7deg); z-index:2; }
   #project-5 .project-media{ flex-basis:40rem; max-width:40rem; --media-x:-1.007rem; --media-y:0.000rem; }
   #project-5 .tile-collage{ width:min(40rem, 100%); }
-  #project-7 .project-media{ flex-basis:40rem; --media-x:36.721rem; --media-y:1.151rem; }
-  #project-7 .tile-new1{ width:53.00%; aspect-ratio:auto; top:40.37%; left:22.03%; transform:rotate(13deg); z-index:2; }
-  #project-7 .tile-a{ width:38.00%; aspect-ratio:auto; top:10.01%; left:36.14%; transform:rotate(-25deg); z-index:3; }
-  #project-7 .tile-b{ width:64.00%; aspect-ratio:auto; top:57.35%; left:10.08%; transform:rotate(-7deg); z-index:1; }
-  #project-7 .tile-collage{ width:min(40rem, 100%); }
+  #project-7 .project-media{ flex-basis:36rem; max-width:36rem; --media-x:36.721rem; --media-y:1.151rem; }
+  #project-7 .tile-new1{ width:55.00%; height:30%; aspect-ratio:auto; top:44.64%; left:23.58%; transform:rotate(12deg); z-index:1; }
+  #project-7 .tile-a{ width:39.00%; height:39%; aspect-ratio:auto; top:15.21%; left:40.19%; transform:rotate(-23deg); z-index:3; }
+  #project-7 .tile-b{ width:63.00%; height:35%; aspect-ratio:auto; top:60.15%; left:10.31%; transform:rotate(-7deg); z-index:2; }
+  #project-7 .tile-collage{ width:36rem; max-width:100%; }
   #project-10 .project-media{ flex-basis:43rem; max-width:43rem; --media-x:0.431rem; --media-y:0.000rem; }
   #project-10 .tile-collage{ width:min(43rem, 100%); }
   #project-10 .tile-a{ width:54.00%; height:47%; aspect-ratio:auto; top:5.43%; left:5.81%; transform:rotate(-27deg); z-index:23; }
   #project-10 .tile-b{ width:53.00%; height:50%; aspect-ratio:auto; top:36.99%; left:35.18%; transform:rotate(-15deg); z-index:27; }
-  #project-11 .project-media{ flex-basis:55rem; max-width:55rem; --media-x:-2.349rem; --media-y:0.000rem; }
-  #project-11 .tile-collage{ width:min(55rem, 100%); }
-  #project-11 .tile-a{ width:50.00%; height:25%; aspect-ratio:auto; top:35.5%; left:5.44%; transform:rotate(-7deg); z-index:2; }
-  #project-11 .tile-b{ width:47.00%; height:24%; aspect-ratio:auto; top:36.31%; left:48.45%; transform:rotate(7deg); z-index:1; }
-  #project-11 .tile-new2{ width:54.00%; height:24%; aspect-ratio:auto; top:12.47%; left:0.79%; transform:rotate(-9deg); z-index:3; }
-  #project-11 .tile-new4{ width:43.00%; height:25%; aspect-ratio:auto; top:12.5%; left:53.61%; transform:rotate(9deg); z-index:4; }
-  #project-9 .tile-a{ width:82.00%; height:38%; aspect-ratio:auto; top:7.19%; left:4.01%; transform:rotate(3deg); z-index:23; }
-  #project-9 .tile-b{ width:70.00%; height:36%; aspect-ratio:auto; top:56.87%; left:25.79%; transform:rotate(-4deg); z-index:1; }
+  #project-11 .project-media{ flex-basis:46rem; max-width:46rem; --media-x:-2.349rem; --media-y:0.000rem; }
+  #project-11 .tile-collage{ width:46rem; max-width:100%; height:36rem; aspect-ratio:auto; }
+  #project-11 .tile-a{ width:50.00%; height:48%; aspect-ratio:auto; top:44.4%; left:4.93%; transform:rotate(-7deg); z-index:3; }
+  #project-11 .tile-b{ width:47.00%; height:44%; aspect-ratio:auto; top:47.47%; left:49.88%; transform:rotate(11deg); z-index:4; }
+  #project-11 .tile-new2{ width:49.00%; height:47%; aspect-ratio:auto; top:5.87%; left:4.64%; transform:rotate(-9deg); z-index:1; }
+  #project-11 .tile-new4{ width:47.00%; height:40%; aspect-ratio:auto; top:5.94%; left:50.48%; transform:rotate(10deg); z-index:2; }
+  #project-9 .tile-a{ width:82.00%; height:38%; aspect-ratio:auto; top:11.2%; left:4.62%; transform:rotate(5deg); z-index:1; }
+  #project-9 .tile-b{ width:70.00%; height:36%; aspect-ratio:auto; top:51.17%; left:26.15%; transform:rotate(-4deg); z-index:2; }
   /* "This is my thing" — fan layout: one photo in the center (straight, on top, largest),
      reszta wygląda zza niego pod różnymi kątami, jak rozrzucone/przypięte zdjęcia na biurku. */
   #about-technical .project-media{ flex-basis:45rem; max-width:45rem; --media-x:-2.445rem; --media-y:1.151rem; }
@@ -1429,8 +1431,8 @@
   #about-life .tile-a{ width:34.00%; height:35%; aspect-ratio:auto; top:5.83%; left:5.44%; transform:rotate(-6deg); z-index:2; }
   #about-life .tile-b{ width:33.00%; height:43%; aspect-ratio:auto; top:42.23%; left:36.61%; transform:rotate(5deg); z-index:4; }
   #about-life .tile-c{ width:38.00%; height:45%; aspect-ratio:auto; top:48.59%; left:57.57%; transform:rotate(10deg); z-index:5; }
-  #about-life .tile-d{ width:40.00%; height:48%; aspect-ratio:auto; top:44.63%; left:4.5%; transform:rotate(-4deg); z-index:3; }
-  #about-life .tile-new1{ width:51.00%; height:31%; aspect-ratio:auto; top:8.88%; left:45.52%; transform:rotate(10deg); z-index:1; }
+  #about-life .tile-d{ width:40.00%; height:48%; aspect-ratio:auto; top:44.5%; left:4.5%; transform:rotate(-4deg); z-index:1; }
+  #about-life .tile-new1{ width:56.00%; height:35%; aspect-ratio:auto; top:7.36%; left:37.57%; transform:rotate(10deg); z-index:2; }
   #about-life .tile .about-photo{ width:100%; height:100%; aspect-ratio:auto; }
 
   /* ===== 3 photos ===== */
@@ -1465,11 +1467,11 @@
   #project-6 .tile-b{ width:61.00%; height:30%; aspect-ratio:auto; top:50.55%; left:9.31%; transform:rotate(-10deg); z-index:1; }
   #project-6 .tile-c{ width:55.00%; height:27%; aspect-ratio:auto; top:71.17%; left:31.12%; transform:rotate(7deg); z-index:2; }
   #project-6 .tile-d{ width:65.00%; height:32%; aspect-ratio:auto; top:34%; left:31.23%; transform:rotate(10deg); z-index:3; }
-  #project-blade .project-media{ flex-basis:27rem; max-width:27rem; }
-  #project-blade .tile-collage{ width:27rem; max-width:100%; height:34rem; aspect-ratio:auto; }
-  #project-blade .tile-a{ width:76.00%; aspect-ratio:auto; top:31%; left:10.39%; transform:rotate(5deg); z-index:2; }
-  #project-blade .tile-b{ width:72.00%; aspect-ratio:auto; top:57.71%; left:0.93%; transform:rotate(-2deg); z-index:3; }
-  #project-blade .tile-c{ width:78.00%; height:39%; aspect-ratio:auto; top:1.1%; left:19.87%; transform:rotate(5deg); z-index:1; }
+  #project-blade .project-media{ flex-basis:30rem; max-width:30rem; }
+  #project-blade .tile-collage{ width:30rem; max-width:100%; }
+  #project-blade .tile-a{ width:76.00%; height:42%; aspect-ratio:auto; top:33.82%; left:8.44%; transform:rotate(5deg); z-index:1; }
+  #project-blade .tile-b{ width:72.00%; height:40%; aspect-ratio:auto; top:59.12%; left:2.21%; transform:rotate(-2deg); z-index:2; }
+  #project-blade .tile-c{ width:78.00%; height:43%; aspect-ratio:auto; top:1.52%; left:16.2%; transform:rotate(5deg); z-index:3; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-a{ width:58%; aspect-ratio:4/5; top:7%; left:8%; transform:rotate(-3.6deg); z-index:4; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-b{ width:36%; aspect-ratio:4/5; top:7%; right:8%; transform:rotate(7.2deg); z-index:3; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-c{ width:36%; aspect-ratio:4/5; bottom:7%; right:8%; transform:rotate(-7.2deg); z-index:2; }
@@ -2137,7 +2139,7 @@
   #about-recommend .project-content{ transform:translate(clamp(0rem, 6.757vw, 8.293rem),0.000rem) scale(0.9); transform-origin:center; }
   #project-1 .project-content{ transform:translate(clamp(-4.219rem, -3.438vw, 0rem),0.000rem) scale(0.9); transform-origin:center; }
   #project-2 .project-content{ transform:translate(clamp(0rem, 6.68vw, 8.198rem),0.000rem) scale(0.9); transform-origin:center; }
-  #project-4 .project-content{ transform:translate(clamp(0rem, 2.304vw, 2.828rem),0.000rem) scale(0.9); transform-origin:center; }
+  #project-4 .project-content{ transform:translate(clamp(0rem, 1.511vw, 1.854rem),0.000rem) scale(0.9); transform-origin:center; }
   #project-5 .project-content{ transform:translate(clamp(-4.794rem, -3.906vw, 0rem),0.000rem) scale(0.9); transform-origin:center; }
   #project-6 .project-content{ transform:translate(clamp(0rem, 0.117vw, 0.144rem),0.000rem) scale(0.9); transform-origin:center; }
   #project-6 .project-media{ transform:translate(clamp(-0.527rem, -0.429vw, 0rem),-2.349rem) scale(.5); }
@@ -2145,9 +2147,9 @@
   #project-blade .project-content{ transform:translate(clamp(0rem, 1.679vw, 2.061rem),-3.691rem) scale(1); transform-origin:center; }
   #project-blade .project-media{ transform:translate(clamp(0rem, 3.438vw, 4.219rem),-2.733rem) scale(.5); }
   #project-blade.in-view .project-media{ transform:translate(clamp(0rem, 3.438vw, 4.219rem),-2.733rem) scale(1); }
-  #project-7 .project-content{ transform:translate(clamp(-39.07rem, -31.836vw, 0rem),7.766rem) scale(0.9); transform-origin:center; }
-  #project-7 .project-media{ transform:translate(clamp(0rem, 30.508vw, 37.44rem),0.000rem) scale(.5); }
-  #project-7.in-view .project-media{ transform:translate(clamp(0rem, 30.508vw, 37.44rem),0.000rem) scale(1); }
+  #project-7 .project-content{ transform:translate(clamp(-36.577rem, -29.805vw, 0rem),0.000rem) scale(0.9); transform-origin:center; }
+  #project-7 .project-media{ transform:translate(clamp(0rem, 29.219vw, 35.858rem),-1.294rem) scale(.5); }
+  #project-7.in-view .project-media{ transform:translate(clamp(0rem, 29.219vw, 35.858rem),-1.294rem) scale(1); }
   #project-4 .project-media{ transform:translate(clamp(0rem, 0.274vw, 0.336rem),-0.431rem) scale(.5); }
   #project-4.in-view .project-media{ transform:translate(clamp(0rem, 0.274vw, 0.336rem),-0.431rem) scale(1); }
   #about-technical .project-media{ transform:translate(clamp(-1.774rem, -1.446vw, 0rem),0.000rem) scale(.5); }
@@ -2157,13 +2159,15 @@
   #project-8 .project-content{ transform:translate(clamp(-1.534rem, -1.25vw, 0rem),4.986rem) scale(0.9); transform-origin:center; }
   #project-8 .project-media{ transform:translate(clamp(-0.815rem, -0.664vw, 0rem),-0.719rem) scale(.5); }
   #project-8.in-view .project-media{ transform:translate(clamp(-0.815rem, -0.664vw, 0rem),-0.719rem) scale(1); }
-  #project-9 .project-content{ transform:translate(clamp(-0.192rem, -0.156vw, 0rem),2.157rem) scale(0.9); transform-origin:center; }
-  #project-9 .project-media{ transform:translate(clamp(0rem, 1.054vw, 1.294rem),-1.630rem) scale(.5); }
-  #project-9.in-view .project-media{ transform:translate(clamp(0rem, 1.054vw, 1.294rem),-1.630rem) scale(1); }
+  #project-9 .project-content{ transform:translate(clamp(0rem, 1.446vw, 1.774rem),1.486rem) scale(0.9); transform-origin:center; }
+  #project-9 .project-media{ transform:translate(clamp(-1.151rem, -0.938vw, 0rem),-1.918rem) scale(.5); }
+  #project-9.in-view .project-media{ transform:translate(clamp(-1.151rem, -0.938vw, 0rem),-1.918rem) scale(1); }
+  #project-11 .project-media{ transform:translate(clamp(-3.068rem, -2.5vw, 0rem),0.767rem) scale(.5); }
+  #project-11.in-view .project-media{ transform:translate(clamp(-3.068rem, -2.5vw, 0rem),0.767rem) scale(1); }
   #project-10 .project-content{ transform:translate(clamp(-3.452rem, -2.813vw, 0rem),0.000rem) scale(0.9); transform-origin:center; }
-  #about-technical .project-content{ transform:translate(clamp(0rem, 1.524vw, 1.87rem),0.000rem) scale(0.9); transform-origin:center; }
+  #about-technical .project-content{ transform:translate(clamp(0rem, 1.836vw, 2.253rem),0.000rem) scale(0.8); transform-origin:center; }
   #about-life .project-content{ transform:translate(0.000rem,0.000rem) scale(1); transform-origin:center; }
-  #project-11 .project-content{ transform:translate(clamp(-0.288rem, -0.235vw, 0rem),7.718rem) scale(0.9); transform-origin:center; }
+  #project-11 .project-content{ transform:translate(clamp(-4.938rem, -4.024vw, 0rem),4.075rem) scale(0.9); transform-origin:center; }
   /* ===== Quick summary (modal for recruiters short on time to scroll) ===== */
   #summary-modal{
     position:fixed; inset:0; z-index:2000;
@@ -2759,7 +2763,12 @@
       <h3 class="reveal">Simply Signals</h3>
       <p class="reveal" data-i18n="p8-p">Silnie typowany, zero-alokacyjny system komunikacji między systemami gry, zaprojektowany tak, żeby komunikacja cross-assembly przestała być bólem głowy. Jedno wywołanie i dane trafiają tam, gdzie chcemy.</p>
       <p class="reveal" data-i18n="p8-p-split">Zamiast trzymać referencje między modułami albo przepychać dane przez singletony, wystarczy jedno wywołanie — <code>Signals.Send(...)</code> — i dane trafiają dokładnie tam, gdzie trzeba, niezależnie od tego, w którym assembly siedzi odbiorca.</p>
-      <p class="reveal" data-i18n="p8-detail">Systemy nie muszą nawzajem o sobie wiedzieć, a mimo to swobodnie się komunikują, bez ryzyka konfliktów między dostawcami sygnału w różnych modułach. W planach: wizualny graf zależności pokazujący na żywo, kto z kim rozmawia w danym momencie gry.</p>
+      <ul class="reveal" data-i18n="p8-detail">
+        <li><strong>Podział pracy: Source Generator + Cecil</strong>Roslyn generuje publiczne API i wewnętrzny stan (rejestrowanie/wyrejestrowywanie), a Cecil robi wyłącznie jedną rzecz — wstrzykuje wywołania rejestracji w <code>Awake</code>/<code>OnDestroy</code>. Każde narzędzie robi to, w czym jest najlepsze.</li>
+        <li><strong>Okno edytorowe zamiast ręcznych interfejsów</strong>Sygnały deklaruje się przez dedykowane okno, nie pisząc interfejsów ręcznie. Kolizje nazw między różnymi fasadami są blokowane już w momencie próby dodania, nie wykrywane później w generatorze.</li>
+        <li><strong>Tryby łączenia bez DynamicInvoke</strong>Zwykły multicast dla <code>void</code>, a dla wartości zwracanych — tryby None/All/Any z przeciążeniami po liczbie argumentów, zamiast kosztownej refleksji w runtime.</li>
+        <li><strong>Zasada bezpieczeństwa Weavera</strong>Jeśli Cecil miałby generować pętlę albo rozgałęzienie — to sygnał, że logika powinna trafić do zwykłej metody C#. W planach: wizualny graf zależności pokazujący na żywo, kto z kim rozmawia w danym momencie gry.</li>
+      </ul>
       <div class="tags reveal"><span>Source Generators</span><span>IL Weaving</span><span>Cecil</span><span>Zero-Allocation</span></div>
     </div>
     <div class="project-media">
@@ -2792,7 +2801,12 @@
       <h3 class="reveal">Runtime Inspector</h3>
       <p class="reveal" data-i18n="p9-p">Wysuwana konsola deweloperska działająca w runtime, wewnątrz builda gry — dowolna metoda w kodzie staje się silnie typowaną, wywoływalną komendą (exec), bez pisania osobnego panelu do każdego testu. Inspector wspiera rekurencję.</p>
       <p class="reveal" data-i18n="p9-p-split">Każde wywołanie zapisywane jest w logu — dokładnie widać, jaka komenda, z jakimi argumentami i z jakim wynikiem została wykonana, co ułatwia odtworzenie i zgłoszenie buga.</p>
-      <p class="reveal" data-i18n="p9-detail">Pełny autocomplete z podpowiedziami sygnatur, zagnieżdżanie wywołań oraz undo/redo, dzięki czemu cofnięcie serii testowych zmian to jedna komenda, nie restart sceny — świetne narzędzie do szybkich testów bez podpinania debuggera.</p>
+      <ul class="reveal" data-i18n="p9-detail">
+        <li><strong>Dwie oddzielne przestrzenie komend</strong><code>/</code> dla komend z gry (pełny autocomplete, zagnieżdżanie) i <code>!</code> dla komend narzędzia (list, help, select, undo, clear) — nigdy się nie mieszają w jednym dropdownie.</li>
+        <li><strong>Reflection zamiast IL weavingu — świadomy wybór</strong>Napisałem i przetestowałem też wariant z Mono.Cecil, ale zostałem przy prostszym reflection — to nie hot path, a jeden jednorodny system jest łatwiejszy w utrzymaniu niż dwa równoległe. Metody czysto debugowe chronione punktowym atrybutem <code>[Preserve]</code> przed strippingiem w IL2CPP.</li>
+        <li><strong>Async i Coroutine</strong>Metody zwracające <code>IEnumerator</code>/<code>Task</code> uruchamiają się jako coroutine na osobnym runnerze, ze statusem „running…” widocznym na żywo w logu.</li>
+        <li><strong>Undo/Redo i zagnieżdżone wywołania</strong>Komendy oznaczone jako Undoable trzymają stan przed/po — jedna komenda zamiast restartu sceny. Zagnieżdżone wywołania logują każdy krok osobno, więc widać dokładnie, jaka wartość trafiła do którego argumentu.</li>
+      </ul>
       <div class="tags reveal"><span>Reflection</span><span>Editor Tools</span><span>Debug Console</span><span>IL2CPP</span></div>
     </div>
     <div class="project-media">
@@ -2829,7 +2843,6 @@
         <li><strong>Font Auto-Size Converter</strong>Ujednolicający skalowanie tekstów pod różne rozdzielczości.</li>
         <li><strong>Interface Drawer</strong>Rysuje interfejsy w Inspectorze, czego Unity domyślnie nie potrafi.</li>
       </ul>
-      <div class="reveal" data-i18n="p10-detail-intro" style="font-size:0.9375rem; color:var(--text-dim); margin-top:0.5rem;"></div>
       <p class="reveal" data-i18n="p10-detail">Całość spięta własnym systemem wstrzykiwania referencji przez atrybuty i reflection oraz atrybutem <code>[OnValueChange]</code> generującym backing field przez IL Weaving.</p>
       <div class="tags reveal"><span>Custom Editor</span><span>Property Drawer</span><span>C# Reflection</span><span>IL Weaving</span></div>
     </div>
@@ -2962,7 +2975,6 @@
       <p class="reveal" data-i18n="about-p-0">Lubię proste rozwiązania trudnych problemów. Nie lubię kodu, który rozumiem tylko ja.</p>
       <p class="reveal" data-i18n="about-p-0b">Trzymam się sprawdzonych zasad architektury i wzorców projektowych — a jak trzeba, schodzę głębiej: Reflection, IL Weaving, Source Generators. Zbudowałem sporo systemów wstrzykiwania zależności, z których korzysta cały zespół, nie tylko ja.</p>
       <p class="reveal" data-i18n="about-p-0b-split">Potrafię dogadać się w zespole — pracowałem sam, w małych kilkuosobowych ekipach (game jamy, projekty uczelniane), a także w zespole produkcyjnym liczącym 13 osób. Komunikacja nigdy nie była dla mnie problemem.</p>
-      <p class="reveal" data-i18n="about-p-0c">Potrafię dogadać się w zespole — pracowałem sam, w małych kilkuosobowych ekipach (game jamy, projekty uczelniane), a także w zespole produkcyjnym liczącym 13 osób. Komunikacja nigdy nie była dla mnie problemem.</p>
       <div class="testimonial-wrap reveal">
         <button type="button" class="test-nav test-prev" id="test-prev" aria-label="Poprzednia referencja" disabled>‹</button>
         <div class="testimonial-track" id="testimonial-track">
@@ -3411,7 +3423,6 @@
       'about-p-0':'I like simple solutions to hard problems. I don\'t like code that only I understand.',
       'about-p-0b':'I stick to proven architecture principles and design patterns — and when I need to, I go deeper: Reflection, IL Weaving, Source Generators. I\'ve built a fair number of dependency injection systems that the whole team uses, not just me.',
       'about-p-0b-split':'I get along well within a team — I\'ve worked solo, in small teams (game jams, university projects), and in a production team of 13 people. Communication has never been a problem for me.',
-      'about-p-0c':'I can hold my own in a team — I\'ve worked solo, in small crews (game jams, university projects), and in a 13-person production team. Communication has never been a problem for me.',
       'about-p-1':'Calisthenics and running keep me in enough shape that the screen hasn\'t fully absorbed me yet — winning, for now. I watch my diet too, though I don\'t always beat the midnight pizza.',
       'about-p-1b':'Gaming has always been a passion of mine — not just downtime, but inspiration for my own projects. I pick up a squash racket sometimes, and whenever I get the chance, I pack a bag and disappear somewhere new — the best reset I know.',
       'about-p-2':'Gaming has been with me forever, long before I ever thought about writing code. I\'ve played a ton of titles across genres, from soulslikes to shooters. Lately I\'m most into FPS games and extraction shooters. I\'m still waiting for a properly finished version of The Day Before to come out — probably in a different universe.',
@@ -3458,14 +3469,13 @@
       'p7-p':'My own game, which I\'m building myself — pitched as <em>“Overcooked meets base defense”</em>. You defend a backyard from living, attacking food, cook it up on the grill, and race to serve hungry guests before the forest breaks through the fence. Co-op for 1–4 players. I\'m aiming to release a demo in January 2027 — I\'ll leave the rest as a surprise.',
       'p8-p':'A strongly-typed, zero-allocation communication system between game systems, built so cross-assembly communication stops being a headache. Instead of holding references between modules or pushing data through singletons, one call — <code>Signals.Send(...)</code> — is enough, and the data lands exactly where it needs to, no matter which assembly the receiver lives in. Systems don\'t need to know about each other, yet they communicate freely, with no risk of signal-provider conflicts across modules. ',
       'p8-p-split':'Instead of holding references between modules or pushing data through singletons, one call — <code>Signals.Send(...)</code> — is enough, and the data lands exactly where it needs to, no matter which assembly the receiver lives in.',
-      'p8-detail':'Systems don\'t need to know about each other, yet they communicate freely, with no risk of conflicts between signal providers across different modules. Coming up: a visual dependency graph showing, live, who\'s talking to whom at any given moment in the game.',
+      'p8-detail':'<li><strong>Split responsibility: Source Generator + Cecil</strong>Roslyn generates the public API and internal state (register/unregister), while Cecil does exactly one thing — injects the registration calls into <code>Awake</code>/<code>OnDestroy</code>. Each tool does what it\'s best at.</li><li><strong>Editor window instead of hand-written interfaces</strong>Signals are declared through a dedicated window, not by writing interfaces by hand. Name collisions between different facades are blocked the moment you try to add them, not caught later in the generator.</li><li><strong>Combine modes without DynamicInvoke</strong>Plain multicast for <code>void</code>, and for return values — None/All/Any modes with arity-based overloads instead of costly runtime reflection.</li><li><strong>The Weaver\'s safety rule</strong>If Cecil ever needed to generate a loop or a branch, that\'s a sign the logic belongs in plain C# instead. Coming up: a visual dependency graph showing, live, who\'s talking to whom at any given moment in the game.</li>',
       'p9-p':'A slide-out developer console that runs at runtime, inside the game build — any method in the code becomes a strongly-typed, callable command (exec), with no need to write a dedicated panel for every test. Every call gets logged — you can see exactly which command ran, with which arguments, and what it returned, which makes reproducing and reporting bugs far easier. ',
       'p9-p-split':'Every call gets logged — you can see exactly which command ran, with what arguments, and what result, making it much easier to reproduce and report a bug.',
-      'p9-detail':'Full autocomplete with signature hints, command nesting, and undo/redo, so rolling back a batch of test changes is one command, not a scene restart — great for fast testing without ever attaching a debugger.',
+      'p9-detail':'<li><strong>Two separate command spaces</strong><code>/</code> for game commands (full autocomplete, nesting) and <code>!</code> for tool commands (list, help, select, undo, clear) — never mixed in the same dropdown.</li><li><strong>Reflection over IL weaving — a deliberate choice</strong>I built and tested a Mono.Cecil-based version too, but stuck with simpler reflection — it\'s not a hot path, and one uniform system beats maintaining two parallel ones. Purely debug-only methods are protected from IL2CPP stripping with a targeted <code>[Preserve]</code> attribute.</li><li><strong>Async and Coroutine support</strong>Methods returning <code>IEnumerator</code>/<code>Task</code> run as coroutines on a dedicated runner, with a live "running…" status in the log.</li><li><strong>Undo/Redo and nested calls</strong>Commands marked Undoable keep before/after state — one command instead of a scene restart. Nested calls log every step separately, so you can see exactly which value fed into which argument.</li>',
       'p10-h3':'Editor Tools',
       'p10-p':'Nobody brags about editor tools in a first interview, yet they\'re what speeds up the whole team the most. A set of smaller tools used daily:',
       'p10-p-split':'<li><strong>Anchor Converter</strong>Turns UI elements into screen-relative anchors.</li><li><strong>Font Auto-Size Converter</strong>Unifies text scaling across resolutions.</li><li><strong>Interface Drawer</strong>Draws interfaces in the Inspector, something Unity can\'t do out of the box.</li>',
-      'p10-detail-intro':'',
       'p10-detail':'All tied together by my own attribute- and reflection-based reference injection system, plus the <code>[OnValueChange]</code> attribute that generates a backing field via IL Weaving.',
       'p11-h3':'Systems',
       'p11-p':"These aren't big, standalone products — they're smaller support systems that speed up my day-to-day game dev work. Once they hit a more stable version, I plan to release them publicly, for free:",
