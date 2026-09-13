@@ -4738,6 +4738,7 @@
     activeEl.classList.add('edit-active');
     zCounter += 1;
     el.style.setProperty('z-index', zCounter, 'important');
+    if(el.classList && el.classList.contains('tile')) recordState(el); // save the "brought to front" immediately — not just on drag/resize
     tileControls.style.display = 'block';
     motifControls.style.display = 'none';
     const { sectionId, tag } = selectorFor(el);
