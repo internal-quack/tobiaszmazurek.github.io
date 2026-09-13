@@ -4059,10 +4059,12 @@
 <button id="ep-reopen" type="button" title="Pokaż panel edycji (klawisz H)">Panel ‹</button>
 <script>
 (function(){
+  // Cały mechanizm edytora (setki nasłuchiwaczy, obsługa przeciągania, itd.) jest potrzebny
+  // WYŁĄCZNIE w trybie ?edit — dla zwykłego odwiedzającego (99.9% ruchu) w ogóle się nie uruchamia,
+  // żeby nie obciążać startu strony kodem, którego i tak nigdy nie użyje.
+  if(!new URLSearchParams(window.location.search).has('edit')) return;
   const toggleBtn = document.getElementById('edit-toggle');
-  if(new URLSearchParams(window.location.search).has('edit')){
-    toggleBtn.classList.add('visible');
-  }
+  toggleBtn.classList.add('visible');
   const panel = document.getElementById('edit-panel');
   const txtScaleInput = document.getElementById('ep-txt-scale');
   const txtScaleVal = document.getElementById('ep-txt-val');
