@@ -2524,8 +2524,14 @@
     <div class="project-content">
       <span class="pindex reveal">Projekt 02 / 12</span>
       <h3 class="reveal">Nerd Simulator</h3>
-      <p class="reveal" data-i18n="p1-p">A skoro przed chwilą czytałeś o sprzątaniu kibla — tak, pracowałem też przy grze dosłownie o byciu nerdem. Niezłe zestawienie, co? Krótka, humorystyczna przygodówka point-and-click, w której pomagasz czterdziestoletniemu Mervinowi wyprowadzić się od mamy — przez absurdalne prace dorywcze i jeszcze bardziej absurdalne kłopoty. </p>
-      <p class="reveal" data-i18n="p1-p-split">Odpowiadałem za szeroki zakres gameplayu, między innymi pseudo-klikera, sortowanią śmieci, customizacją pokoju czy pomocniczym pinnym.</p>
+      <p class="reveal" data-i18n="p1-p">A skoro przed chwilą czytałeś o sprzątaniu kibla — tak, pracowałem też przy grze dosłownie o byciu nerdem. Niezłe zestawienie, co? Krótka, humorystyczna przygodówka, w której pomagasz czterdziestoletniemu Mervinowi wyprowadzić się od mamy — przez absurdalne prace dorywcze i jeszcze bardziej absurdalne kłopoty.</p>
+      <p class="reveal" data-i18n="p1-p-split">Odpowiadałem za implementację kluczowych systemów rozgrywki i minigier (w tym systemy prac dorywczych, minigry zręcznościowe oraz pętle mechaniczne). Projektowałem także logikę statystyk i potrzeb bohatera, systemy customizacji pokoju oraz zarządzanie interfejsem i stanem gry.</p>
+      <ul class="reveal" data-i18n="p1-detail-list">
+        <li><strong>Systemy Prac i Minigier</strong>Zaprogramowanie logiki różnorodnych prac dorywczych oraz powiązanych z nimi minigier (m.in. systemy zleceń typu freelance, minigry malowania, sortownie śmieci, czy sekwencje zręcznościowe). Zarządzanie stanami minigier, ich pętlami rozgrywki, warunkami wygranej/przegranej oraz płynnym powrotem do głównej pętli gry.</li>
+        <li><strong>Statystyki Postaci i Zarządzanie Stanem</strong>Implementacja systemu potrzeb bohatera (pęcherz, energia, głód) oraz powiązanego z nimi dynamicznego HUD-a i wskaźników ostrzegawczych. Synchronizacja statystyk z otoczeniem i zdarzeniami losowymi (np. wpływ stanu postaci na przebieg dni i dostępność interakcji).</li>
+        <li><strong>System Customizacyjny i Architektura Pokoju</strong>Stworzenie logiki systemu customizacji pokoju Mervina (zarządzanie meblami, dywanami, spawnowaniem obiektów i zapisem układu pomieszczenia). Walidacja zakupów i integracja elementów wystroju z systemem ekonomicznym gry.</li>
+        <li><strong>UX, Architektura Zapisów i Architektura UI</strong>Wdrożenie i stabilizacja dedykowanych systemów zapisu dla dynamicznych elementów świata, zadań oraz customizacji. Zarządzanie stanami interfejsu (pop-upy, ekrany pauzy, dynamiczne bindy i ekrany kontekstowe).</li>
+      </ul>
       <div class="tags reveal"><span>Unity</span><span>C#</span><span>Steam</span><span>Point & Click</span></div>
       <div class="links reveal">
         <a href="https://store.steampowered.com/app/3128220/Nerd_Simulator/?l=polish" target="_blank" rel="noopener">Steam ↗</a>
@@ -2558,8 +2564,8 @@
     <div class="project-content">
       <span class="pindex reveal">Projekt 03 / 12</span>
       <h3 class="reveal">Indian Lumberjack</h3>
-      <p class="reveal" data-i18n="p5-p">Zręcznościowa, niekończąca się gra — Indianin musi zebrać odpowiednią ilość drewna, aby przetrwać zimę, rozbijając drzewo na części jednym uderzeniem. Zaprogramowałem całość samodzielnie, zarządzając przy tym assetami od zewnętrznych grafików, kompozytorów i twórcy dźwięku oraz wpinając je w grę. </p>
-      <p class="reveal" data-i18n="p5-p-split">To właśnie przy tym projekcie nauczyłem się jak realnie spiąć cały projekt w całość.</p>
+      <p class="reveal" data-i18n="p5-p">Zręcznościowa, niekończąca się gra — Indianin musi zebrać odpowiednią ilość drewna, aby przetrwać zimę, rozbijając drzewo na części jednym uderzeniem. Gra oferuje 3 poziomy trudności oraz różne mapy, więc każde podejście wygląda i gra się nieco inaczej.</p>
+      <p class="reveal" data-i18n="p5-p-split">Zaprogramowałem całość samodzielnie, zarządzając przy tym assetami od zewnętrznych grafików i twórcy dźwięku oraz wpinając je w grę. To właśnie ten projekt nauczył mnie, jak realnie spiąć wszystkie elementy w jedną, spójną całość — od pierwszego prototypu po gotowy produkt.</p>
       <div class="tags reveal"><span>Unity</span><span>C#</span><span>Arcade</span><span>Solo Dev</span></div>
     </div>
     <div class="project-media">
@@ -2596,7 +2602,7 @@
     <div class="project-content">
       <span class="pindex reveal">Projekt 04 / 12</span>
       <h3 class="reveal" data-i18n="pblade-h3">Blade River</h3>
-      <p class="reveal" data-i18n="pblade-p">Zręcznościowy hack and slash z widokiem z góry — walczysz z falami wrogów, łącząc podstawowy atak z czterema umiejętnościami na cooldownie. Zaprogramowałem całość samodzielnie: system walki, AI przeciwników, fale spawnów i cały zestaw skilli.</p>
+      <p class="reveal" data-i18n="pblade-p">Zręcznościowy hack and slash z widokiem z góry — walczysz z falami wrogów, łącząc podstawowy atak z czterema umiejętnościami na cooldownie. Odpowiadałem za system walki, fale przeciwników, przepływ rozgrywki (game flow) oraz cały zestaw umiejętności wraz z systemem obrażeń — całość poza samym AI przeciwników.</p>
       <div class="tags reveal"><span>Unity</span><span>C#</span><span>Hack and Slash</span><span>Solo Dev</span></div>
     </div>
     <div class="project-media">
@@ -2699,6 +2705,7 @@
       <span class="pindex reveal">Projekt 07 / 12</span>
       <h3 class="reveal">Popiel</h3>
       <p class="reveal" data-i18n="p4-p">Pierwsza gra, jaką stworzyłem — w trzyosobowym zespole na Game Jamie PolskiGamedev.pl. Sama gra jest krótka i niezbyt rozbudowana pod względem gameplayu, ale to właśnie przy niej nauczyłem się najwięcej jako początkujący programista. Celem jest pokonanie Popiela poprzez zbieranie myszy na trzech różniących się mapach, które zmieniają się po skompletowaniu wszystkiego, co potrzebne w danej rundzie.</p>
+      <p class="reveal" data-i18n="p4-p-split">Byłem jednym z trzech programistów w zespole — odpowiadałem za gameplay, w tym logikę zbierania myszy, zmianę map oraz warunki zakończenia rundy.</p>
       <div class="tags reveal"><span>Unity</span><span>C#</span><span>Game Jam</span></div>
     </div>
     <div class="project-media">
@@ -2731,8 +2738,9 @@
     <div class="project-content">
       <span class="pindex reveal">Projekt 08 / 12</span>
       <h3 class="reveal">Simply Signals</h3>
-      <p class="reveal" data-i18n="p8-p">Silnie typowany, zero-alokacyjny system komunikacji między systemami gry, zaprojektowany tak, żeby komunikacja cross-assembly przestała być bólem głowy. Zamiast trzymać referencje między modułami albo przepychać dane przez singletony, wystarczy jedno wywołanie — <code>Signals.Send(...)</code> — i dane trafiają dokładnie tam, gdzie trzeba, niezależnie od tego, w którym assembly siedzi odbiorca. Systemy nie muszą nawzajem o sobie wiedzieć, a mimo to swobodnie się komunikują, bez ryzyka konfliktów między dostawcami sygnału w różnych modułach. </p>
-      <p class="reveal" data-i18n="p8-p-split">W planach: wizualny graf zależności pokazujący na żywo, kto z kim rozmawia w danym momencie gry.</p>
+      <p class="reveal" data-i18n="p8-p">Silnie typowany, zero-alokacyjny system komunikacji między systemami gry, zaprojektowany tak, żeby komunikacja cross-assembly przestała być bólem głowy. Jedno wywołanie i dane trafiają tam, gdzie chcemy.</p>
+      <p class="reveal" data-i18n="p8-p-split">Zamiast trzymać referencje między modułami albo przepychać dane przez singletony, wystarczy jedno wywołanie — <code>Signals.Send(...)</code> — i dane trafiają dokładnie tam, gdzie trzeba, niezależnie od tego, w którym assembly siedzi odbiorca.</p>
+      <p class="reveal" data-i18n="p8-detail">Systemy nie muszą nawzajem o sobie wiedzieć, a mimo to swobodnie się komunikują, bez ryzyka konfliktów między dostawcami sygnału w różnych modułach. W planach: wizualny graf zależności pokazujący na żywo, kto z kim rozmawia w danym momencie gry.</p>
       <div class="tags reveal"><span>Source Generators</span><span>IL Weaving</span><span>Cecil</span><span>Zero-Allocation</span></div>
     </div>
     <div class="project-media">
@@ -2763,8 +2771,9 @@
     <div class="project-content">
       <span class="pindex reveal">Projekt 09 / 12</span>
       <h3 class="reveal">Runtime Inspector</h3>
-      <p class="reveal" data-i18n="p9-p">Wysuwana konsola deweloperska działająca w runtime, wewnątrz builda gry — dowolna metoda w kodzie staje się silnie typowaną, wywoływalną komendą (exec), bez pisania osobnego panelu do każdego testu. Każde wywołanie zapisywane jest w logu — dokładnie widać, jaka komenda, z jakimi argumentami i z jakim wynikiem została wykonana, co ułatwia odtworzenie i zgłoszenie buga. </p>
-      <p class="reveal" data-i18n="p9-p-split">Pełny autocomplete z podpowiedziami sygnatur, zagnieżdżanie wywołań oraz undo/redo, dzięki czemu cofnięcie serii testowych zmian to jedna komenda, nie restart sceny — świetne narzędzie do szybkich testów bez podpinania debuggera.</p>
+      <p class="reveal" data-i18n="p9-p">Wysuwana konsola deweloperska działająca w runtime, wewnątrz builda gry — dowolna metoda w kodzie staje się silnie typowaną, wywoływalną komendą (exec), bez pisania osobnego panelu do każdego testu. Inspector wspiera rekurencję.</p>
+      <p class="reveal" data-i18n="p9-p-split">Każde wywołanie zapisywane jest w logu — dokładnie widać, jaka komenda, z jakimi argumentami i z jakim wynikiem została wykonana, co ułatwia odtworzenie i zgłoszenie buga.</p>
+      <p class="reveal" data-i18n="p9-detail">Pełny autocomplete z podpowiedziami sygnatur, zagnieżdżanie wywołań oraz undo/redo, dzięki czemu cofnięcie serii testowych zmian to jedna komenda, nie restart sceny — świetne narzędzie do szybkich testów bez podpinania debuggera.</p>
       <div class="tags reveal"><span>Reflection</span><span>Editor Tools</span><span>Debug Console</span><span>IL2CPP</span></div>
     </div>
     <div class="project-media">
@@ -2795,7 +2804,14 @@
     <div class="project-content">
       <span class="pindex reveal">Projekt 10 / 12</span>
       <h3 class="reveal" data-i18n="p10-h3">Narzędzia edytorskie</h3>
-      <p class="reveal" data-i18n="p10-p">Nikt nie chwali się narzędziami edytorskimi na pierwszej rozmowie kwalifikacyjnej, a to one najbardziej przyspieszają pracę całego zespołu. Zestaw mniejszych narzędzi używanych codziennie: Anchor Converter konwertujący UI na anchory względne do ekranu, Font Auto-Size Converter ujednolicający skalowanie tekstów pod różne rozdzielczości, oraz Interface Drawer serializujący interfejsy w Inspectorze — czego Unity domyślnie nie potrafi. Całość spięta własnym systemem wstrzykiwania referencji przez atrybuty i reflection oraz atrybutem <code>[OnValueChange]</code> generującym backing field przez IL Weaving.</p>
+      <p class="reveal" data-i18n="p10-p">Nikt nie chwali się narzędziami edytorskimi na pierwszej rozmowie kwalifikacyjnej, a to one najbardziej przyspieszają pracę całego zespołu. Zestaw mniejszych narzędzi używanych codziennie:</p>
+      <ul class="reveal" data-i18n="p10-p-split">
+        <li><strong>Anchor Converter</strong>Konwertujący UI na anchory względne do ekranu.</li>
+        <li><strong>Font Auto-Size Converter</strong>Ujednolicający skalowanie tekstów pod różne rozdzielczości.</li>
+        <li><strong>Interface Drawer</strong>Serializujący interfejsy w Inspectorze — czego Unity domyślnie nie potrafi.</li>
+      </ul>
+      <div class="reveal" data-i18n="p10-detail-intro" style="font-size:0.9375rem; color:var(--text-dim); margin-top:0.5rem;">A także wiele więcej (sprawdź szczegółowy opis).</div>
+      <p class="reveal" data-i18n="p10-detail">Całość spięta własnym systemem wstrzykiwania referencji przez atrybuty i reflection oraz atrybutem <code>[OnValueChange]</code> generującym backing field przez IL Weaving.</p>
       <div class="tags reveal"><span>Custom Editor</span><span>Property Drawer</span><span>C# Reflection</span><span>IL Weaving</span></div>
     </div>
     <div class="project-media">
@@ -3401,25 +3417,32 @@
       'skills-items1':'C# (advanced), C/C++ (basic), Python',
       'skills-items2':'Unity (advanced, URP), Unreal Engine 5 (basic)',
 
-      'p1-p':'And since you were just reading about scrubbing a toilet — yes, I also made a game literally about being a nerd. Quite the pairing. A short, comedic point-and-click adventure where you help forty-year-old Mervin move out of his mom\'s house — through absurd odd jobs and even more absurd trouble. ',
-      'p1-p-split':'I was responsible for a broad range of gameplay, including a pseudo-clicker, trash sorting, room customization, and a helper pin system.',
+      'p1-p':'And since you were just reading about scrubbing a toilet — yes, I also made a game literally about being a nerd. Quite the pairing. A short, comedic adventure where you help forty-year-old Mervin move out of his mom\'s house — through absurd odd jobs and even more absurd trouble.',
+      'p1-p-split':'I was responsible for implementing key gameplay and minigame systems (including odd-job systems, arcade-style minigames, and mechanical loops). I also designed the character stats/needs logic, the room customization system, and managed the UI and game state.',
+      'p1-detail-list':'<li><strong>Job & Minigame Systems</strong>Programmed the logic for a variety of odd jobs and their related minigames (e.g. freelance-style gig systems, painting minigames, trash sorting, and arcade sequences). Managed minigame states, gameplay loops, win/lose conditions, and a smooth return to the main game loop.</li><li><strong>Character Stats & State Management</strong>Implemented the character needs system (bladder, energy, hunger) along with a dynamic HUD and warning indicators. Synced stats with the environment and random events (e.g. how character state affects the flow of days and interaction availability).</li><li><strong>Customization System & Room Architecture</strong>Built the logic for Mervin\'s room customization system (managing furniture, rugs, object spawning, and saving room layouts). Purchase validation and integration of decor items with the game\'s economy system.</li><li><strong>UX, Save Architecture & UI Architecture</strong>Implemented and stabilized dedicated save systems for dynamic world elements, quests, and customization. Managed UI states (pop-ups, pause screens, dynamic keybinds, and contextual screens).</li>',
       'p2-p':'Yes, it\'s literally a simulator about cleaning a public restroom — sometimes the best gameplay hides in the least glamorous premise. Clean up, charge fees, kick out freeloaders, and grow your bathroom empire. ',
       'p2-p-split':'I was responsible for a broad range of gameplay systems — from early prototypes through to polished, finished mechanics. This was the project where I learned the real requirements of the platform, as well as the process of shipping a game on Steam.',
       'p2-detail-list':'<li><strong>Core Gameplay Systems</strong>Designing and implementing the main gameplay loops, player-environment interactions, and unique tool/minigame mechanics (e.g. economic minigames and NPC interactions).</li><li><strong>Game Architecture &amp; State Management</strong>Building core systems that manage game state, including an advanced save system (world and economy save/load), a dynamic calendar, and time/economy systems.</li><li><strong>Player Onboarding &amp; UX</strong>Building player-support systems — from a logical tutorial flow to notification systems, contextual hints, and settings panels (including control rebinding).</li><li><strong>Optimization &amp; Steam Deployment</strong>Keeping the codebase stable and performant, optimizing systems, and adapting the project to the technical and publishing requirements of the Steam platform.</li>',
       'p3-h3':'Space Defense',
       'p3-p':'A cyberpunk-styled Tower Defense — you defend a path from waves of enemies by placing and upgrading defense turrets. Built as a university project with a four-person team, run fully by SCRUM — short sprints, stand-ups, retrospectives, planning. I was the gameplay programmer.',
       'p4-p':'The first game I ever made — in a three-person team at the PolskiGamedev.pl Game Jam. The game itself is short and not exactly deep in terms of gameplay, but it\'s where I learned the most as a beginner programmer. The goal is to defeat Popiel by collecting mice across three different maps, which change once you\'ve gathered everything needed for that round.',
-      'p5-p':'An endless arcade game — a lumberjack has to gather enough wood to survive winter, chopping a tree into pieces with a single hit. I coded the whole thing myself, managing assets from external artists, composers, and a sound designer and wiring them into the game. ',
-      'p5-p-split':'This was the project where I learned how to actually tie a whole project together end to end.',
-      'pblade-p':'A top-down hack and slash — you fight off waves of enemies, combining a basic attack with four cooldown-based skills. I coded the whole thing myself: the combat system, enemy AI, spawn waves, and the full skill set.',
+      'p4-p-split':'I was one of three programmers on the team — I was responsible for gameplay, including the mouse-collecting logic, map switching, and round-end conditions.',
+      'p5-p':'An endless arcade game — a lumberjack has to gather enough wood to survive winter, chopping a tree into pieces with a single hit. The game offers 3 difficulty levels and different maps, so every run looks and plays a little differently.',
+      'p5-p-split':'I coded the whole thing myself, managing assets from external artists and a sound designer and wiring them into the game. This was the project that taught me how to really tie every piece together into one coherent whole — from the first prototype to the finished product.',
+      'pblade-p':'A top-down hack and slash — you fight off waves of enemies, combining a basic attack with four cooldown-based skills. I was responsible for the combat system, enemy waves, game flow, and the full skill set along with the damage system — everything except the enemy AI itself.',
       'p6-p':"A multi-level arcade game made at a game jam — you play a galaxy defender saving a cat planet from destruction, destroying enemy comets and dodging attacks. Each planet is its own self-contained minigame, with its own set of threats. I was the programmer, responsible for every layer of gameplay — from controls and collision, through enemy wave logic, to the scoring system and transitions between planets.",
       'p7-p':'My own game, which I\'m building myself — pitched as <em>“Overcooked meets base defense”</em>. You defend a backyard from living, attacking food, cook it up on the grill, and race to serve hungry guests before the forest breaks through the fence. Co-op for 1–4 players. I\'m aiming to release a demo in January 2027 — I\'ll leave the rest as a surprise.',
       'p8-p':'A strongly-typed, zero-allocation communication system between game systems, built so cross-assembly communication stops being a headache. Instead of holding references between modules or pushing data through singletons, one call — <code>Signals.Send(...)</code> — is enough, and the data lands exactly where it needs to, no matter which assembly the receiver lives in. Systems don\'t need to know about each other, yet they communicate freely, with no risk of signal-provider conflicts across modules. ',
-      'p8-p-split':'Coming up: a visual dependency graph showing, live, who\'s talking to whom at any given moment in the game.',
+      'p8-p-split':'Instead of holding references between modules or pushing data through singletons, one call — <code>Signals.Send(...)</code> — is enough, and the data lands exactly where it needs to, no matter which assembly the receiver lives in.',
+      'p8-detail':'Systems don\'t need to know about each other, yet they communicate freely, with no risk of conflicts between signal providers across different modules. Coming up: a visual dependency graph showing, live, who\'s talking to whom at any given moment in the game.',
       'p9-p':'A slide-out developer console that runs at runtime, inside the game build — any method in the code becomes a strongly-typed, callable command (exec), with no need to write a dedicated panel for every test. Every call gets logged — you can see exactly which command ran, with which arguments, and what it returned, which makes reproducing and reporting bugs far easier. ',
-      'p9-p-split':'Full autocomplete with signature hints, command nesting, and undo/redo, so rolling back a batch of test changes is one command, not a scene restart — great for fast testing without ever attaching a debugger.',
+      'p9-p-split':'Every call gets logged — you can see exactly which command ran, with what arguments, and what result, making it much easier to reproduce and report a bug.',
+      'p9-detail':'Full autocomplete with signature hints, command nesting, and undo/redo, so rolling back a batch of test changes is one command, not a scene restart — great for fast testing without ever attaching a debugger.',
       'p10-h3':'Editor Tools',
-      'p10-p':'Nobody brags about editor tools in a first interview, yet they\'re what speeds up the whole team the most. A set of smaller tools used daily: an Anchor Converter that turns UI elements into screen-relative anchors, a Font Auto-Size Converter that unifies text scaling across resolutions, and an Interface Drawer that serializes interfaces in the Inspector — something Unity can\'t do out of the box. All tied together by my own attribute- and reflection-based reference injection system, plus the <code>[OnValueChange]</code> attribute that generates a backing field via IL Weaving.',
+      'p10-p':'Nobody brags about editor tools in a first interview, yet they\'re what speeds up the whole team the most. A set of smaller tools used daily:',
+      'p10-p-split':'<li><strong>Anchor Converter</strong>Turns UI elements into screen-relative anchors.</li><li><strong>Font Auto-Size Converter</strong>Unifies text scaling across resolutions.</li><li><strong>Interface Drawer</strong>Serializes interfaces in the Inspector — something Unity can\'t do out of the box.</li>',
+      'p10-detail-intro':'And a lot more (see the detailed description).',
+      'p10-detail':'All tied together by my own attribute- and reflection-based reference injection system, plus the <code>[OnValueChange]</code> attribute that generates a backing field via IL Weaving.',
       'p11-h3':'Systems',
       'p11-p':"These aren't big, standalone products — they're smaller support systems that speed up my day-to-day game dev work. Once they hit a more stable version, I plan to release them publicly, for free:",
       'p11-list':'<li><strong>LScene</strong> — a scene loader with network-loading support, built around a core / menu / map architecture</li><li><strong>Storex</strong> — a game-state save system</li><li><strong>Config Injector</strong> — reflection-based config injection from Resources</li><li><strong>Hermes</strong> — my own opinionated DI architecture inspired by Zenject</li>',
