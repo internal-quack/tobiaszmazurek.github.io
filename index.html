@@ -396,11 +396,16 @@
     box-sizing:border-box;
   }
   section.in-view{opacity:1;}
+  section:not(.in-view){
+    content-visibility:hidden;
+    contain-intrinsic-size:0 100vh;
+  }
   @media (prefers-reduced-motion: reduce){
     section{opacity:1; transition:none;}
   }
   @media (max-width:860px){
     section{padding:90px 24px; height:auto; min-height:100vh; width:100% !important; opacity:1;}
+    section:not(.in-view){ content-visibility:visible; } /* na mobile sekcje układają się pionowo jedna pod drugą — ukrywanie treści psułoby zwykłe przewijanie */
   }
   .inner{
     position:relative;
@@ -2066,7 +2071,6 @@
   #project-9 .project-media{ transform:translate(1.294rem,-1.630rem); }
   #project-10 .project-content{ transform:translate(-3.452rem,0.000rem) scale(0.9); transform-origin:center; }
   #project-11 .project-content{ transform:translate(-0.288rem,7.718rem) scale(0.9); transform-origin:center; }
-  #about-technical .project-content{ transform:translate(5.034rem,0.767rem) scale(0.8); transform-origin:center; }
   #about-life .project-content{ transform:translate(-11.649rem,0.000rem) scale(0.9); transform-origin:center; }
   /* ===== Szybkie podsumowanie (modal dla rekruterów bez czasu na scrollowanie) ===== */
   #summary-modal{
