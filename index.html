@@ -5158,7 +5158,17 @@
       alert('Ta sekcja nie ma kolażu wielu zdjęć (może mieć tylko jedno zdjęcie) — dodawanie nie jest tu wspierane.');
       return;
     }
-    addedTileCounter++;
+    // Find the next free tile-newN number by looking at what's ACTUALLY already in this
+    // section's collage — not just a session counter, which has no idea that a tile-new1
+    // might already exist from an earlier editing session (baked into the static HTML).
+    // Relying on the counter alone caused two different added photos to both end up named
+    // "tile-new1", silently overwriting each other's CSS rule.
+    let maxExisting = 0;
+    collage.querySelectorAll('[class*="tile-new"]').forEach(function(existingEl){
+      const mm = Array.from(existingEl.classList).find(function(c){ return /^tile-new\d+$/.test(c); });
+      if(mm){ const n = parseInt(mm.replace('tile-new', ''), 10); if(n > maxExisting) maxExisting = n; }
+    });
+    addedTileCounter = Math.max(addedTileCounter, maxExisting) + 1;
     const tag = 'tile-new' + addedTileCounter;
     const el = document.createElement('div');
     el.className = 'tile ' + tag;
