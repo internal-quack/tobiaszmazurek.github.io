@@ -1428,11 +1428,11 @@
   #about-life .tile{ transition:transform .35s cubic-bezier(.22,1,.36,1), z-index 0s; cursor:default; }
   body:not(.edit-mode) #about-life .tile:hover{ transform:rotate(0deg) scale(1.07) !important; z-index:500 !important; }
   #about-life .tile:hover .about-photo{ box-shadow:0 28px 55px -18px rgba(0,0,0,.85); }
-  #about-life .tile-a{ width:34.00%; height:35%; aspect-ratio:auto; top:5.83%; left:5.44%; transform:rotate(-6deg); z-index:1; }
-  #about-life .tile-b{ width:33.00%; height:43%; aspect-ratio:auto; top:42.23%; left:36.61%; transform:rotate(5deg); z-index:3; }
-  #about-life .tile-c{ width:38.00%; height:45%; aspect-ratio:auto; top:48.59%; left:57.57%; transform:rotate(10deg); z-index:4; }
-  #about-life .tile-d{ width:40.00%; height:48%; aspect-ratio:auto; top:44.37%; left:4.5%; transform:rotate(-4deg); z-index:5; }
-  #about-life .tile-new1{ width:56.00%; height:35%; aspect-ratio:auto; top:7.36%; left:37.57%; transform:rotate(10deg); z-index:2; }
+  #about-life .tile-a{ width:34.00%; height:35%; aspect-ratio:auto; top:5.83%; left:5.44%; transform:rotate(-6deg); z-index:4; }
+  #about-life .tile-b{ width:33.00%; height:43%; aspect-ratio:auto; top:42.23%; left:36.61%; transform:rotate(5deg); z-index:1; }
+  #about-life .tile-c{ width:38.00%; height:45%; aspect-ratio:auto; top:48.59%; left:57.57%; transform:rotate(10deg); z-index:2; }
+  #about-life .tile-d{ width:40.00%; height:48%; aspect-ratio:auto; top:44.12%; left:4.36%; transform:rotate(-4deg); z-index:3; }
+  #about-life .tile-new1{ width:45.00%; height:26%; aspect-ratio:auto; top:16.17%; left:50.73%; transform:rotate(3deg); z-index:6; }
   #about-life .tile .about-photo{ width:100%; height:100%; aspect-ratio:auto; }
 
   /* ===== 3 photos ===== */
@@ -3061,18 +3061,18 @@
     <div class="project-media">
       <div class="tile-collage" data-count="4" data-layout="2">
         <div class="tile tile-a">
-          <div class="about-photo" style="background-image:url('images/tak-to-ja-3.jpg?v=1')" role="img" aria-label="Zdjęcie: ja"></div>
+          <div class="about-photo" style="background-image:url('images/tak-to-ja-1.jpg?v=1')" role="img" aria-label="Zdjęcie: ja"></div>
         </div>
         <div class="tile tile-b has-tape tape-right">
-          <div class="about-photo" style="background-image:url('images/tak-to-ja-2.jpg?v=1')" role="img" aria-label="Zdjęcie: squash"></div>
+          <div class="about-photo" style="background-image:url('images/tak-to-ja-5.jpg?v=1')" role="img" aria-label="Zdjęcie: squash"></div>
         </div>
         <div class="tile tile-c has-tape tape-left">
-          <div class="about-photo" style="background-image:url('images/tak-to-ja-4.jpg?v=1')" role="img" aria-label="Zdjęcie: bieganie"></div>
+          <div class="about-photo" style="background-image:url('images/tak-to-ja-6.jpg?v=1')" role="img" aria-label="Zdjęcie: bieganie"></div>
         </div>
         <div class="tile tile-d">
-          <div class="about-photo" style="background-image:url('images/tak-to-ja-1.jpg?v=1')" role="img" aria-label="Zdjęcie: widok z podróży"></div>
+          <div class="about-photo" style="background-image:url('images/tak-to-ja-4.jpg?v=1')" role="img" aria-label="Zdjęcie: widok z podróży"></div>
         </div>
-        <div class="tile tile-new1"><div class="about-photo" style="background-image:url('images/tak-to-ja-7.jpg')"></div></div>
+        <div class="tile tile-new1"><div class="about-photo" style="background-image:url('images/tak-to-ja-3.jpg')"></div></div>
       </div>
     </div>
   </div>
@@ -3867,30 +3867,42 @@
     lightbox.classList.add('active');
     lightbox.setAttribute('aria-hidden', 'false');
 
-    // Automatically pulls in further numbered photos beyond the visible tiles
-    // (e.g. visible ones are takto-1..4.jpg — try takto-5.jpg, 6.jpg... until one doesn't exist).
-    // This means files can be added to the images/ folder without changing the code.
+    // Automatically pulls in further numbered photos beyond the visible tiles —
+    // checks EVERY number from 1 up (skipping ones already shown as static tiles), not just
+    // ones above the current highest tile, so a gap (e.g. a missing #6 between a static #4 and
+    // #7) doesn't hide higher numbers that do exist. This means files can be added to the
+    // images/ folder without changing the code, in any order.
     const firstUrl = currentGroup[0] && currentGroup[0].url;
     const m = firstUrl && firstUrl.match(/^(.*?)(\d+)(\.[a-zA-Z0-9]+)(\?.*)?$/);
     if(m){
       const prefix = m[1], ext = m[3];
+      const existingNums = new Set();
       let maxNum = 0;
       currentGroup.forEach(function(item){
         const mm = item.url.match(/(\d+)(\.[a-zA-Z0-9]+)(\?.*)?$/);
-        if(mm){ const n = parseInt(mm[1], 10); if(n > maxNum) maxNum = n; }
+        if(mm){ const n = parseInt(mm[1], 10); existingNums.add(n); if(n > maxNum) maxNum = n; }
       });
+      function resortGroup(){
+        currentGroup.sort(function(a, b){
+          const na = (a.url.match(/(\d+)(\.[a-zA-Z0-9]+)(\?.*)?$/) || [])[1];
+          const nb = (b.url.match(/(\d+)(\.[a-zA-Z0-9]+)(\?.*)?$/) || [])[1];
+          return (parseInt(na, 10) || 0) - (parseInt(nb, 10) || 0);
+        });
+      }
       (function probe(n, triesLeft){
-        if(triesLeft <= 0) return;
+        if(triesLeft <= 0 || n > maxNum + 15) return; // stop once well past the highest known number
+        if(existingNums.has(n)){ probe(n + 1, triesLeft - 1); return; } // already a static tile — don't re-fetch it
         const testUrl = prefix + n + ext + '?v=1';
         const img = new Image();
         img.onload = function(){
           currentGroup.push({ url: testUrl, alt: '' });
+          resortGroup();
           if(currentGroup.length > 1){ lbPrev.hidden = false; lbNext.hidden = false; }
           probe(n + 1, triesLeft - 1);
         };
-        img.onerror = function(){}; // brak kolejnego pliku — koniec doszukiwania
+        img.onerror = function(){ probe(n + 1, triesLeft - 1); }; // missing file — skip it, keep trying higher numbers
         img.src = testUrl;
-      })(maxNum + 1, 30);
+      })(1, 30);
     }
   }
   function closeLightbox(){
