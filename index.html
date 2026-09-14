@@ -5507,25 +5507,46 @@
     // set small, tidy values (1,2,3...) SEPARATELY within each section — this preserves
     // the "what's on top of what" order, but never creeps toward unsafe numbers.
     (function normalizeZIndex(){
-      const bySection = new Map();
-      tileState.forEach(function(v, key){
+      const sectionIds = new Set();
+      tileState.forEach(function(v){
         if(deletedTiles.has(v.sectionId + ' :: ' + v.tag)) return;
-        if(!bySection.has(v.sectionId)) bySection.set(v.sectionId, []);
-        bySection.get(v.sectionId).push(v);
+        sectionIds.add(v.sectionId);
       });
-      bySection.forEach(function(list){
-        list.sort(function(a, b){ return (parseFloat(a.zIndex) || 0) - (parseFloat(b.zIndex) || 0); });
+      sectionIds.forEach(function(sectionId){
+        // Pull in EVERY tile actually present in this section's collage — not just the
+        // ones that happen to already be in tileState — so clicking just ONE photo to
+        // bring it forward doesn't get treated as "the only tile in this section".
+        const els = Array.from(document.querySelectorAll('#' + sectionId + ' .tile-collage .tile'));
+        const list = els.map(function(el){
+          const tag = Array.from(el.classList).find(function(c){ return c !== 'tile' && c !== 'edit-active' && !c.startsWith('has-tape') && !c.startsWith('tape-'); });
+          if(deletedTiles.has(sectionId + ' :: ' + tag)) return null;
+          const z = parseFloat(el.style.zIndex) || parseFloat(getComputedStyle(el).zIndex) || 0;
+          return { el, tag, zIndex: z };
+        }).filter(Boolean);
+        list.sort(function(a, b){ return a.zIndex - b.zIndex; });
         list.forEach(function(v, i){
           const newZ = i + 1;
-          v.zIndex = newZ;
-          const el = document.querySelector('#' + v.sectionId + ' .' + v.tag);
-          if(el) el.style.setProperty('z-index', newZ, 'important');
+          v.el.style.setProperty('z-index', newZ, 'important');
+          const key = sectionId + ' :: ' + v.tag;
+          const existing = tileState.get(key);
+          if(existing){
+            existing.zIndex = newZ;
+          } else {
+            // Wasn't individually edited before — record just enough so the export includes its z-index too.
+            tileState.set(key, { sectionId: sectionId, tag: v.tag, left: null, top: null, width: null, height: null, rotate: null, aspect: null, zIndex: newZ });
+          }
         });
       });
       zCounter = 10;
     })();
     tileState.forEach(function(v){
       if(deletedTiles.has(v.sectionId + ' :: ' + v.tag)) return; // deleted - don't export its position
+      if(v.width === null){
+        // Was never individually edited — only picked up so its z-index (stacking order)
+        // could be normalized. Export just that, not a full block with "width:null".
+        css += '#' + v.sectionId + ' .' + v.tag + '{ z-index:' + v.zIndex + ' !important; }\n';
+        return;
+      }
       const posProps = [];
       if(v.top) posProps.push('top:' + v.top + ';');
       if(v.left) posProps.push('left:' + v.left + ';');
