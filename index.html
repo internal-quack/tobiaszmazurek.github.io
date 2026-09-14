@@ -1428,10 +1428,10 @@
   #about-life .tile{ transition:transform .35s cubic-bezier(.22,1,.36,1), z-index 0s; cursor:default; }
   body:not(.edit-mode) #about-life .tile:hover{ transform:rotate(0deg) scale(1.07) !important; z-index:500 !important; }
   #about-life .tile:hover .about-photo{ box-shadow:0 28px 55px -18px rgba(0,0,0,.85); }
-  #about-life .tile-a{ width:34.00%; height:35%; aspect-ratio:auto; top:5.83%; left:5.44%; transform:rotate(-6deg); z-index:2; }
-  #about-life .tile-b{ width:33.00%; height:43%; aspect-ratio:auto; top:42.23%; left:36.61%; transform:rotate(5deg); z-index:4; }
-  #about-life .tile-c{ width:38.00%; height:45%; aspect-ratio:auto; top:48.59%; left:57.57%; transform:rotate(10deg); z-index:5; }
-  #about-life .tile-d{ width:40.00%; height:48%; aspect-ratio:auto; top:44.37%; left:4.5%; transform:rotate(-4deg); z-index:1; }
+  #about-life .tile-a{ width:34.00%; height:35%; aspect-ratio:auto; top:5.83%; left:5.44%; transform:rotate(-6deg); z-index:1; }
+  #about-life .tile-b{ width:33.00%; height:43%; aspect-ratio:auto; top:42.23%; left:36.61%; transform:rotate(5deg); z-index:3; }
+  #about-life .tile-c{ width:38.00%; height:45%; aspect-ratio:auto; top:48.59%; left:57.57%; transform:rotate(10deg); z-index:4; }
+  #about-life .tile-d{ width:40.00%; height:48%; aspect-ratio:auto; top:44.37%; left:4.5%; transform:rotate(-4deg); z-index:5; }
   #about-life .tile-new1{ width:56.00%; height:35%; aspect-ratio:auto; top:7.36%; left:37.57%; transform:rotate(10deg); z-index:2; }
   #about-life .tile .about-photo{ width:100%; height:100%; aspect-ratio:auto; }
 
@@ -1469,9 +1469,9 @@
   #project-6 .tile-d{ width:65.00%; height:32%; aspect-ratio:auto; top:34%; left:31.23%; transform:rotate(10deg); z-index:3; }
   #project-blade .project-media{ flex-basis:30rem; max-width:30rem; }
   #project-blade .tile-collage{ width:30rem; max-width:100%; }
-  #project-blade .tile-a{ width:67.00%; height:33%; aspect-ratio:auto; top:33.5%; left:14.2%; transform:rotate(5deg); z-index:1; }
-  #project-blade .tile-b{ width:75.00%; height:35%; aspect-ratio:auto; top:56.75%; left:9.07%; transform:rotate(-3deg); z-index:2; }
-  #project-blade .tile-c{ width:60.00%; height:29%; aspect-ratio:auto; top:10.52%; left:20%; transform:rotate(-8deg); z-index:3; }
+  #project-blade .tile-a{ width:67.00%; height:33%; aspect-ratio:auto; top:33.5%; left:14.2%; transform:rotate(5deg); z-index:2; }
+  #project-blade .tile-b{ width:75.00%; height:35%; aspect-ratio:auto; top:56.75%; left:9.07%; transform:rotate(-3deg); z-index:3; }
+  #project-blade .tile-c{ width:60.00%; height:29%; aspect-ratio:auto; top:10.52%; left:20%; transform:rotate(-8deg); z-index:1; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-a{ width:58%; aspect-ratio:4/5; top:7%; left:8%; transform:rotate(-3.6deg); z-index:4; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-b{ width:36%; aspect-ratio:4/5; top:7%; right:8%; transform:rotate(7.2deg); z-index:3; }
   .tile-collage[data-count="4"][data-layout="4"] .tile-c{ width:36%; aspect-ratio:4/5; bottom:7%; right:8%; transform:rotate(-7.2deg); z-index:2; }
@@ -1658,7 +1658,25 @@
   }
   @media (max-width:860px){
     .project-row{ flex-direction:column !important; gap:28px; }
-    .project-media{ flex:0 0 auto; width:100%; }
+    .project-media{ flex:0 0 auto !important; width:100% !important; max-width:100% !important; max-height:none !important; transform:none !important; }
+    /* Every #project-X .tile-collage / .tile-a / .tile-b ... rule set throughout the site is
+       tuned for desktop and has higher CSS specificity than a plain .tile-collage rule — so on
+       mobile it would otherwise win and render at its full desktop size/position, regardless of
+       screen width. !important here forces ALL of them back to one simple, predictable mobile
+       layout: a plain 2-column grid instead of the rotated, absolutely-positioned desktop "fan". */
+    .tile-collage{
+      width:100% !important; max-width:420px !important; height:auto !important;
+      aspect-ratio:auto !important; display:grid !important; grid-template-columns:1fr 1fr !important;
+      gap:0.625rem !important; padding:0 !important; margin:1.5rem auto 0.5rem !important;
+    }
+    .tile-collage[data-count="1"], .tile-collage[data-count="2"]{ grid-template-columns:1fr 1fr !important; }
+    .tile-collage[data-count="3"] .tile:first-child{ grid-column:1 / 3 !important; }
+    .tile{
+      position:relative !important; width:100% !important; height:auto !important;
+      aspect-ratio:4/5 !important; top:auto !important; left:auto !important; right:auto !important;
+      bottom:auto !important; transform:none !important; z-index:auto !important;
+    }
+    .tile .about-photo{ width:100% !important; height:100% !important; }
   }
   .project-content .pindex{
     display:block;
@@ -2133,6 +2151,7 @@
      sideways than the available space allows, regardless of window width or aspect ratio. */
   #hero .inner{ transform:translate(0.000rem,-2.157rem) scale(0.8); transform-origin:center; }
   #career .inner{ transform:translate(0.000rem,0.000rem) scale(1); transform-origin:center; }
+  #roadmap .inner{ transform:translate(0.000rem,0.000rem) scale(1); transform-origin:center; }
   #skills .inner{ transform:translate(0.000rem,0.000rem) scale(0.9); transform-origin:center; }
   #contact .inner{ transform:translate(0.000rem,-0.959rem) scale(0.9); transform-origin:center; }
   #project-12 .project-content{ transform:translate(0.000rem,-0.911rem) scale(0.9); transform-origin:center; }
@@ -2952,6 +2971,16 @@
         <span class="roadmap-name">Wild Bar</span>
         <span class="roadmap-status" data-i18n="roadmap-status-0">W produkcji</span>
       </div>
+      <div class="roadmap-item">
+        <span class="roadmap-dot"></span>
+        <span class="roadmap-name">Simply Signals</span>
+        <span class="roadmap-status" data-i18n="roadmap-status-1">Rozwijam dalej — cel: Unity Asset Store</span>
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-dot"></span>
+        <span class="roadmap-name">Runtime Inspector</span>
+        <span class="roadmap-status" data-i18n="roadmap-status-2">Rozwijam dalej — cel: Unity Asset Store</span>
+      </div>
     </div>
   </div>
 </section>
@@ -3406,6 +3435,8 @@
       'roadmap-h3':"What's next",
       'roadmap-p':"What I'm currently working on, or planning to pick up soon:",
       'roadmap-status-0':'In production',
+      'roadmap-status-1':'Still developing — aiming for the Unity Asset Store',
+      'roadmap-status-2':'Still developing — aiming for the Unity Asset Store',
       'nav-editor':'Editor Tools','nav-wip':'More',
 
       'hero-loc':'open to remote / relocation',
@@ -3462,6 +3493,7 @@
       'p4-p-split':'I was the lead programmer on the team — I was responsible for gameplay, including the mouse-collecting logic, map switching, and round-end conditions.',
       'p5-p':'An endless arcade game — a lumberjack has to gather enough wood to survive winter, chopping a tree into pieces with a single hit. The game offers 3 difficulty levels and different maps, so every run looks and plays a little differently.',
       'p5-p-split':'I coded the whole thing myself, managing assets from external artists and a sound designer and wiring them into the game. This was the project that taught me how to really tie every piece together into one coherent whole — from the first prototype to the finished product.',
+      'pblade-h3':'Blade River',
       'pblade-p':'A top-down hack and slash — you fight off waves of enemies, combining a basic attack with four cooldown-based skills.',
       'pblade-p-split':'I was responsible for the combat system, enemy waves, game flow, and the full skill set along with the damage system — everything except the enemy AI itself.',
       'p6-p':'A multi-level arcade game made at a game jam — you play a galaxy defender saving a cat planet from destruction, destroying enemy comets and dodging attacks. Each planet is its own self-contained minigame, with its own set of threats.',
