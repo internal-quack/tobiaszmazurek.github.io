@@ -2351,8 +2351,8 @@
   </ul>
   <div class="foot">
     <a href="mailto:tobiasz7182@gmail.com">tobiasz7182@gmail.com</a>
-    <a href="https://github.com/veli-dev" target="_blank" rel="noopener">GitHub ↗</a>
-    <a href="https://sites.google.com/view/tobiasz-mazurek-v2/strona-g%C5%82%C3%B3wna" target="_blank" rel="noopener" data-i18n="foot-more">Więcej projektów ↗</a>
+    <a href="https://github.com/internal-quack" target="_blank" rel="noopener" data-i18n="foot-github-new">GitHub (nowy) ↗</a>
+    <a href="https://github.com/Tobiasz2817" target="_blank" rel="noopener" data-i18n="foot-github-old">GitHub (stary) ↗</a>
   </div>
 </nav>
 
@@ -3136,8 +3136,8 @@
     <p class="reveal" data-i18n="contact-p2">Jeśli masz ochotę pogadać o branży albo po prostu o game devie — zawsze chętnie się spotkam, a jeśli akurat jesteś w okolicy, może się nawet uda wyskoczyć na piwo.</p>
     <div class="contact-links reveal">
       <a href="mailto:tobiasz7182@gmail.com">Email <span class="arrow">tobiasz7182@gmail.com</span></a>
-      <a href="https://github.com/veli-dev" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
-      <a href="https://sites.google.com/view/tobiasz-mazurek-v2/strona-g%C5%82%C3%B3wna" target="_blank" rel="noopener" data-i18n="contact-more">Więcej projektów <span class="arrow">↗</span></a>
+      <a href="https://github.com/internal-quack" target="_blank" rel="noopener" data-i18n="contact-github-new">GitHub (nowy) <span class="arrow">↗</span></a>
+      <a href="https://github.com/Tobiasz2817" target="_blank" rel="noopener" data-i18n="contact-github-old">GitHub (stary) <span class="arrow">↗</span></a>
       <a href="CV_Tobiasz_Mazurek.pdf" target="_blank" rel="noopener">CV (PDF) <span class="arrow">↓</span></a>
       <a href="Referencje.pdf" target="_blank" rel="noopener" data-i18n="contact-reference">Referencja (PDF) <span class="arrow">↓</span></a>
     </div>
@@ -3394,6 +3394,17 @@
       }
     });
   });
+  // Exposed so [data-jump] links added later in the document (e.g. inside the summary
+  // modal, which is defined further down in the HTML and so misses the listener above)
+  // can navigate using this exact same desktop-track / mobile-scroll logic.
+  window.__pageJump = function(targetId){
+    if(isDesktop()){
+      const i = sections.findIndex(s => s.id === targetId);
+      if(i !== -1) goTo(i);
+    } else {
+      document.getElementById(targetId)?.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+  };
 
   // --- On resize, resync section widths and slide position ---
   window.addEventListener('resize', () => {
@@ -3522,9 +3533,11 @@
       'contact-p1':'Looking for a Unity Developer to work with — full-time, project-based, or a one-off job? Reach out, I usually reply within 24h.',
       'contact-p2':"If you'd like to talk shop or just chat about game dev in general — I'm always up for it, and if you're nearby, we might even grab a beer.",
       'contact-p3':"By the way — like this site? I also build ones like it on commission, and teach Unity one-on-one. Let me know if either sounds interesting.",
-      'contact-more':'More projects <span class="arrow">↗</span>',
       'contact-reference':'Reference (PDF) <span class="arrow">↓</span>',
-      'foot-more':'More projects ↗',
+      'contact-github-new':'GitHub (new) <span class="arrow">↗</span>',
+      'contact-github-old':'GitHub (old) <span class="arrow">↗</span>',
+      'foot-github-new':'GitHub (new) ↗',
+      'foot-github-old':'GitHub (old) ↗',
       'contact-copyright':'© 2026 Tobiasz Mazurek',
     };
 
@@ -4044,8 +4057,8 @@
       <h4>Kontakt</h4>
       <div class="sum-projects">
         <a href="mailto:tobiasz7182@gmail.com" class="sum-project"><strong>Email</strong><span>tobiasz7182@gmail.com</span></a>
-        <a href="https://github.com/veli-dev" target="_blank" rel="noopener" class="sum-project"><strong>GitHub</strong><span>github.com/veli-dev ↗</span></a>
-        <a href="https://sites.google.com/view/tobiasz-mazurek-v2/strona-g%C5%82%C3%B3wna" target="_blank" rel="noopener" class="sum-project"><strong>Więcej projektów</strong><span>portfolio ↗</span></a>
+        <a href="https://github.com/internal-quack" target="_blank" rel="noopener" class="sum-project"><strong>GitHub (nowy)</strong><span>github.com/internal-quack ↗</span></a>
+        <a href="https://github.com/Tobiasz2817" target="_blank" rel="noopener" class="sum-project"><strong>GitHub (stary)</strong><span>github.com/Tobiasz2817 ↗</span></a>
       </div>
 
       <div class="sum-actions">
@@ -4087,15 +4100,14 @@
   modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
 
-  // Links inside the modal (e.g. to projects) — close the modal, then scroll to the section.
+  // Links inside the modal (e.g. to projects) — close the modal, then jump using the
+  // exact same desktop-track / mobile-scroll logic as the rest of the page.
   modal.querySelectorAll('[data-jump]').forEach(function(a){
     a.addEventListener('click', function(e){
       e.preventDefault();
       closeModal();
       const targetId = a.dataset.jump;
-      setTimeout(function(){
-        document.getElementById(targetId)?.scrollIntoView({ behavior:'smooth', block:'start' });
-      }, 200);
+      setTimeout(function(){ window.__pageJump && window.__pageJump(targetId); }, 200);
     });
   });
 })();
