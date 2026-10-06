@@ -457,8 +457,19 @@ nav.primary-nav a.nav-contact-btn svg{ width:0.85rem; height:0.85rem; flex:none;
 .dg-chapter.hue-c .dg-ribbon{ background:#C9A227; }
 .dg-grid{ display:grid; grid-template-columns:1fr; gap:2rem; margin-top:2.5rem; align-items:start; }
 @media (min-width:860px){ .dg-grid{ grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center; } }
-.dg-photo .project-cover{ max-width:28rem; margin:0 auto; }
-.dg-photo .filmstrip{ max-width:28rem; width:fit-content; margin:0.85rem auto 0; }
+/* Grid items default to min-width:auto, which means they refuse to shrink
+   below their content's natural width. The filmstrip's width:fit-content
+   wants to fit every thumbnail in a row (~28rem for 4 photos, way more for
+   8) — without min-width:0 here, that forces the whole grid TRACK wider
+   than the viewport on a narrow phone, which is what was pushing the cover
+   photo off the edge of the screen. This is why "W co gram" (only 3 thumbs,
+   narrower content) looked fine while the other two chapters (4 and 8
+   thumbs) didn't — more thumbnails made the overflow worse, not the cover
+   photo's own sizing. */
+.dg-photo{ min-width:0; }
+.about-copy{ min-width:0; }
+.dg-photo .project-cover{ max-width:min(28rem, 100%); margin:0 auto; }
+.dg-photo .filmstrip{ max-width:min(28rem, 100%); width:fit-content; margin:0.85rem auto 0; }
 
 .testimonial-grid{
   display:grid;
@@ -851,6 +862,11 @@ a.contact-row:hover .contact-row-arrow{ color:var(--accent); transform:translate
 @media (min-width:960px){
   .project-layout{ grid-template-columns:1.5fr 0.8fr; }
 }
+/* caps the reading column to ~65-75 characters per line — without this the
+   lead/body paragraphs stretch the full 1.5fr grid track (often 800px+ on
+   wide desktops), which is well past the point where eyes lose their place
+   jumping to the next line. */
+.project-copy{ max-width:42rem; }
 .project-copy .eyebrow{
   font-size:0.75rem;
   text-transform:uppercase;

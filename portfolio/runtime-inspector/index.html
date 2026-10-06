@@ -62,7 +62,7 @@
       <p data-i18n="p9-p-split">Każde wywołanie zapisywane jest w logu — dokładnie widać, jaka komenda, z jakimi argumentami i z jakim wynikiem została wykonana, co ułatwia odtworzenie i zgłoszenie buga.</p>
       <ul data-i18n="p9-detail">
         <li><strong>Dwie oddzielne przestrzenie komend</strong><code>/</code> dla komend z gry (pełny autocomplete, zagnieżdżanie) i <code>!</code> dla komend narzędzia (list, help, select, undo, clear) — nigdy się nie mieszają w jednym dropdownie.</li>
-        <li><strong>Reflection zamiast IL weavingu — świadomy wybór</strong>Napisałem i przetestowałem też wariant z Mono.Cecil, ale zostałem przy prostszym reflection — to nie hot path, a jeden jednorodny system jest łatwiejszy w utrzymaniu niż dwa równoległe. Metody czysto debugowe chronione punktowym atrybutem <code>[Preserve]</code> przed strippingiem w IL2CPP.</li>
+        <li><strong>Reflection zamiast IL weavingu — świadomy wybór</strong>Napisałem też wariant z Mono.Cecil, ale zostałem przy reflection — to nie hot path, a jeden spójny system jest łatwiejszy w utrzymaniu. Metody debugowe chroni atrybut <code>[Preserve]</code> przed strippingiem w IL2CPP.</li>
         <li><strong>Async i Coroutine</strong>Metody zwracające <code>IEnumerator</code>/<code>Task</code> uruchamiają się jako coroutine na osobnym runnerze, ze statusem „running…” widocznym na żywo w logu.</li>
         <li><strong>Undo/Redo i zagnieżdżone wywołania</strong>Komendy oznaczone jako Undoable trzymają stan przed/po — jedna komenda zamiast restartu sceny. Zagnieżdżone wywołania logują każdy krok osobno, więc widać dokładnie, jaka wartość trafiła do którego argumentu.</li>
       </ul>
