@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tobiasz Mazurek — Unity Developer</title>
-<meta name="description" content="Portfolio Tobiasza Mazurka, Unity Developera — gry wydane na Steam, projekty z game jamów, własne narzędzia i architektura.">
+<title>Projekty — Tobiasz Mazurek</title>
+<meta name="description" content="Wszystkie projekty Tobiasza Mazurka, Unity Developera — gry wydane na Steam, narzędzia edytorskie i oprogramowanie na zlecenie.">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -15,7 +15,7 @@
   <div class="shell nav-shell">
     <a class="brand" href="index.html">Tobiasz <em>Mazurek</em></a>
     <nav class="primary-nav" aria-label="Główna nawigacja">
-      <a href="projects.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> <span data-i18n="nav-projects">Projekty</span></a>
+      <a href="projects.html" class="active" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> <span data-i18n="nav-projects">Projekty</span></a>
       <a href="about.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg> <span data-i18n="nav-about">O mnie</span></a>
       <a href="career.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg> <span data-i18n="nav-career">Kariera</span></a>
       <a href="contact.html" class="nav-contact-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <span data-i18n="nav-contact">Kontakt</span></a>
@@ -42,39 +42,25 @@
 
 <section class="hero">
   <div class="shell">
-    <p class="kicker"><span></span> Portfolio</p>
-    <h1 data-i18n="hero-h1">Cześć!<br>Miło <em>Cię</em> tu widzieć.</h1>
-    <p class="hero-sub" data-i18n="hero-sub">To mój mały deweloperski świat — gameplay, systemy sieciowe i własne narzędzia edytorskie, od game jamów po tytuły wydane na Steam.</p>
+    <p class="kicker"><span></span> <span data-i18n="nav-projects">Projekty</span></p>
+    <h1 data-i18n="projects-page-h1">Wszystkie<br>projekty.</h1>
+    <p class="hero-sub" data-i18n="projects-page-sub">12 projektów — od game jamów po tytuły wydane na Steam.</p>
   </div>
 </section>
 
-<section class="projects-section" id="projekty">
+<section class="projects-section">
   <div class="shell">
+    <div class="projects-toolbar">
+      <div class="filters" role="group" aria-label="Filtruj projekty">
+        <button type="button" class="filter-chip active" data-filter="gry" data-i18n="nav-games">Gry</button>
+        <button type="button" class="filter-chip" data-filter="narzedzia" data-i18n="nav-tools">Narzędzia</button>
+        <button type="button" class="filter-chip" data-filter="oprogramowanie" data-i18n="nav-software">Oprogramowanie</button>
+      </div>
+    </div>
+
     <div class="grid">
 
-      <a class="card" href="portfolio/simply-signals/">
-        <div class="card-media"><img src="images/simply-signals-1.jpg?v=1" alt="Simply Signals — struktura projektu Unity" loading="lazy">
-          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
-        </div>
-        <div class="card-meta">
-          <p class="eyebrow" data-i18n="card-eyebrow-8">Narzędzie · W rozwoju</p>
-          <h3>Simply Signals</h3>
-          <p data-i18n="card-teaser-8">Zero-alokacyjny system komunikacji między systemami gry.</p>
-        </div>
-      </a>
-
-      <a class="card" href="portfolio/quick-load/">
-        <div class="card-media"><img src="images/quick-load-1.jpg" alt="QuickLoad — przycisk Play w toolbarze Unity" loading="lazy">
-          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
-        </div>
-        <div class="card-meta">
-          <p class="eyebrow" data-i18n="card-eyebrow-quickload">Narzędzie · Stabilne</p>
-          <h3>QuickLoad</h3>
-          <p data-i18n="card-teaser-quickload">Wejście w Play Mode z dowolnej sceny bez łamania startowego flow gry.</p>
-        </div>
-      </a>
-
-      <a class="card" href="portfolio/mr-toilet/">
+      <a class="card" data-group="gry" href="portfolio/mr-toilet/">
         <div class="card-media"><img src="images/mr-toilet-1.jpg?v=1" alt="Mr Toilet — grafika ze strony Steam" loading="lazy">
           <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
         </div>
@@ -85,7 +71,7 @@
         </div>
       </a>
 
-      <a class="card" href="portfolio/nerd-simulator/">
+      <a class="card" data-group="gry" href="portfolio/nerd-simulator/">
         <div class="card-media"><img src="images/nerd-simulator-1.jpg?v=1" alt="Nerd Simulator — grafika ze strony Steam" loading="lazy">
           <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
         </div>
@@ -96,7 +82,7 @@
         </div>
       </a>
 
-      <a class="card" href="portfolio/indian-lumberjack/">
+      <a class="card" data-group="gry" href="portfolio/indian-lumberjack/">
         <div class="card-media"><img src="images/indian-lumberjack-1.jpg?v=1" alt="Indian Lumberjack — rozgrywka, wariant leśny" loading="lazy">
           <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
         </div>
@@ -107,7 +93,7 @@
         </div>
       </a>
 
-      <a class="card" href="portfolio/blade-river/">
+      <a class="card" data-group="gry" href="portfolio/blade-river/">
         <div class="card-media"><img src="images/blade-river-1.jpg?v=1" alt="Blade River — starcie z wrogami na polanie" loading="lazy">
           <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
         </div>
@@ -118,69 +104,94 @@
         </div>
       </a>
 
-    </div>
-
-    <div class="show-more-wrap">
-      <a href="projects.html" class="btn-outline">
-        <span data-i18n="show-more">Pokaż wszystkie projekty</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <a class="card" data-group="gry" href="portfolio/space-defense/">
+        <div class="card-media"><img src="images/space-defense-1.jpg?v=1" alt="Space Defense — widok z góry na całą mapę" loading="lazy">
+          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </div>
+        <div class="card-meta">
+          <p class="eyebrow" data-i18n="card-eyebrow-4">Gra · Projekt uczelniany</p>
+          <h3>Space Defense</h3>
+          <p data-i18n="card-teaser-4">Cyberpunkowy Tower Defense zrobiony metodyką SCRUM.</p>
+        </div>
       </a>
-    </div>
-  </div>
-</section>
 
-<section class="section section-tertiary" id="czym-pomagam">
-  <div class="shell">
-    <div class="capabilities-head">
-      <div>
-        <p class="kicker"><span></span> <span data-i18n="cap-kicker">Freelance, dopasowany do projektu</span></p>
-        <h2 data-i18n="cap-h2">W czym mogę pomóc.</h2>
-      </div>
-      <p class="section-lead" data-i18n="cap-lead">Mogę poprowadzić warstwę multiplayer, dołączyć do zespołu na czas projektu albo wziąć pełną odpowiedzialność za build.</p>
-    </div>
-    <div class="capabilities-grid">
-      <div class="cap-card">
-        <span class="cap-num">01</span>
-        <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M5 8v2a2 2 0 0 0 2 2h2m8-4v2a2 2 0 0 1-2 2h-2m-2 0v2"/></svg></span>
-        <h3 data-i18n="cap-1-h">Systemy sieciowe</h3>
-        <p data-i18n="cap-1-p">Wdrażam multiplayer w nowej albo istniejącej grze — Netcode for GameObjects, PurrNet, Photon, FishNet, Unity Game Services.</p>
-      </div>
-      <div class="cap-card">
-        <span class="cap-num">02</span>
-        <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-        <h3 data-i18n="cap-2-h">Narzędzia edytorskie</h3>
-        <p data-i18n="cap-2-p">Property Drawers, Interface Drawers, Source Generators, IL Weaving — narzędzia, które realnie przyspieszają pracę całego zespołu.</p>
-      </div>
-      <div class="cap-card">
-        <span class="cap-num">03</span>
-        <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 10v4M4 12h4m6-1h.01M17 13h.01"/></svg></span>
-        <h3 data-i18n="cap-3-h">Pełny development gry</h3>
-        <p data-i18n="cap-3-p">Od pierwszego prototypu po wydanie na Steam — gameplay, systemy, optymalizacja i wymogi platformy.</p>
-      </div>
-      <div class="cap-card">
-        <span class="cap-num">04</span>
-        <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-        <h3 data-i18n="cap-4-h">Dołączenie do zespołu</h3>
-        <p data-i18n="cap-4-p">Pracowałem solo, w kilkuosobowych ekipach i w 13-osobowym zespole produkcyjnym — potrafię się szybko wdrożyć.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <a class="card" data-group="gry" href="portfolio/fluffy-saviour/">
+        <div class="card-media"><img src="images/fluffy-saviour-1.jpg?v=1" alt="Fluffy Savior — rozgrywka, niszczenie komet" loading="lazy">
+          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </div>
+        <div class="card-meta">
+          <p class="eyebrow" data-i18n="card-eyebrow-7">Gra · Game Jam</p>
+          <h3>Fluffy Savior</h3>
+          <p data-i18n="card-teaser-7">Obrona kociej planety przed falami komet.</p>
+        </div>
+      </a>
 
-<section class="section">
-  <div class="shell">
-    <p class="kicker"><span></span> <span data-i18n="testimonials-kicker">Referencje</span></p>
-    <div class="testimonial-grid">
-      <div class="testimonial">
-        <svg class="testimonial-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18h6.83v-6.83H4.5a2.67 2.67 0 0 1 2.67-2.67V6zm10 0A5.17 5.17 0 0 0 12 11.17V18h6.83v-6.83H14.5a2.67 2.67 0 0 1 2.67-2.67V6z"/></svg>
-        <p data-i18n="about-quote">„Osoba zaangażowana i chętna do nauki, otwarta na feedback i konsekwentnie rozwijająca swoje umiejętności — od pisania czytelnego kodu, przez rozwiązywanie problemów, po pracę z repozytorium. Rzetelny, ambitny i godny zaufania współpracownik.”</p>
-        <cite data-i18n="about-quote-cite">— referencja, 2025</cite>
-      </div>
-      <div class="testimonial">
-        <svg class="testimonial-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18h6.83v-6.83H4.5a2.67 2.67 0 0 1 2.67-2.67V6zm10 0A5.17 5.17 0 0 0 12 11.17V18h6.83v-6.83H14.5a2.67 2.67 0 0 1 2.67-2.67V6z"/></svg>
-        <p data-i18n="about-quote2">„Zawsze można było na niego liczyć — chętnie wspierał innych członków zespołu i dzielił się swoją wiedzą. Z pełnym przekonaniem mogę polecić Tobiasza jako osobę zaangażowaną, kompetentną i godną zaufania.”</p>
-        <cite data-i18n="about-quote2-cite">— referencja, Radikate, 2026</cite>
-      </div>
+      <a class="card" data-group="gry" href="portfolio/popiel/">
+        <div class="card-media"><img src="images/popiel-1.jpg?v=1" alt="Popiel — zrzut ekranu z rozgrywki" loading="lazy">
+          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </div>
+        <div class="card-meta">
+          <p class="eyebrow" data-i18n="card-eyebrow-5">Gra · Game Jam</p>
+          <h3>Popiel</h3>
+          <p data-i18n="card-teaser-5">Pierwsza gra, jaką stworzyłem — zbieranie myszy na Game Jamie.</p>
+        </div>
+      </a>
+
+      <a class="card" data-group="narzedzia" href="portfolio/simply-signals/">
+        <div class="card-media"><img src="images/simply-signals-1.jpg?v=1" alt="Simply Signals — struktura projektu Unity" loading="lazy">
+          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </div>
+        <div class="card-meta">
+          <p class="eyebrow" data-i18n="card-eyebrow-8">Narzędzie · W rozwoju</p>
+          <h3>Simply Signals</h3>
+          <p data-i18n="card-teaser-8">Zero-alokacyjny system komunikacji między systemami gry.</p>
+        </div>
+      </a>
+
+      <a class="card" data-group="narzedzia" href="portfolio/quick-load/">
+        <div class="card-media"><img src="images/quick-load-1.jpg" alt="QuickLoad — przycisk Play w toolbarze Unity" loading="lazy">
+          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </div>
+        <div class="card-meta">
+          <p class="eyebrow" data-i18n="card-eyebrow-quickload">Narzędzie · Stabilne</p>
+          <h3>QuickLoad</h3>
+          <p data-i18n="card-teaser-quickload">Wejście w Play Mode z dowolnej sceny bez łamania startowego flow gry.</p>
+        </div>
+      </a>
+
+      <a class="card" data-group="narzedzia" href="portfolio/runtime-inspector/">
+        <div class="card-media"><img src="images/runtime-inspector-1.jpg?v=1" alt="Runtime Inspector — konsola deweloperska" loading="lazy">
+          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </div>
+        <div class="card-meta">
+          <p class="eyebrow" data-i18n="card-eyebrow-9">Narzędzie · W rozwoju</p>
+          <h3>Runtime Inspector</h3>
+          <p data-i18n="card-teaser-9">Konsola deweloperska działająca wewnątrz builda gry.</p>
+        </div>
+      </a>
+
+      <a class="card" data-group="narzedzia" href="portfolio/editor-tools/">
+        <div class="card-media"><img src="images/narzedzia-edytorskie-1.jpg?v=1" alt="Narzędzia edytorskie — struktura projektu" loading="lazy">
+          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </div>
+        <div class="card-meta">
+          <p class="eyebrow" data-i18n="card-eyebrow-10">Narzędzie · Wewnętrzne</p>
+          <h3>Narzędzia edytorskie</h3>
+          <p data-i18n="card-teaser-10">Zestaw narzędzi przyspieszających pracę całego zespołu.</p>
+        </div>
+      </a>
+
+      <a class="card" data-group="oprogramowanie" href="portfolio/route-system/">
+        <div class="card-media icon-cover"><img src="images/icons/system-tras.svg" alt="System tras — ikona projektu" loading="lazy">
+          <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </div>
+        <div class="card-meta">
+          <p class="eyebrow" data-i18n="card-eyebrow-12">Oprogramowanie · Zlecenie komercyjne</p>
+          <h3>System tras</h3>
+          <p data-i18n="card-teaser-12">Aplikacja transportowa z nawigacją punkt po punkcie.</p>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>

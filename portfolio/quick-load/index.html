@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickLoad — Tobiasz Mazurek</title>
+<meta name="description" content="QuickLoad — narzędzie edytorskie Unity Tobiasza Mazurka pozwalające wejść w Play Mode z dowolnej sceny bez łamania startowego flow projektu.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell nav-shell">
+    <a class="brand" href="../../index.html">Tobiasz <em>Mazurek</em></a>
+    <nav class="primary-nav" aria-label="Główna nawigacja">
+      <a href="../../projects.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> <span data-i18n="nav-projects">Projekty</span></a>
+      <a href="../../about.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg> <span data-i18n="nav-about">O mnie</span></a>
+      <a href="../../career.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg> <span data-i18n="nav-career">Kariera</span></a>
+      <a href="../../contact.html" class="nav-contact-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <span data-i18n="nav-contact">Kontakt</span></a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-toggle" role="group" aria-label="Język / Language">
+        <button type="button" data-lang="pl" class="active">PL</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <a href="../../projects.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> <span data-i18n="nav-projects">Projekty</span></a>
+    <a href="../../about.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg> <span data-i18n="nav-about">O mnie</span></a>
+    <a href="../../career.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg> <span data-i18n="nav-career">Kariera</span></a>
+    <a href="../../contact.html" class="nav-contact-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <span data-i18n="nav-contact">Kontakt</span></a>
+  </div>
+</header>
+
+<main>
+<section class="project-hero">
+  <div class="shell">
+    <a class="breadcrumb" href="../../projects.html" data-i18n="back-to-projects">← Wszystkie projekty</a>
+    <div class="project-cover">
+      <img src="../../images/quick-load-1.jpg" alt="QuickLoad — przycisk Play w toolbarze Unity">
+    </div>
+    <div class="filmstrip">
+      <button type="button" class="active"><img src="../../images/quick-load-1.jpg" alt="QuickLoad — przycisk Play w toolbarze Unity"></button>
+      <button type="button"><img src="../../images/quick-load-2.jpg" alt="QuickLoad — ustawienia Init Scene w Project Settings"></button>
+    </div>
+  </div>
+</section>
+
+<section class="project-body">
+  <div class="shell project-layout">
+    <div class="project-copy">
+      <p class="eyebrow" data-i18n="card-eyebrow-quickload">Narzędzie · Stabilne</p>
+      <h1>QuickLoad</h1>
+      <p class="tagline" data-i18n="card-teaser-quickload">Wejście w Play Mode z dowolnej sceny bez łamania startowego flow gry.</p>
+      <p class="lead" data-i18n="p-quickload-lead">QuickLoad to narzędzie edytorskie Unity, które pozwala wejść w Play Mode z dowolnej sceny bez łamania startowego flow projektu — Play Mode przechodzi przez dedykowaną Init Scene, gdzie inicjalizują się systemy współdzielone (managery, obiekty DontDestroyOnLoad, bootstrapping serwisów), a dopiero potem ładuje się scena, nad którą akurat pracujesz.</p>
+      <p data-i18n="p-quickload-p2">Wystarczy otworzyć scenę, nad którą pracujesz, i kliknąć przycisk QuickLoad Play — reszta dzieje się automatycznie. Po zatrzymaniu Play Mode edytor wraca do sceny, od której zacząłeś, razem z całym zestawem otwartych scen sprzed wejścia w tryb gry.</p>
+      <ul data-i18n="p-quickload-detail">
+        <li><strong>Automatyczny powrót do sceny roboczej</strong>Unity zapamiętuje otwarte sceny przed wejściem w Play Mode i przywraca je po jego zatrzymaniu — zero ręcznego przełączania.</li>
+        <li><strong>Init Scene jako punkt startowy</strong>Wszystko, co musi istnieć raz na start (managery, serwisy), trafia do Init Scene i jest odpinane zaraz po załadowaniu docelowej sceny — zostają tylko obiekty przeniesione do DontDestroyOnLoad.</li>
+        <li><strong>Wsparcie Multiplayer Play Mode</strong>Wirtualni gracze (klony edytora) też przechodzą przez Init Scene, więc managery i obiekty DontDestroyOnLoad istnieją w każdym oknie testowym.</li>
+        <li><strong>Diagnostyka w konsoli</strong>Jeśli Init Scene nie jest ustawiona w ustawieniach projektu, konsola od razu mówi, co zrobić, zamiast cichego błędu.</li>
+      </ul>
+      <div class="tags"><span>Unity Editor Tool</span><span>Play Mode</span><span>Toolbar Extension</span><span>Multiplayer Play Mode</span></div>
+    </div>
+    <div class="project-side">
+      <div class="side-field">
+        <span class="label" data-i18n="side-status-label">Status</span>
+        <span class="value" data-i18n="side-status-quickload">Stabilne</span>
+      </div>
+      <div class="side-field">
+        <span class="label" data-i18n="side-focus-label">Zakres</span>
+        <span class="value" data-i18n="side-focus-quickload">Narzędzie edytorskie Unity</span>
+      </div>
+      <a class="btn-accent" href="https://github.com/internal-quack/quick-load" target="_blank" rel="noopener"><span data-i18n="side-github-btn">Zobacz repo</span> ↗</a>
+      <div class="work-box">
+        <span class="label" data-i18n="side-work-label">Zakres pracy</span>
+        <ul>
+          <li data-i18n="work-quickload-1">Automatyczny powrót do sceny roboczej</li>
+          <li data-i18n="work-quickload-2">Init Scene jako punkt startowy</li>
+          <li data-i18n="work-quickload-3">Wsparcie Multiplayer Play Mode</li>
+          <li data-i18n="work-quickload-4">Diagnostyka w konsoli</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="next-project">
+  <div class="shell">
+    <a href="../runtime-inspector/">
+      <div>
+        <span class="eyebrow" data-i18n="next-project-eyebrow">Następny projekt</span>
+        <h2>Runtime Inspector</h2>
+      </div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer" id="kontakt">
+  <div class="shell footer-grid">
+    <div class="footer-lead">
+      <p class="kicker"><span></span> <span data-i18n="contact-kicker">Kontakt</span></p>
+      <h2 data-i18n="contact-h2">Otwarty na współpracę<br>i rozmowę o projektach</h2>
+      <p data-i18n="contact-p1">Szukasz Unity Developera do współpracy — na stałe, projektowo albo przy jednym zleceniu? Napisz, odpowiadam zwykle w ciągu 24h.</p>
+      <a class="footer-email" href="mailto:tobiasz7182@gmail.com">tobiasz7182@gmail.com <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="footer-details">
+      <div>
+        <span class="label" data-i18n="contact-discord">Discord</span>
+        <span class="footer-text">tobiasz8676</span>
+      </div>
+      <div>
+        <span class="label" data-i18n="contact-github-new">GitHub</span>
+        <a href="https://github.com/internal-quack" target="_blank" rel="noopener">internal-quack ↗</a>
+        <a href="https://github.com/Tobiasz2817" target="_blank" rel="noopener" data-i18n="contact-github-old-inline">Tobiasz2817 (stare konto) ↗</a>
+      </div>
+      <div>
+        <span class="label">CV / Referencje</span>
+        <a href="../../CV_Tobiasz_Mazurek.pdf" target="_blank" rel="noopener">CV (PL) ↓</a>
+        <a href="../../CV_Tobiasz_Mazurek_ENG.pdf" target="_blank" rel="noopener">CV (EN) ↓</a>
+        <a href="../../Referencje.pdf" target="_blank" rel="noopener" data-i18n="contact-reference">Referencja ↓</a>
+      </div>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span data-i18n="contact-copyright">© 2026 Tobiasz Mazurek</span>
+    <span data-i18n="contact-page-sign-off">Miłego dnia i do usłyszenia!</span>
+  </div>
+</footer>
+
+<script src="../../script.js" defer></script>
+</body>
+</html>
