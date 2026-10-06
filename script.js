@@ -266,7 +266,11 @@
    (project detail pages) or several (the About page timeline). Each thumb
    can carry data-orientation="portrait" — the cover snaps between two
    static size presets (landscape default, portrait via .is-portrait)
-   instead of resizing to match each photo's real aspect ratio. */
+   instead of resizing to match each photo's real aspect ratio. A chapter
+   keeps ONE preset for all its photos even if some aren't a perfect ratio
+   match — switching box shape mid-gallery as you click thumbnails felt
+   like a jarring jolt, so consistency within a chapter wins over a
+   perfect per-photo fit. */
 (function(){
   document.querySelectorAll('.filmstrip').forEach(filmstrip => {
     const sib = filmstrip.previousElementSibling;
