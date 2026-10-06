@@ -37,6 +37,7 @@ body{
   font-family:'General Sans', 'Inter', sans-serif;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
 
 h1,h2,h3,h4,.display{
@@ -457,19 +458,16 @@ nav.primary-nav a.nav-contact-btn svg{ width:0.85rem; height:0.85rem; flex:none;
 .dg-chapter.hue-c .dg-ribbon{ background:#C9A227; }
 .dg-grid{ display:grid; grid-template-columns:1fr; gap:2rem; margin-top:2.5rem; align-items:start; }
 @media (min-width:860px){ .dg-grid{ grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center; } }
-/* Grid items default to min-width:auto, which means they refuse to shrink
-   below their content's natural width. The filmstrip's width:fit-content
-   wants to fit every thumbnail in a row (~28rem for 4 photos, way more for
-   8) — without min-width:0 here, that forces the whole grid TRACK wider
-   than the viewport on a narrow phone, which is what was pushing the cover
-   photo off the edge of the screen. This is why "W co gram" (only 3 thumbs,
-   narrower content) looked fine while the other two chapters (4 and 8
-   thumbs) didn't — more thumbnails made the overflow worse, not the cover
-   photo's own sizing. */
-.dg-photo{ min-width:0; }
+/* Grid items default to min-width:auto, refusing to shrink below their
+   content's natural width — min-width:0 overrides that. The filmstrip itself
+   is locked to width:100% (not fit-content) so its box size always matches
+   its grid cell, never the thumbnail count: chapters with more photos (4 or
+   8) just scroll further inside that fixed box instead of forcing the whole
+   track wider than the phone screen, same as the 3-photo chapter already did. */
+.dg-photo{ min-width:0; width:100%; }
 .about-copy{ min-width:0; }
-.dg-photo .project-cover{ max-width:min(28rem, 100%); margin:0 auto; }
-.dg-photo .filmstrip{ max-width:min(28rem, 100%); width:fit-content; margin:0.85rem auto 0; }
+.dg-photo .project-cover{ width:100%; max-width:28rem; margin:0 auto; }
+.dg-photo .filmstrip{ width:100%; max-width:28rem; margin:0.85rem auto 0; }
 
 .testimonial-grid{
   display:grid;
@@ -824,8 +822,8 @@ a.contact-row:hover .contact-row-arrow{ color:var(--accent); transform:translate
    static track so there's always a visible hint there's more to scroll; on
    touch devices the browser auto-hides it until you actually scroll. */
 .filmstrip{
-  width:fit-content;
-  max-width:min(28rem, 100%);
+  width:100%;
+  max-width:28rem;
   margin:0.75rem auto 0;
   display:flex;
   justify-content:flex-start;
