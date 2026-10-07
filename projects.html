@@ -52,13 +52,16 @@
   <div class="shell">
     <div class="projects-toolbar">
       <div class="filters" role="group" aria-label="Filtruj projekty">
-        <button type="button" class="filter-chip active" data-filter="gry" data-i18n="nav-games">Gry</button>
+        <button type="button" class="filter-chip active" data-filter="all" data-i18n="nav-all">Wszystko</button>
+        <button type="button" class="filter-chip" data-filter="gry" data-i18n="nav-games">Gry</button>
         <button type="button" class="filter-chip" data-filter="narzedzia" data-i18n="nav-tools">Narzędzia</button>
         <button type="button" class="filter-chip" data-filter="oprogramowanie" data-i18n="nav-software">Oprogramowanie</button>
       </div>
     </div>
 
-    <div class="grid">
+    <div class="grid-group" data-group-section="gry">
+      <p class="kicker group-kicker"><span></span> <span data-i18n="nav-games">Gry</span></p>
+      <div class="grid">
 
       <a class="card" data-group="gry" href="portfolio/mr-toilet/">
         <div class="card-media"><img src="images/mr-toilet-1.jpg?v=1" alt="Mr Toilet — grafika ze strony Steam" loading="lazy">
@@ -137,6 +140,13 @@
         </div>
       </a>
 
+      </div>
+    </div>
+
+    <div class="grid-group" data-group-section="narzedzia">
+      <p class="kicker group-kicker"><span></span> <span data-i18n="nav-tools">Narzędzia</span></p>
+      <div class="grid">
+
       <a class="card" data-group="narzedzia" href="portfolio/simply-signals/">
         <div class="card-media"><img src="images/simply-signals-1.jpg?v=1" alt="Simply Signals — struktura projektu Unity" loading="lazy">
           <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
@@ -181,6 +191,13 @@
         </div>
       </a>
 
+      </div>
+    </div>
+
+    <div class="grid-group" data-group-section="oprogramowanie">
+      <p class="kicker group-kicker"><span></span> <span data-i18n="nav-software">Oprogramowanie</span></p>
+      <div class="grid">
+
       <a class="card" data-group="oprogramowanie" href="portfolio/route-system/">
         <div class="card-media icon-cover"><img src="images/icons/system-tras.svg" alt="System tras — ikona projektu" loading="lazy">
           <span class="card-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
@@ -192,7 +209,9 @@
         </div>
       </a>
 
+      </div>
     </div>
+
   </div>
 </section>
 

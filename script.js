@@ -22,7 +22,7 @@
 (function(){
   const EN = {
     'nav-start':'Home','nav-projects':'Projects','nav-about':'About','nav-career':'Career',
-    'nav-contact':'Contact','nav-productions':'Productions','nav-tools':'Tools','nav-games':'Games',
+    'nav-contact':'Contact','nav-productions':'Productions','nav-tools':'Tools','nav-games':'Games','nav-all':'All',
     'nav-software':'Software','nav-roadmap':'Roadmap','back-to-projects':'← All projects',
     'filter-all':'All','projects-h2':'12 projects — from game jams to Steam',
     'show-more':'Show all projects',
@@ -238,15 +238,19 @@
   window.__i18n = { applyLang, EN };
 })();
 
-/* ------------------------------------------------------------ filters */
+/* ------------------------------------------------------------ filters
+   "Wszystko" shows every .grid-group (Gry/Narzędzia/Oprogramowanie) stacked
+   with its own heading — toggling whole groups, not individual cards, is
+   what gives each category a clear labeled section while scrolling instead
+   of a single mixed grid. */
 (function(){
   const chips = document.querySelectorAll('.filter-chip');
-  const cards = document.querySelectorAll('.grid .card');
-  if(!chips.length || !cards.length) return;
+  const groups = document.querySelectorAll('.grid-group');
+  if(!chips.length || !groups.length) return;
 
   function apply(group){
-    cards.forEach(card => {
-      card.style.display = (group === 'all' || card.dataset.group === group) ? '' : 'none';
+    groups.forEach(section => {
+      section.style.display = (group === 'all' || section.dataset.groupSection === group) ? '' : 'none';
     });
   }
 

@@ -308,6 +308,8 @@ nav.primary-nav a.nav-contact-btn svg{ width:0.85rem; height:0.85rem; flex:none;
 }
 
 /* ------------------------------------------------------------- card grid */
+.grid-group{ margin-top:3rem; }
+
 .grid{
   display:grid;
   grid-template-columns:1fr;
