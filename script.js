@@ -233,7 +233,7 @@
 
   let saved = null;
   try{ saved = localStorage.getItem('site-lang'); }catch(e){}
-  if(saved === 'en'){ applyLang('en'); }
+  if(saved !== 'pl'){ applyLang('en'); }
 
   window.__i18n = { applyLang, EN };
 })();
