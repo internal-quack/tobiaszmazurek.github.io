@@ -21,7 +21,7 @@
 /* ------------------------------------------------------- PL/EN language */
 (function(){
   const EN = {
-    'nav-start':'Home','nav-projects':'Projects','nav-about':'About','nav-career':'Career',
+    'nav-start':'Home','nav-projects':'Projects','nav-about':'About','nav-career':'Experience',
     'nav-contact':'Contact','nav-productions':'Productions','nav-tools':'Tools','nav-games':'Games','nav-all':'All',
     'nav-software':'Software','nav-roadmap':'Roadmap','back-to-projects':'← All projects',
     'filter-all':'All','projects-h2':'12 projects — from game jams to Steam',
@@ -43,7 +43,7 @@
     'about-page-kicker':'About','about-page-h1':'Not just <em>code</em>.',
     'about-page-sub':'What drives me at work, how I spend my free time, and what I play when I’m not coding.',
 
-    'side-status-label':'Status','side-focus-label':'Focus','side-work-label':'Scope of work',
+    'side-status-label':'Status','side-focus-label':'Focus','side-work-label':'My responsibility',
     'side-steam-btn':'View on Steam','next-project-eyebrow':'Next project',
 
     'side-status-1':'Released on Steam','side-focus-1':'Gameplay programming',
@@ -72,10 +72,9 @@
     'work-5-1':'Mouse-collecting logic','work-5-2':'Map switching','work-5-3':'Round-end conditions',
     'work-12-1':'GPX route generation','work-12-2':'Point-by-point navigation','work-12-3':'Built for a waste-management client',
 
-    'card-eyebrow-quickload':'Tool · Stable',
     'card-teaser-quickload':'Enter Play Mode from any scene without breaking your project’s startup flow.',
-    'p-quickload-lead':'QuickLoad is a Unity editor tool that lets you enter Play Mode from any scene without breaking your project’s startup flow — Play Mode is routed through a dedicated Init Scene, where shared systems are initialized (managers, DontDestroyOnLoad objects, service bootstrapping), and only then is the scene you’re working on loaded.',
-    'p-quickload-p2':'Open the scene you’re working on and click the QuickLoad Play button — everything else happens automatically. When you stop Play Mode, the editor returns to the scene you started from, along with the full set of scenes you had open before entering Play Mode.',
+    'p-quickload-lead':'Testing a single scene in Unity usually means manually replaying the whole startup flow first — spinning up the Init Scene, managers, and DontDestroyOnLoad objects before you even reach what you actually want to check.',
+    'p-quickload-p2':'QuickLoad automates that in one click — Play Mode runs through the Init Scene, initializes shared systems, then returns exactly to the scene you were working on when you stop. One button instead of replaying the startup flow by hand every time.',
     'p-quickload-detail':'<li><strong>Automatic return to your working scene</strong>Unity remembers which scenes were open before entering Play Mode and restores them once it stops — no manual switching.</li><li><strong>Init Scene as the starting point</strong>Anything that needs to exist once at startup (managers, services) lives in the Init Scene and gets unloaded right after your target scene loads — only the objects moved to DontDestroyOnLoad survive.</li><li><strong>Multiplayer Play Mode support</strong>Virtual players (editor clones) also go through the Init Scene, so managers and DontDestroyOnLoad objects exist in every test window.</li><li><strong>Console diagnostics</strong>If the Init Scene isn’t set in the project settings, the console tells you exactly what to do instead of failing silently.</li>',
     'side-status-quickload':'Stable','side-focus-quickload':'Unity editor tooling',
     'side-github-btn':'View on GitHub',
@@ -83,8 +82,10 @@
     'work-quickload-3':'Multiplayer Play Mode support','work-quickload-4':'Console diagnostics',
 
     'hero-loc':'open to remote / relocation',
-    'hero-h1':'Hey!<br>Great to have <em>you</em> here.',
-    'hero-sub':'This is my little corner of game dev — gameplay, networking systems, and custom editor tools, from game jams to titles shipped on Steam.',
+    'hero-kicker':'Hey, great to have you here 👋',
+    'hero-h1':'Unity <em>Developer</em>.',
+    'hero-sub':'I design gameplay systems and Unity tooling — multiplayer, Source Generators, IL Weaving — and take them from prototype to a Steam release.',
+    'hero-stat1':'projects','hero-stat2':'Steam releases','hero-stat3':'custom tooling',
     'about-stat1':'years in Unity','about-stat2':'completed projects','about-stat3':'titles on Steam',
 
     'roadmap-eyebrow':'Roadmap',
@@ -106,7 +107,7 @@
     'about-steam-link':'My Steam profile ↗',
     'testimonials-kicker':'References',
     'about-quote':'“An engaged, eager learner — open to feedback and consistently leveling up, from writing clean code, to problem-solving, to working with a repo. A reliable, ambitious, trustworthy collaborator.”',
-    'about-quote-cite':'— reference, 2025',
+    'about-quote-cite':'— Radosław Kozaczuk, 2025',
     'about-quote2':'“You could always count on him — he was always happy to support other team members and share his knowledge. I can confidently recommend Tobiasz as an engaged, competent, and trustworthy person.”',
     'about-quote2-cite':'— reference, Radikate, 2026',
 
@@ -138,12 +139,13 @@
     'skills-items1':'C# (advanced), C/C++ (basic), Python',
     'skills-items2':'Unity (advanced, URP), Unreal Engine 5 (basic)',
 
-    'card-eyebrow-1':'Game · Steam','card-eyebrow-2':'Game · Steam',
-    'card-eyebrow-8':'Tool · In development','card-eyebrow-9':'Tool · In development',
-    'card-eyebrow-10':'Tool · Internal','card-eyebrow-11':'Tool · Work in progress',
-    'card-eyebrow-6':'Game · Solo dev','card-eyebrow-blade':'Game · Solo dev',
-    'card-eyebrow-4':'Game · University project','card-eyebrow-7':'Game · Game jam',
-    'card-eyebrow-5':'Game · Game jam','card-eyebrow-12':'Software · Commercial project',
+    'card-eyebrow-1':'Gameplay Programmer · Steam','card-eyebrow-2':'Gameplay Programmer · Steam',
+    'card-eyebrow-8':'Tools / Systems · Unity','card-eyebrow-9':'Unity Tooling · In development',
+    'card-eyebrow-10':'Unity Tooling · Internal','card-eyebrow-11':'Tool · Work in progress',
+    'card-eyebrow-6':'Game Programmer · Solo dev','card-eyebrow-blade':'Gameplay Programmer · Solo dev',
+    'card-eyebrow-4':'Gameplay Programmer · University project','card-eyebrow-7':'Game Programmer · Game jam',
+    'card-eyebrow-5':'Game Programmer · Game jam','card-eyebrow-12':'Software / Navigation · Commercial project',
+    'card-eyebrow-quickload':'Unity Tooling · Stable',
 
     'card-teaser-1':'A toilet-cleaning simulator that made it to Steam.',
     'card-teaser-2':'A comedic adventure about moving out of your mom’s house.',
@@ -152,7 +154,7 @@
     'card-teaser-10':'A toolkit that speeds up the whole team’s workflow.',
     'card-teaser-11':'Smaller support systems for day-to-day game dev work.',
     'card-teaser-6':'An arcade game about chopping wood to survive winter.',
-    'card-teaser-blade':'A top-down hack and slash with four cooldown skills.',
+    'card-teaser-blade':'A top-down hack and slash with cooldown skills.',
     'card-teaser-4':'A cyberpunk Tower Defense built with SCRUM.',
     'card-teaser-7':'Defending a cat planet from waves of comets.',
     'card-teaser-5':'The first game I ever made — collecting mice at a game jam.',
@@ -161,8 +163,8 @@
     'p1-p':'And since you were just reading about scrubbing a toilet — yes, I also made a game literally about being a nerd. Quite the pairing. A short, comedic adventure where you help forty-year-old Mervin move out of his mom’s house — through absurd odd jobs and even more absurd trouble.',
     'p1-p-split':'I was responsible for implementing key gameplay and minigame systems (including odd-job systems, arcade-style minigames, and mechanical loops). I also designed the character stats/needs logic, the room customization system, and managed the UI and game state.',
     'p1-detail-list':'<li><strong>Job &amp; Minigame Systems</strong>Logic for odd jobs and their minigames — freelance gigs, painting, trash sorting, arcade sequences.</li><li><strong>Character Stats &amp; State Management</strong>Character needs system (bladder, energy, hunger) with a dynamic HUD and random events.</li><li><strong>Customization System &amp; Room Architecture</strong>Room customization — furniture, rugs, layout saving, and economy integration.</li><li><strong>UX, Save Architecture &amp; UI Architecture</strong>Save systems for world state and quests, plus UI states — pop-ups, pause, keybinds.</li>',
-    'p2-p':'Yes, it’s literally a simulator about cleaning a public restroom — sometimes the best gameplay hides in the least glamorous premise. Clean up, charge fees, kick out freeloaders, and grow your bathroom empire.',
-    'p2-p-split':'I was responsible for a broad range of gameplay systems — from early prototypes through to polished, finished mechanics. This was the project where I learned the real requirements of the platform, as well as the process of shipping a game on Steam.',
+    'p2-p':'Yes, it’s literally a simulator about cleaning a public restroom — sometimes the best gameplay hides in the least glamorous premise.',
+    'p2-p-split':'I owned the full range of gameplay systems: the cleaning-and-fees loop, the economy, freeloader interactions, and growing your bathroom empire — from early prototypes to mechanics polished for Steam, platform requirements included.',
     'p2-detail-list':'<li><strong>Core Gameplay Systems</strong>Main gameplay loops, player-environment interactions, and economic minigames with NPCs.</li><li><strong>Game Architecture &amp; State Management</strong>Save system for world and economy state, a dynamic calendar, and a time system.</li><li><strong>Player Onboarding &amp; UX</strong>Tutorials, notifications, contextual hints, and a settings panel with control rebinding.</li><li><strong>Optimization &amp; Steam Deployment</strong>Code stability and performance, plus adapting the project to Steam’s requirements.</li>',
     'p3-p':'A cyberpunk-styled Tower Defense — you defend a path from waves of enemies by placing and upgrading defense turrets.',
     'p3-p-split':'Built as a university project with a four-person team, run fully by SCRUM — short sprints, stand-ups, retrospectives, planning. I was the gameplay programmer.',
@@ -170,14 +172,14 @@
     'p4-p-split':'I was the lead programmer on the team — I was responsible for gameplay, including the mouse-collecting logic, map switching, and round-end conditions.',
     'p5-p':'An endless arcade game — a lumberjack has to gather enough wood to survive winter, chopping a tree into pieces with a single hit. The game offers 3 difficulty levels and different maps, so every run looks and plays a little differently.',
     'p5-p-split':'I coded the whole thing myself, managing assets from external artists and a sound designer and wiring them into the game. This was the project that taught me how to really tie every piece together into one coherent whole — from the first prototype to the finished product.',
-    'pblade-p':'A top-down hack and slash — you fight off waves of enemies, combining a basic attack with four cooldown-based skills.',
+    'pblade-p':'A top-down hack and slash — you fight off waves of enemies, combining a basic attack with cooldown-based skills.',
     'pblade-p-split':'I was responsible for the combat system, enemy waves, game flow, and the full skill set along with the damage system — everything except the enemy AI itself.',
     'p6-p':'A multi-level arcade game made at a game jam — you play a galaxy defender saving a cat planet from destruction, destroying enemy comets and dodging attacks. Each planet is its own self-contained minigame, with its own set of threats.',
     'p6-p-split':'I was the programmer, responsible for every layer of gameplay — from controls and collision, through enemy wave logic, to the scoring system and transitions between planets.',
-    'p8-p':'A strongly-typed, zero-allocation communication system between game systems, built so cross-assembly communication stops being a headache. One call and the data lands exactly where it needs to.',
-    'p8-p-split':'Instead of holding references between modules or pushing data through singletons, one call — <code>Signals.Send(...)</code> — is enough, and the data lands exactly where it needs to, no matter which assembly the receiver lives in.',
+    'p8-p':'As a Unity project grows, systems start needing each other — manager references, singletons, hand-written interfaces. Over time it gets hard to track who\'s talking to whom.',
+    'p8-p-split':'Simply Signals lets systems talk through a generated API instead of direct references — one call, <code>Signals.Send(...)</code>, and the data lands exactly where it needs to, regardless of assembly.',
     'p8-detail':'<li><strong>Split responsibility: Source Generator + Cecil</strong>Roslyn generates the public API and internal state (register/unregister), while Cecil does exactly one thing — injects the registration calls into <code>Awake</code>/<code>OnDestroy</code>. Each tool does what it’s best at.</li><li><strong>Editor window instead of hand-written interfaces</strong>Signals are declared through a dedicated window, not by writing interfaces by hand. Name collisions between different facades are blocked the moment you try to add them, not caught later in the generator.</li><li><strong>Combine modes without DynamicInvoke</strong>Plain multicast for <code>void</code>, and for return values — None/All/Any modes with arity-based overloads instead of costly runtime reflection.</li><li><strong>The Weaver’s safety rule</strong>If Cecil ever needed to generate a loop or a branch, that’s a sign the logic belongs in plain C# instead. Coming up: a visual dependency graph showing, live, who’s talking to whom at any given moment in the game.</li>',
-    'p9-p':'A slide-out developer console that runs at runtime, inside the game build — any method in the code becomes a strongly-typed, callable command (exec), with no need to write a dedicated panel for every test.',
+    'p9-p':'Testing a single method inside a built game usually means either a debug panel written just for that one case, or rebuilding the project from scratch. Runtime Inspector is a slide-out developer console that runs inside the build — any method in the code becomes a strongly-typed, callable command, with no need to write a dedicated panel for every test. Supports recursion.',
     'p9-p-split':'Every call gets logged — you can see exactly which command ran, with what arguments, and what result, making it much easier to reproduce and report a bug.',
     'p9-detail':'<li><strong>Two separate command spaces</strong><code>/</code> for game commands (full autocomplete, nesting) and <code>!</code> for tool commands (list, help, select, undo, clear) — never mixed in the same dropdown.</li><li><strong>Reflection over IL weaving — a deliberate choice</strong>I also built a Mono.Cecil version, but stuck with reflection — it’s not a hot path, and one consistent system is easier to maintain. Debug-only methods are protected from IL2CPP stripping with a <code>[Preserve]</code> attribute.</li><li><strong>Async and Coroutine support</strong>Methods returning <code>IEnumerator</code>/<code>Task</code> run as coroutines on a dedicated runner, with a live "running…" status in the log.</li><li><strong>Undo/Redo and nested calls</strong>Commands marked Undoable keep before/after state — one command instead of a scene restart. Nested calls log every step separately, so you can see exactly which value fed into which argument.</li>',
     'p10-p':'Nobody brags about editor tools in a first interview, yet they’re what speeds up the whole team the most. A set of smaller tools used daily:',
@@ -185,15 +187,15 @@
     'p10-detail':'All tied together by my own attribute- and reflection-based reference injection system, plus the <code>[OnValueChange]</code> attribute that generates a backing field via IL Weaving.',
     'p11-p':'These aren’t big, standalone products — they’re smaller support systems that speed up my day-to-day game dev work. Once they hit a more stable version, I plan to release them publicly, for free:',
     'p11-list':'<li><strong>LScene</strong> — a scene loader with network-loading support, built around a core / menu / map architecture</li><li><strong>Storex</strong> — a game-state save system</li><li><strong>Config Injector</strong> — reflection-based config injection from Resources</li><li><strong>Hermes</strong> — my own opinionated DI architecture inspired by Zenject</li>',
-    'p12-p':'A transport app built for a waste management company.',
+    'p12-p':'Drivers collecting waste from multiple stops a day needed a clear stop order instead of planning the route by hand on a map — I built the app for a waste-management company.',
     'p12-p-split':'The system generates collection routes in GPX format, and the navigation module guides the driver point by point along the planned route — no manual stop-by-stop planning needed.',
 
     'contact-kicker':'Contact',
-    'contact-h2':'Open to collaboration<br>and project talk',
+    'contact-h2':'Got a project that needs<br>a Unity Developer?',
     'contact-page-h1':'Let’s talk<br>about the <em>project</em>.',
     'contact-page-sub':'Looking for a Unity Developer to work with — full-time, project-based, or a single commission? Pick whatever fits.',
     'contact-page-sign-off':'Have a great day — talk soon!',
-    'contact-p1':'Looking for a Unity Developer — full-time, project-based, or a one-off job? Reach out, I usually reply within 24h.',
+    'contact-p1':'Let\'s talk about what needs building. I usually reply within 24h.',
     'contact-p2':'If you’d like to talk shop or just chat about game dev in general — I’m always up for it, and if you’re nearby, we might even grab a beer.',
     'contact-p3':'I also build sites like this on commission, and teach Unity one-on-one.',
     'contact-reference':'Reference','contact-github-old-inline':'Tobiasz2817 (old account)',
@@ -236,6 +238,19 @@
   if(saved !== 'pl'){ applyLang('en'); }
 
   window.__i18n = { applyLang, EN };
+})();
+
+/* --------------------------------------------------- CV button language */
+(function(){
+  const links = document.querySelectorAll('[data-cv-link]');
+  if(!links.length) return;
+  function syncCvLinks(lang){
+    links.forEach(a => {
+      a.href = a.href.replace(/CV_Tobiasz_Mazurek(_ENG)?\.pdf/, lang === 'en' ? 'CV_Tobiasz_Mazurek_ENG.pdf' : 'CV_Tobiasz_Mazurek.pdf');
+    });
+  }
+  document.addEventListener('langchange', e => syncCvLinks(e.detail.lang));
+  syncCvLinks(document.documentElement.lang);
 })();
 
 /* ------------------------------------------------------------ filters

@@ -17,10 +17,11 @@
     <nav class="primary-nav" aria-label="Główna nawigacja">
       <a href="../../projects.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> <span data-i18n="nav-projects">Projekty</span></a>
       <a href="../../about.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg> <span data-i18n="nav-about">O mnie</span></a>
-      <a href="../../career.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg> <span data-i18n="nav-career">Kariera</span></a>
+      <a href="../../career.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg> <span data-i18n="nav-career">Doświadczenie</span></a>
       <a href="../../contact.html" class="nav-contact-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <span data-i18n="nav-contact">Kontakt</span></a>
     </nav>
     <div class="header-right">
+      <a class="nav-cv-btn" href="../../CV_Tobiasz_Mazurek.pdf" target="_blank" rel="noopener" data-cv-link data-i18n="nav-cv">CV &#8595;</a>
       <div class="lang-toggle" role="group" aria-label="Język / Language">
         <button type="button" data-lang="pl" class="active">PL</button>
         <button type="button" data-lang="en">EN</button>
@@ -31,9 +32,10 @@
     </div>
   </div>
   <div class="mobile-menu">
+    <a class="nav-cv-btn mobile" href="../../CV_Tobiasz_Mazurek.pdf" target="_blank" rel="noopener" data-cv-link data-i18n="nav-cv">CV &#8595;</a>
     <a href="../../projects.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> <span data-i18n="nav-projects">Projekty</span></a>
     <a href="../../about.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg> <span data-i18n="nav-about">O mnie</span></a>
-    <a href="../../career.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg> <span data-i18n="nav-career">Kariera</span></a>
+    <a href="../../career.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg> <span data-i18n="nav-career">Doświadczenie</span></a>
     <a href="../../contact.html" class="nav-contact-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <span data-i18n="nav-contact">Kontakt</span></a>
   </div>
 </header>
@@ -55,11 +57,11 @@
 <section class="project-body">
   <div class="shell project-layout">
     <div class="project-copy">
-      <p class="eyebrow" data-i18n="card-eyebrow-quickload">Narzędzie · Stabilne</p>
+      <p class="eyebrow" data-i18n="card-eyebrow-quickload">Narzędzia Unity · Stabilne</p>
       <h1>QuickLoad</h1>
       <p class="tagline" data-i18n="card-teaser-quickload">Wejście w Play Mode z dowolnej sceny bez łamania startowego flow gry.</p>
-      <p class="lead" data-i18n="p-quickload-lead">QuickLoad to narzędzie edytorskie Unity, które pozwala wejść w Play Mode z dowolnej sceny bez łamania startowego flow projektu — Play Mode przechodzi przez dedykowaną Init Scene, gdzie inicjalizują się systemy współdzielone (managery, obiekty DontDestroyOnLoad, bootstrapping serwisów), a dopiero potem ładuje się scena, nad którą akurat pracujesz.</p>
-      <p data-i18n="p-quickload-p2">Wystarczy otworzyć scenę, nad którą pracujesz, i kliknąć przycisk QuickLoad Play — reszta dzieje się automatycznie. Po zatrzymaniu Play Mode edytor wraca do sceny, od której zacząłeś, razem z całym zestawem otwartych scen sprzed wejścia w tryb gry.</p>
+      <p class="lead" data-i18n="p-quickload-lead">Testowanie pojedynczej sceny w Unity zwykle oznacza ręczne odtwarzanie całego flow startowego gry — odpalenie Init Scene, managerów i obiektów DontDestroyOnLoad, zanim w ogóle dotrzesz do tego, co chcesz sprawdzić.</p>
+      <p data-i18n="p-quickload-p2">QuickLoad automatyzuje to jednym kliknięciem — Play Mode przechodzi przez Init Scene, inicjalizuje systemy współdzielone, a po zatrzymaniu wraca dokładnie do sceny, nad którą pracowałeś. Jeden przycisk zamiast ręcznego odtwarzania startowego flow za każdym razem.</p>
       <ul data-i18n="p-quickload-detail">
         <li><strong>Automatyczny powrót do sceny roboczej</strong>Unity zapamiętuje otwarte sceny przed wejściem w Play Mode i przywraca je po jego zatrzymaniu — zero ręcznego przełączania.</li>
         <li><strong>Init Scene jako punkt startowy</strong>Wszystko, co musi istnieć raz na start (managery, serwisy), trafia do Init Scene i jest odpinane zaraz po załadowaniu docelowej sceny — zostają tylko obiekty przeniesione do DontDestroyOnLoad.</li>
@@ -79,7 +81,7 @@
       </div>
       <a class="btn-accent" href="https://github.com/internal-quack/quick-load" target="_blank" rel="noopener"><span data-i18n="side-github-btn">Zobacz repo</span> ↗</a>
       <div class="work-box">
-        <span class="label" data-i18n="side-work-label">Zakres pracy</span>
+        <span class="label" data-i18n="side-work-label">Moja odpowiedzialność</span>
         <ul>
           <li data-i18n="work-quickload-1">Automatyczny powrót do sceny roboczej</li>
           <li data-i18n="work-quickload-2">Init Scene jako punkt startowy</li>
@@ -108,8 +110,8 @@
   <div class="shell footer-grid">
     <div class="footer-lead">
       <p class="kicker"><span></span> <span data-i18n="contact-kicker">Kontakt</span></p>
-      <h2 data-i18n="contact-h2">Otwarty na współpracę<br>i rozmowę o projektach</h2>
-      <p data-i18n="contact-p1">Szukasz Unity Developera do współpracy — na stałe, projektowo albo przy jednym zleceniu? Napisz, odpowiadam zwykle w ciągu 24h.</p>
+      <h2 data-i18n="contact-h2">Masz projekt, który potrzebuje<br>Unity Developera?</h2>
+      <p data-i18n="contact-p1">Porozmawiajmy o tym, co trzeba zbudować. Odpowiadam zwykle w ciągu 24h.</p>
       <a class="footer-email" href="mailto:tobiasz7182@gmail.com">tobiasz7182@gmail.com <span aria-hidden="true">↗</span></a>
     </div>
     <div class="footer-details">
@@ -120,7 +122,6 @@
       <div>
         <span class="label" data-i18n="contact-github-new">GitHub</span>
         <a href="https://github.com/internal-quack" target="_blank" rel="noopener">internal-quack ↗</a>
-        <a href="https://github.com/Tobiasz2817" target="_blank" rel="noopener" data-i18n="contact-github-old-inline">Tobiasz2817 (stare konto) ↗</a>
       </div>
       <div>
         <span class="label">CV / Referencje</span>

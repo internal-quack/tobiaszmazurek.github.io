@@ -143,6 +143,29 @@ nav.primary-nav a.nav-contact-btn svg{ width:0.85rem; height:0.85rem; flex:none;
   margin-left:auto;
 }
 
+.nav-cv-btn{
+  display:inline-flex;
+  align-items:center;
+  font-family:'General Sans', 'Inter', sans-serif;
+  font-weight:600;
+  font-size:0.8rem;
+  padding:0.35rem 0.8rem;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--text);
+  text-decoration:none;
+  transition:border-color .2s ease, color .2s ease;
+}
+.nav-cv-btn:hover{ border-color:var(--accent); color:var(--accent); }
+.nav-cv-btn.mobile{
+  border:none;
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+  padding:0.9rem 1.25rem;
+  font-size:0.95rem;
+  color:var(--accent);
+}
+
 .lang-toggle{
   display:flex;
   border:1px solid var(--line);
@@ -211,6 +234,7 @@ nav.primary-nav a.nav-contact-btn svg{ width:0.85rem; height:0.85rem; flex:none;
 @media (min-width:860px){
   .hero{ padding:8rem 0 7rem; }
 }
+.kicker.kicker-greeting{ text-transform:none; letter-spacing:0; font-weight:500; }
 .hero h1{
   font-size:clamp(2.75rem, 1.8rem + 7vw, 6rem);
   font-weight:700;
