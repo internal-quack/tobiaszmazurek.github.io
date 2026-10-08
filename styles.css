@@ -875,6 +875,11 @@ a.contact-row:hover .contact-row-arrow{ color:var(--accent); transform:translate
   cursor:pointer;
   background:var(--bg-panel-2);
 }
+/* auto margins center the thumbnails when they don't fill the strip, but
+   collapse to 0 once they overflow — unlike justify-content:center, which
+   would push the first thumbnails out of reach of the scroll container */
+.filmstrip button:first-child{ margin-left:auto; }
+.filmstrip button:last-child{ margin-right:auto; }
 .filmstrip button.active{ border-color:var(--accent); }
 .filmstrip img{ width:100%; height:100%; object-fit:cover; display:block; }
 
