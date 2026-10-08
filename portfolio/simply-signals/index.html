@@ -7,7 +7,7 @@
 <meta name="description" content="Simply Signals — silnie typowany, zero-alokacyjny system komunikacji między systemami gry w Unity, budowany przez Tobiasza Mazurka.">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../styles.css?v=3">
 </head>
 <body>
 
@@ -62,7 +62,7 @@
       <h1>Simply Signals</h1>
       <p class="tagline" data-i18n="card-teaser-8">Zero-alokacyjny system komunikacji między systemami gry.</p>
       <p class="lead" data-i18n="p8-p">W rosnącym projekcie Unity systemy zaczynają się nawzajem potrzebować — referencje między managerami, singletony, ręcznie pisane interfejsy. Z czasem trudno się połapać, kto z kim rozmawia.</p>
-      <p data-i18n="p8-p-split">Simply Signals pozwala systemom komunikować się przez generowane API, bez bezpośrednich referencji — jedno wywołanie, <code>Signals.Send(...)</code>, i dane trafiają dokładnie tam, gdzie trzeba, niezależnie od assembly.</p>
+      <p data-i18n="p8-p-split">Simply Signals pozwala systemom komunikować się przez generowane, silnie typowane API — bez bezpośrednich referencji i bez alokacji przy wysyłaniu. Jedno wywołanie, <code>Signals.Send(...)</code>, i dane trafiają dokładnie tam, gdzie trzeba, niezależnie od assembly.</p>
       <ul data-i18n="p8-detail">
         <li><strong>Podział pracy: Source Generator + Cecil</strong>Roslyn generuje publiczne API i wewnętrzny stan (rejestrowanie/wyrejestrowywanie), a Cecil robi wyłącznie jedną rzecz — wstrzykuje wywołania rejestracji w <code>Awake</code>/<code>OnDestroy</code>. Każde narzędzie robi to, w czym jest najlepsze.</li>
         <li><strong>Okno edytorowe zamiast ręcznych interfejsów</strong>Sygnały deklaruje się przez dedykowane okno, nie pisząc interfejsów ręcznie. Kolizje nazw między różnymi fasadami są blokowane już w momencie próby dodania, nie wykrywane później w generatorze.</li>
@@ -137,6 +137,6 @@
   </div>
 </footer>
 
-<script src="../../script.js" defer></script>
+<script src="../../script.js?v=3" defer></script>
 </body>
 </html>

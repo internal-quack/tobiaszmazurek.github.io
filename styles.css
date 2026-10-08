@@ -967,6 +967,7 @@ a.contact-row:hover .contact-row-arrow{ color:var(--accent); transform:translate
   background:var(--bg-panel);
 }
 .work-box .label{
+  display:block;
   font-size:0.7rem;
   text-transform:uppercase;
   letter-spacing:0.05em;

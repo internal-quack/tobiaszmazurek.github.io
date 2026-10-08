@@ -7,7 +7,7 @@
 <meta name="description" content="QuickLoad — narzędzie edytorskie Unity Tobiasza Mazurka pozwalające wejść w Play Mode z dowolnej sceny bez łamania startowego flow projektu.">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../styles.css?v=3">
 </head>
 <body>
 
@@ -63,8 +63,8 @@
       <p class="lead" data-i18n="p-quickload-lead">Testowanie pojedynczej sceny w Unity zwykle oznacza ręczne odtwarzanie całego flow startowego gry — odpalenie Init Scene, managerów i obiektów DontDestroyOnLoad, zanim w ogóle dotrzesz do tego, co chcesz sprawdzić.</p>
       <p data-i18n="p-quickload-p2">QuickLoad automatyzuje to jednym kliknięciem — Play Mode przechodzi przez Init Scene, inicjalizuje systemy współdzielone, a po zatrzymaniu wraca dokładnie do sceny, nad którą pracowałeś. Jeden przycisk zamiast ręcznego odtwarzania startowego flow za każdym razem.</p>
       <ul data-i18n="p-quickload-detail">
-        <li><strong>Automatyczny powrót do sceny roboczej</strong>Unity zapamiętuje otwarte sceny przed wejściem w Play Mode i przywraca je po jego zatrzymaniu — zero ręcznego przełączania.</li>
-        <li><strong>Init Scene jako punkt startowy</strong>Wszystko, co musi istnieć raz na start (managery, serwisy), trafia do Init Scene i jest odpinane zaraz po załadowaniu docelowej sceny — zostają tylko obiekty przeniesione do DontDestroyOnLoad.</li>
+        <li><strong>Automatyczny powrót do sceny roboczej</strong>QuickLoad zapamiętuje sceny otwarte przed wejściem w Play Mode i przywraca je po jego zatrzymaniu — bez ręcznego przełączania.</li>
+        <li><strong>Init Scene jako punkt startowy</strong>Wszystko, co musi istnieć raz na start (managery, serwisy), trafia do Init Scene, która jest zamykana zaraz po załadowaniu docelowej sceny — zostają tylko obiekty przeniesione do DontDestroyOnLoad.</li>
         <li><strong>Wsparcie Multiplayer Play Mode</strong>Wirtualni gracze (klony edytora) też przechodzą przez Init Scene, więc managery i obiekty DontDestroyOnLoad istnieją w każdym oknie testowym.</li>
         <li><strong>Diagnostyka w konsoli</strong>Jeśli Init Scene nie jest ustawiona w ustawieniach projektu, konsola od razu mówi, co zrobić, zamiast cichego błędu.</li>
       </ul>
@@ -137,6 +137,6 @@
   </div>
 </footer>
 
-<script src="../../script.js" defer></script>
+<script src="../../script.js?v=3" defer></script>
 </body>
 </html>

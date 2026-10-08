@@ -7,7 +7,7 @@
 <meta name="description" content="Runtime Inspector — wysuwana konsola deweloperska działająca w runtime builda gry, budowana przez Tobiasza Mazurka.">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../styles.css?v=3">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
       <p class="eyebrow" data-i18n="card-eyebrow-9">Narzędzia Unity · W rozwoju</p>
       <h1>Runtime Inspector</h1>
       <p class="tagline" data-i18n="card-teaser-9">Konsola deweloperska działająca wewnątrz builda gry.</p>
-      <p class="lead" data-i18n="p9-p">Testowanie pojedynczej metody w zbudowanej grze zwykle oznacza albo osobny panel debugowy pisany pod ten jeden przypadek, albo przebudowę projektu od zera. Runtime Inspector to wysuwana konsola deweloperska działająca wewnątrz builda — dowolna metoda w kodzie staje się silnie typowaną, wywoływalną komendą, bez pisania osobnego panelu do każdego testu. Wspiera rekurencję.</p>
+      <p class="lead" data-i18n="p9-p">Testowanie pojedynczej metody w zbudowanej grze zwykle oznacza albo osobny panel debugowy pisany pod ten jeden przypadek, albo kolejny build z doklejonym kodem testowym. Runtime Inspector to wysuwana konsola deweloperska działająca wewnątrz builda — dowolna metoda w kodzie staje się silnie typowaną, wywoływalną komendą, bez pisania osobnego panelu do każdego testu. Komendy można zagnieżdżać — wynik jednej trafia jako argument do kolejnej.</p>
       <p data-i18n="p9-p-split">Każde wywołanie zapisywane jest w logu — dokładnie widać, jaka komenda, z jakimi argumentami i z jakim wynikiem została wykonana, co ułatwia odtworzenie i zgłoszenie buga.</p>
       <ul data-i18n="p9-detail">
         <li><strong>Dwie oddzielne przestrzenie komend</strong><code>/</code> dla komend z gry (pełny autocomplete, zagnieżdżanie) i <code>!</code> dla komend narzędzia (list, help, select, undo, clear) — nigdy się nie mieszają w jednym dropdownie.</li>
@@ -83,7 +83,7 @@
         <span class="label" data-i18n="side-work-label">Moja odpowiedzialność</span>
         <ul>
           <li data-i18n="work-9-1">Dwie oddzielne przestrzenie komend</li>
-          <li data-i18n="work-9-2">Reflection zamiast IL weavingu — świadomy wybór</li>
+          <li data-i18n="work-9-2">Reflection zamiast IL weavingu</li>
           <li data-i18n="work-9-3">Async i Coroutine</li>
           <li data-i18n="work-9-4">Undo/Redo i zagnieżdżone wywołania</li>
         </ul>
@@ -136,6 +136,6 @@
   </div>
 </footer>
 
-<script src="../../script.js" defer></script>
+<script src="../../script.js?v=3" defer></script>
 </body>
 </html>
